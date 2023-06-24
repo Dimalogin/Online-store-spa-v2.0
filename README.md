@@ -1,1 +1,1 @@
-# MyGallery-spa
+## MyGallery-spa - test project for It-Academy
