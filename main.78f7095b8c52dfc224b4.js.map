@@ -1,0 +1,1 @@
+{"version":3,"file":"main.78f7095b8c52dfc224b4.js","mappings":"mBAAAA,QAAQC,IAAI,Q","sources":["webpack://online-store-spa-v2.0/./src/index.ts"],"sourcesContent":["console.log(\"start\");\n"],"names":["console","log"],"sourceRoot":""}
