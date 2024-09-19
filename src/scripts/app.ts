@@ -19,6 +19,12 @@ export default class App {
     document.addEventListener("DOMContentLoaded", () => {
       this.navigate(null);
     });
+
+    window.addEventListener("popstate", this.newNav);
+  }
+
+  newNav() {
+    console.log("link");
   }
 
   navigate(url: string | null) {
