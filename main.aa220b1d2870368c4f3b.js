@@ -1,2 +1,0 @@
-(()=>{"use strict";new class{constructor(){this.historyRouterHandlerParams={nameEvent:"popstate",locationField:"pathname"},document.addEventListener("DOMContentLoaded",(()=>{this.navigate(null)}))}navigate(o){const t=window.location[this.historyRouterHandlerParams.locationField].slice(1);console.log(t);const e={path:"",resource:""},n=t.split("/");console.log(n),[e.path="",e.resource=""]=n,console.log(e)}}})();
-//# sourceMappingURL=main.aa220b1d2870368c4f3b.js.map
