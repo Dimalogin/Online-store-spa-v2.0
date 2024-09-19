@@ -38,9 +38,11 @@ export default class App {
 
     const path = urlString.split("/");
 
-    console.log(result);
+    console.log(path);
 
     [result.path = "", result.resource = ""] = path;
+
+    console.log(result);
 
     //this.#callback!(result);
   }
