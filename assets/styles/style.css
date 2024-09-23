@@ -8,10 +8,31 @@
   font-style: normal;
 }
 
-body {
+@font-face {
+  font-family: "montserrat_alternatesbold";
+  src: url("../fonts/montserrat/montserratalternates-bold-webfont.woff2")
+      format("woff2"),
+    url("../fonts/montserrat/montserratalternates-bold-webfont.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
-.header__body {
-  color: red;
+html,
+body {
+  background-color: #f7f7f7;
+  height: 100%;
+  line-height: 1;
   font-family: "montserrat_alternatesregular";
+  font-weight: 400;
+}
+
+.wrapper {
+}
+
+.container {
+  max-width: 1720px;
+  margin: 0px auto;
+  padding: 0px 15px;
+  box-sizing: content-box;
 }
