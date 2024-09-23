@@ -1,0 +1,152 @@
+.header {
+  background-color: #fff;
+}
+
+.header__top {
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.header__body {
+  min-height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  font-family: "montserrat_alternatesbold";
+  text-transform: uppercase;
+  line-height: 18px;
+  letter-spacing: 1.4px;
+  font-size: 20px;
+}
+
+/*Nav*/
+
+.header__list {
+  display: flex;
+}
+
+.header__item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.header__link {
+  cursor: pointer;
+  display: block;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.header__link:hover {
+  text-decoration: underline;
+}
+
+.header__link--active {
+  text-decoration: underline;
+}
+
+/*Side Btns*/
+
+.header__side-links {
+  display: flex;
+}
+
+.header__side-link {
+  position: relative;
+  cursor: pointer;
+}
+
+.header__side-link:not(:last-child) {
+  margin-right: 15px;
+}
+
+.header-side-link__icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.header-side-link__icon--search {
+  background-image: url(../../../images/header/header-search.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 140%;
+}
+
+.header-side-link__icon--account {
+  background-image: url(../../../images/header/header-account.svg);
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  background-size: 100%;
+}
+
+.header-side-link__icon--favorite {
+  background-image: url(../../../images/header/header-favorite.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 110%;
+}
+
+.header-side-link__icon--basket {
+  background-image: url(../../../images/header/header-basket.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 140%;
+}
+
+.header-side-link__count {
+  display: block;
+  position: absolute;
+  top: -9px;
+  right: -11px;
+  font-size: 13px;
+  width: 15px;
+  height: 15px;
+}
+
+/*free Shipping*/
+
+.header__bottom {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.header__delivery {
+  font-size: 12px;
+  font-family: "montserrat_alternatesbold";
+}
+
+/*Side Menu*/
+.header__menu {
+  display: none;
+  background: transparent;
+}
+
+.menu-header__item {
+  min-width: 30px;
+  height: 4px;
+  background-color: #000;
+  border-radius: 5px;
+}
+
+.menu-header__item:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+@media (max-width: 870px) {
+  .header__nav {
+    display: none;
+  }
+
+  .header__side-links {
+    display: none;
+  }
+
+  .header__menu {
+    display: flex;
+    flex-direction: column;
+  }
+}
