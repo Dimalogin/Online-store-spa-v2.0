@@ -16,22 +16,44 @@
           <div class="header__container container">
             <div class="header__body">
               <a class="header__logo">store</a>
-              <nav class="header__nav">
-                <ul class="header__list">
-                  <li class="header__item">
-                    <a class="header__link header__link--active">home</a>
-                  </li>
-                  <li class="header__item">
-                    <a class="header__link">products</a>
-                  </li>
-                  <li class="header__item">
-                    <a class="header__link">contacts</a>
-                  </li>
-                  <li class="header__item">
-                    <a class="header__link">about</a>
-                  </li>
-                </ul>
-              </nav>
+              <ul class="header__list">
+                <li class="header__item">
+                  <a class="header__link header__link--active">home</a>
+                </li>
+                <li class="header__item">
+                  <a class="header__link header__link--dropdown">products</a>
+                  <div class="header__dropdown dropdown-header">
+                    <div class="dropdown-header__content">
+                      <div class="dropdown-header-content__woman">
+                        <h2 class="dropdown-header-content__title">
+                          For woman's
+                        </h2>
+                        <ul class="dropdown-header-content__list">
+                          <li class="dropdown-header-content__item">
+                            <a class="dropdown-header-content__link"></a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="dropdown-header-content__man">
+                        <h2 class="dropdown-header-content__title">
+                          For man's
+                        </h2>
+                        <ul class="dropdown-header-content__list">
+                          <li class="dropdown-header-content__item">
+                            <a class="dropdown-header-content__link"></a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="header__item">
+                  <a class="header__link">contacts</a>
+                </li>
+                <li class="header__item">
+                  <a class="header__link">about</a>
+                </li>
+              </ul>
               <div class="header__side-links">
                 <a class="header__side-link header__side-link--search">
                   <i
@@ -76,6 +98,6 @@
 
     <div class="side-navigations"></div>
 
-    <script src="./assets/pages/home/scripts/home.js"></script>
+    <script src="./assets/pages/home/scripts/home.js" type="module"></script>
   </body>
 </html>

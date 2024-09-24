@@ -3,11 +3,12 @@
 }
 
 .header__top {
-  border-bottom: 1px solid #e8e8e8;
+  border-bottom: 1px solid red;
+  position: relative;
 }
-
+/* #e8e8e8*/
 .header__body {
-  min-height: 80px;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,6 +47,25 @@
   text-decoration: underline;
 }
 
+.header__item--dropdown {
+}
+
+/*Dropdown menu*/
+
+.header__dropdown {
+  display: none;
+  position: absolute;
+  background-color: pink;
+  width: 100%;
+  top: 81px;
+  left: 0px;
+  padding: 20px 50px 20px 50px;
+  z-index: 10;
+}
+
+.header__item--dropdown:hover .header__dropdown {
+  display: block;
+}
 /*Side Btns*/
 
 .header__side-links {
