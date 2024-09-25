@@ -6,7 +6,7 @@ export default class HeaderDropdown {
 
   constructor() {
     this.#initTemplate();
-    this.#bindListeners();
+    this.#bindListener();
   }
 
   #initTemplate() {
@@ -16,7 +16,7 @@ export default class HeaderDropdown {
     this.#headerDropdown = document.querySelector(".header__dropdown");
   }
 
-  #bindListeners() {
+  #bindListener() {
     this.#headerLinkDropdown.addEventListener(
       "mouseover",
       this.#showDropdownByLink.bind(this)
