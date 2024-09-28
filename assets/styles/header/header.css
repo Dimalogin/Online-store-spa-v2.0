@@ -190,10 +190,10 @@
 
 /*Side Navigation */
 .header-side-navigation {
-  display: block;
+  display: none;
   background: #fff;
   position: absolute;
-  width: 300px;
+  width: 0px;
   height: 100%;
   top: 0px;
   right: 0px;
