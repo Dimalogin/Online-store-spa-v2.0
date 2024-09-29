@@ -1,0 +1,71 @@
+.main__fall-collection {
+  padding: 100px 0px 0px 0px;
+}
+
+.fall-collection__header {
+  text-align: center;
+
+  margin: 0px 0px 50px 0px;
+}
+
+.fall-collection__title {
+  text-transform: uppercase;
+  line-height: 30px;
+  font-size: 28px;
+  letter-spacing: 0.8px;
+}
+
+.fall-collection__body {
+  display: flex;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.fall-collection__column {
+  flex: 0 1 25%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.fall-collection__row {
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  letter-spacing: 0.5px;
+  line-height: 30px;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 0px 20px;
+}
+
+.fall-collection__row--one,
+.fall-collection__row--ten {
+  flex: 1 1 auto;
+}
+
+.fall-collection__content {
+  color: #fff;
+}
+.fall-collection__brand {
+  font-size: 26px;
+  letter-spacing: 0.5px;
+}
+
+.fall-collection__text {
+  font-size: 18px;
+  letter-spacing: 1.2px;
+}
+
+.fall-collection__icon {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
