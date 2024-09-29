@@ -1,0 +1,58 @@
+.main__streetwear {
+  padding: 80px 0px 0px 0px;
+}
+
+.streetwear__body {
+  border-radius: 10px;
+  background: rgb(239, 235, 237);
+  background: linear-gradient(
+    45deg,
+    rgba(239, 235, 237, 1) 40%,
+    rgba(210, 205, 202, 1) 100%
+  );
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-height: 300px;
+  overflow: hidden;
+}
+
+.streetwear__content {
+  flex: 0 1 50%;
+  padding: 80px 0px 0px 150px;
+}
+
+.streetwear__title {
+  text-transform: uppercase;
+  font-size: 26px;
+  line-height: 20px;
+  letter-spacing: 0.8px;
+  margin: 0px 0px 10px 0px;
+}
+
+.streetwear__text {
+  font-size: 15px;
+  line-height: 20px;
+  margin: 0px 0px 20px 0px;
+}
+
+.streetwear__shop {
+  font-size: 18px;
+  text-transform: uppercase;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.streetwear__icon {
+  flex: 0 1 50%;
+
+  position: relative;
+}
+
+.streetwear__icon img {
+  position: absolute;
+  top: -50px;
+  right: 150px;
+  width: 90%;
+  mix-blend-mode: multiply;
+}
