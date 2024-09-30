@@ -20,6 +20,7 @@
   line-height: 18px;
   letter-spacing: 1.4px;
   font-size: 20px;
+  color: #000;
 }
 
 /*Nav*/
@@ -107,6 +108,7 @@
 .header__side-link {
   position: relative;
   cursor: pointer;
+  color: #000;
 }
 
 .header__side-link:not(:last-child) {
