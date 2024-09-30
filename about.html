@@ -1,11 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h2>About</h2>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Default Styles-->
+    <link rel="stylesheet" href="./assets/styles/reset.css" />
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+
+    <!--Header styles-->
+    <link rel="stylesheet" href="./assets/styles/header/header.css" />
+
+
+
+
+     <!--Footer-->
+     <link rel="stylesheet" href="./assets/styles/footer/footer.css" />
+
+
+    <title>Online Store</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__top">
+          <div class="header__container container">
+            <div class="header__body">
+              <a class="header__logo">store</a>
+              <ul class="header__list">
+                <li class="header__item">
+                  <a class="header__link header__link--active">home</a>
+                </li>
+                <li class="header__item">
+                  <a class="header__link header__link--dropdown">products</a>
+                  <div class="header__dropdown dropdown-header">
+                    <div class="dropdown-header__content">
+                      <div class="dropdown-header-content__woman">
+                        <h2 class="dropdown-header-content__title">
+                          For woman's
+                        </h2>
+                        <ul class="dropdown-header-content__list">
+                          <li class="dropdown-header-content__item">
+                            <a class="dropdown-header-content__link">dress</a>
+                          </li>
+                          <li class="dropdown-header-content__item">
+                            <a class="dropdown-header-content__link">shoes</a>
+                          </li>
+                          <li class="dropdown-header-content__item">
+                            <a class="dropdown-header-content__link">bags</a>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="dropdown-header-content__man">
+                        <h2 class="dropdown-header-content__title">
+                          ` For man's
+                        </h2>
+                        <ul class="dropdown-header-content__list">
+                          <li class="dropdown-header-content__item">
+                            <a class="dropdown-header-content__link">coat</a>
+                          </li>
+                          <li class="dropdown-header-content__item">
+                            <a class="dropdown-header-content__link">
+                              trousers</a
+                            >
+                          </li>
+                          <li class="dropdown-header-content__item">
+                            <a class="dropdown-header-content__link">shoes</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="header__item">
+                  <a class="header__link">contacts</a>
+                </li>
+                <li class="header__item">
+                  <a class="header__link">about</a>
+                </li>
+              </ul>
+              <div class="header__side-links">
+                <a class="header__side-link header__side-link--search">
+                  <i
+                    class="header-side-link__icon header-side-link__icon--search"
+                  ></i>
+                </a>
+                <a class="header__side-link header__side-link--account">
+                  <i
+                    class="header-side-link__icon header-side-link__icon--account"
+                  ></i>
+                </a>
+                <a class="header__side-link header__side-link--favorite">
+                  <i
+                    class="header-side-link__icon header-side-link__icon--favorite"
+                  ></i>
+                </a>
+                <a class="header__side-link header__side-link--basket">
+                  <i
+                    class="header-side-link__icon header-side-link__icon--basket"
+                  ></i>
+                  <span class="header-side-link__count">0</span>
+                </a>
+                <button class="header__menu menu-header">
+                  <span class="menu-header__item"></span>
+                  <span class="menu-header__item"></span>
+                  <span class="menu-header__item"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="header__bottom">
+          <div class="header__container container">
+            <div class="header__delivery">free shipping on orders over $20</div>
+          </div>
+        </div>
+      </header>
+
+      <!--Side Navigation-->
+
+      <div class="header-side-navigation">
+        <button class="header-side-navigation__close-btn">&#10006;</button>
+        <ul class="header-side-navigation__list">
+          <li class="header-side-navigation__item">
+            <a
+              class="header-side-navigation__link header-side-navigation__link--active"
+              >Home</a
+            >
+          </li>
+          <li class="header-side-navigation__item">
+            <a
+              class="header-side-navigation__link header-side-navigation__link--products"
+              >Products</a
+            >
+            <div class="header-side-navigation__panel side-navigation-panel">
+              <h3 class="side-navigation-panel__title">for woman's</h3>
+              <ul class="side-navigation-panel__list">
+                <li class="side-navigation-panel__item">
+                  <a class="side-navigation-panel__link">dress</a>
+                </li>
+                <li class="side-navigation-panel__item">
+                  <a class="side-navigation-panel__link">shoes</a>
+                </li>
+                <li class="side-navigation-panel__item">
+                  <a class="side-navigation-panel__link">bags</a>
+                </li>
+              </ul>
+
+              <h3 class="side-navigation-panel__title">for man's</h3>
+              <ul class="side-navigation-panel__list">
+                <li class="side-navigation-panel__item">
+                  <a class="side-navigation-panel__link">coat</a>
+                </li>
+                <li class="side-navigation-panel__item">
+                  <a class="side-navigation-panel__link">trousers</a>
+                </li>
+                <li class="side-navigation-panel__item">
+                  <a class="side-navigation-panel__link">shoes</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="header-side-navigation__item">
+            <a class="header-side-navigation__link">Contacts</a>
+          </li>
+          <li class="header-side-navigation__item">
+            <a class="header-side-navigation__link">About</a>
+          </li>
+        </ul>
+      </div>
+
+      <main class="main">
+        
+      </main>
+
+      <!--Footer-->
+
+      <footer class="footer">
+        <div class="footer__top">
+          <div class="footer__container container">
+            <div class="footer__body">
+              <div class="footer__column">
+                <div class="footer__label">For Woman's</div>
+                <div class="footer__menu menu-footer">
+                  <ul class="menu-footer__list">
+                    <li class="menu-footer__item">
+                      <a href="" class="menu-footer__link">Dress</a>
+                    </li>
+                    <li class="menu-footer__item">
+                      <a href="" class="menu-footer__link">Shoes</a>
+                    </li>
+                    <li class="menu-footer__item">
+                      <a href="" class="menu-footer__link">Bags</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="footer__column">
+                <div class="footer__label">For Man's</div>
+                <div class="footer__menu menu-footer">
+                  <ul class="menu-footer__list">
+                    <li class="menu-footer__item">
+                      <a href="" class="menu-footer__link">Coat</a>
+                    </li>
+                    <li class="menu-footer__item">
+                      <a href="" class="menu-footer__link">Trousers</a>
+                    </li>
+                    <li class="menu-footer__item">
+                      <a href="" class="menu-footer__link">Shoes</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="footer__column">
+                <div class="footer__label">About us</div>
+                <div class="footer__menu menu-footer">
+                  <ul class="menu-footer__list">
+                    <li class="menu-footer__item">
+                      <a href="" class="menu-footer__link">Home</a>
+                    </li>
+                    <li class="menu-footer__item">
+                      <a href="" class="menu-footer__link">Contacts</a>
+                    </li>
+                    <li class="menu-footer__item">
+                      <a href="" class="menu-footer__link">About</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="footer__column">
+                <div class="footer__label">Social Network</div>
+                <div class="footer__social social">
+                  <a href="" class="social__item">
+                    <img
+                      src="./assets/images/footer/social-icons/facebook.svg"
+                      alt="social"
+                    />
+                  </a>
+                  <a href="" class="social__item">
+                    <img
+                      src="./assets/images/footer/social-icons/instagram.svg"
+                      alt="social"
+                    />
+                  </a>
+                  <a href="" class="social__item">
+                    <img
+                      src="./assets/images/footer/social-icons/twitter.svg"
+                      alt="social"
+                    />
+                  </a>
+                  <a href="" class="social__item">
+                    <img
+                      src="./assets/images/footer/social-icons/vkontakte.svg"
+                      alt="social"
+                    />
+                  </a>
+                  <a href="" class="social__item">
+                    <img
+                      src="./assets/images/footer/social-icons/youtube.svg"
+                      alt="social"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="footer__container container">
+            <div class="footer__content">
+              <div class="footer__info">
+                <div class="footer__terms">Terms & conditions</div>
+                <div class="footer__privacy">Privacy policy</div>
+              </div>
+              <div class="footer__rights">© 2020. All rights reserved.</div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="./assets/scripts/index.js" type="module"></script>
+  </body>
 </html>
