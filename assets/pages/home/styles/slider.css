@@ -39,7 +39,7 @@
 }
 
 .slides-wrapper__list {
-  height: calc(100vh - 137px);
+  height: calc(100vh - 121px);
   width: 100%;
   display: flex;
   list-style: none;
@@ -48,6 +48,24 @@
   overflow: scroll;
   scroll-behavior: smooth;
   scrollbar-width: none;
+}
+
+@media (max-width: 1250px) {
+  .slides-wrapper__list {
+    height: calc(100vh - 300px);
+  }
+}
+
+@media (max-width: 950px) {
+  .slides-wrapper__list {
+    height: calc(100vh - 500px);
+  }
+}
+
+@media (max-width: 620px) {
+  .slides-wrapper__list {
+    height: 250px;
+  }
 }
 
 .slides-wrapper__slide {
@@ -73,6 +91,13 @@
   text-transform: uppercase;
 }
 
+@media (max-width: 620px) {
+  .slider-wrapper__text {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
 .slider-wrapper__text--costumes {
   color: #f3efec;
   top: 80px;
@@ -80,9 +105,9 @@
 }
 
 .slider-wrapper__text--clothes {
-  top: 160px;
+  top: 120px;
   color: #fffff9;
-  right: 200px;
+  right: calc(50% - 300px);
 }
 
 .slider-wrapper__text--showcase {
@@ -95,4 +120,26 @@
   color: #ffffff;
   top: calc(50% - 120px);
   left: calc(50% - 169px);
+}
+
+@media (max-width: 620px) {
+  .slider-wrapper__text--costumes {
+    top: 100px;
+    left: calc(50% - 80px);
+  }
+
+  .slider-wrapper__text--clothes {
+    top: 70px;
+    right: calc(50% - 140px);
+  }
+
+  .slider-wrapper__text--showcase {
+    top: 90px;
+    left: calc(50% - 100px);
+  }
+
+  .slider-wrapper__text--jeans {
+    top: 70px;
+    left: calc(50% - 80px);
+  }
 }

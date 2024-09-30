@@ -17,9 +17,33 @@
   overflow: hidden;
 }
 
+@media (max-width: 900px) {
+  .streetwear__body {
+    flex-direction: column;
+  }
+}
+
 .streetwear__content {
   flex: 0 1 50%;
   padding: 80px 0px 0px 150px;
+}
+
+@media (max-width: 1250px) {
+  .streetwear__content {
+    padding: 80px 0px 0px 100px;
+  }
+}
+
+@media (max-width: 900px) {
+  .streetwear__content {
+    padding: 50px 0px 0px 50px;
+  }
+}
+
+@media (max-width: 450px) {
+  .streetwear__content {
+    padding: 20px 0px 0px 20px;
+  }
 }
 
 .streetwear__title {
@@ -30,10 +54,38 @@
   margin: 0px 0px 10px 0px;
 }
 
+@media (max-width: 650px) {
+  .streetwear__title {
+    font-size: 18px;
+    line-height: 18px;
+  }
+}
+
+@media (max-width: 450px) {
+  .streetwear__title {
+    font-size: 16px;
+    line-height: 16px;
+  }
+}
+
 .streetwear__text {
   font-size: 15px;
   line-height: 20px;
   margin: 0px 0px 20px 0px;
+}
+
+@media (max-width: 650px) {
+  .streetwear__text {
+    font-size: 12px;
+    line-height: 12px;
+  }
+}
+
+@media (max-width: 450px) {
+  .streetwear__text {
+    font-size: 10px;
+    line-height: 10px;
+  }
 }
 
 .streetwear__shop {
@@ -43,9 +95,20 @@
   cursor: pointer;
 }
 
+@media (max-width: 650px) {
+  .streetwear__shop {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 450px) {
+  .streetwear__shop {
+    font-size: 14px;
+  }
+}
+
 .streetwear__icon {
   flex: 0 1 50%;
-
   position: relative;
 }
 
@@ -55,4 +118,42 @@
   right: 150px;
   width: 90%;
   mix-blend-mode: multiply;
+}
+
+@media (max-width: 1420px) {
+  .streetwear__icon img {
+    top: -20px;
+    right: 50px;
+  }
+}
+
+@media (max-width: 1250px) {
+  .streetwear__icon img {
+    top: 30px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .streetwear__icon img {
+    top: -240px;
+    width: 70%;
+    right: 0px;
+  }
+}
+
+@media (max-width: 650px) {
+  .streetwear__icon img {
+    top: -200px;
+    width: 80%;
+    right: 0px;
+  }
+}
+
+@media (max-width: 460px) {
+  .streetwear__icon img {
+    top: -200px;
+    width: 100%;
+    right: 0px;
+  }
 }
