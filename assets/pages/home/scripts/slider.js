@@ -7,10 +7,11 @@ export default class MainSliderWrapper {
   slideIndex = 0;
 
   constructor() {
-    this.#initTemplate();
-    this.#bindListener();
-
-    this.#showSlides();
+    document.addEventListener("DOMContentLoaded", () => {
+      this.#initTemplate();
+      this.#bindListener();
+      this.#showSlides();
+    });
   }
 
   #initTemplate() {
