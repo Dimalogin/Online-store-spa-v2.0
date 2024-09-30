@@ -4,7 +4,6 @@
 
 .fall-collection__header {
   text-align: center;
-
   margin: 0px 0px 50px 0px;
 }
 
@@ -15,20 +14,71 @@
   letter-spacing: 0.8px;
 }
 
+@media (max-width: 670px) {
+  .fall-collection__title {
+    line-height: 20px;
+    font-size: 22px;
+  }
+}
+
 .fall-collection__body {
   display: flex;
+  flex-direction: row;
   border-radius: 20px;
   overflow: hidden;
 }
 
-.fall-collection__column {
-  flex: 0 1 25%;
+@media (max-width: 1460px) {
+  .fall-collection__body {
+    max-width: 75%;
+    flex-direction: column;
+    margin: 0px auto;
+  }
+}
 
+@media (max-width: 1050px) {
+  .fall-collection__body {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 720px) {
+  .fall-collection__body {
+    max-width: 60%;
+    margin: 0px auto;
+  }
+}
+
+@media (max-width: 530px) {
+  .fall-collection__body {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 400px) {
+  .fall-collection__body {
+    max-width: 100%;
+  }
+}
+
+.fall-collection__row {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 720px) {
+  .fall-collection__row {
+    flex-direction: column;
+  }
+}
+
+.fall-collection__column {
+  flex: 0 1 50%;
   display: flex;
   flex-direction: column;
 }
 
-.fall-collection__row {
+.fall-collection__item {
   position: relative;
   height: 400px;
   display: flex;
@@ -42,8 +92,8 @@
   padding: 0px 20px;
 }
 
-.fall-collection__row--one,
-.fall-collection__row--ten {
+.fall-collection__item--one,
+.fall-collection__item--ten {
   flex: 1 1 auto;
 }
 
