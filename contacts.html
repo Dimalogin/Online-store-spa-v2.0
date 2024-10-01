@@ -11,8 +11,28 @@
     <!--Header styles-->
     <link rel="stylesheet" href="./assets/styles/header/header.css" />
 
-    <!--Our brands-->
+    <!--Contacts Description-->
 
+    <link
+      rel="stylesheet"
+      href="./assets/pages/contacts/styles/contacts-descriptions.css"
+    />
+
+    <!--Contacts addresses-->
+
+    <link
+      rel="stylesheet"
+      href="./assets/pages/contacts/styles/contacts-addresses.css"
+    />
+
+    <!--Contacts form-->
+
+    <link
+      rel="stylesheet"
+      href="./assets/pages/contacts/styles/contacts-form.css"
+    />
+
+    <!--Our brands-->
     <link rel="stylesheet" href="./assets/pages/home/styles/our-brands.css" />
 
     <!--Footer-->
@@ -190,6 +210,8 @@
       </div>
 
       <main class="main">
+        <!--Contacts Description-->
+
         <section class="main__contacts-description contacts-description">
           <div class="contacts-description__container container">
             <div class="contacts-description__body">
@@ -198,6 +220,8 @@
             </div>
           </div>
         </section>
+
+        <!--Contacts Addresses-->
 
         <section class="main__contacts-addresses contacts-addresses">
           <div class="contacts-addresses__container container">
@@ -246,6 +270,8 @@
           </div>
         </section>
 
+        <!--Contacts Form-->
+
         <section class="main__contacts-form contacts-form">
           <div class="contacts-form__container container">
             <div class="contacts-form__body">
@@ -256,33 +282,34 @@
                 </h2>
               </div>
               <form class="contacts-form__form form-contacts">
-                <div class="form-contacts__body">
+                <div class="form-contacts__inputs">
                   <div class="form-contacts__row">
                     <div class="form-contacts__item">
-                      <label class="form-contacts__label"></label>
+                      <label class="form-contacts__label">Your name</label>
                       <input class="form-contacts__input" type="text" />
                     </div>
-                    <div class="form-contacts__input">
-                      <label class="form-contacts__label"></label>
+                    <div class="form-contacts__item">
+                      <label class="form-contacts__label">Email address</label>
                       <input class="form-contacts__input" type="email" />
                     </div>
                   </div>
                   <div class="form-contacts__row">
                     <div class="form-contacts__item">
-                      <label class="form-contacts__label"></label>
+                      <label class="form-contacts__label">Phone number</label>
                       <input class="form-contacts__input" type="text" />
                     </div>
-                    <div class="form-contacts__input">
-                      <label class="form-contacts__label"></label>
+                    <div class="form-contacts__item">
+                      <label class="form-contacts__label">Order number</label>
                       <input class="form-contacts__input" type="email" />
                     </div>
                   </div>
-                  <div class="form-contacts__row">
-                    <div class="form-contacts__item">
-                      <label class="form-contacts__label"></label>
-                      <textarea class="form-contacts__textarea"></textarea>
-                    </div>
-                  </div>
+                </div>
+                <div class="form-contacts__textarea">
+                  <label class="form-contacts__label">Your message</label>
+                  <textarea></textarea>
+                </div>
+                <div class="form-contacts__button">
+                  <button class="form-contacts__submit">Submit</button>
                 </div>
               </form>
             </div>
