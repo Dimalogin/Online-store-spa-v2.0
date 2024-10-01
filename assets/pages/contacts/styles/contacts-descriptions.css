@@ -1,0 +1,21 @@
+.main__contacts-description {
+  padding: 50px 0px 0px 0px;
+}
+
+.contacts-description__body {
+  text-align: center;
+}
+
+.contacts-description__title {
+  margin: 0px 0px 20px 0px;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0.5px;
+}
+
+.contacts-description__text {
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  line-height: 28px;
+  font-size: 26px;
+}
