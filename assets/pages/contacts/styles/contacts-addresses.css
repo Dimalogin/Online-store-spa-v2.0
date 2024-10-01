@@ -17,9 +17,13 @@
 .contacts-addresses__column {
   padding: 0px 15px;
   flex: 0 1 25%;
+  min-width: 280px;
 }
 
-.contacts-addresses__address {
+@media (max-width: 1118px) {
+  .contacts-addresses__column:not(:last-child) {
+    margin: 0px 0px 20px 0px;
+  }
 }
 
 .contacts-addresses__title {
@@ -30,6 +34,12 @@
   line-height: 22px;
 }
 
+@media (max-width: 650px) {
+  .contacts-addresses__title {
+    font-size: 18px;
+  }
+}
+
 .contacts-addresses__number {
   font-size: 14px;
   margin: 0px 0px 5px 0px;
@@ -38,11 +48,23 @@
   letter-spacing: 0.5px;
 }
 
+@media (max-width: 650px) {
+  .contacts-addresses__number {
+    font-size: 12px;
+  }
+}
+
 .contacts-addresses__email {
   font-size: 14px;
   cursor: pointer;
   line-height: 18px;
   letter-spacing: 0.5px;
+}
+
+@media (max-width: 650px) {
+  .contacts-addresses__email {
+    font-size: 12px;
+  }
 }
 
 .contacts-addresses__number:hover,

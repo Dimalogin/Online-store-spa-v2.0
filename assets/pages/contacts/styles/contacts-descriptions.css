@@ -19,3 +19,10 @@
   line-height: 28px;
   font-size: 26px;
 }
+
+@media (max-width: 620px) {
+  .contacts-description__text {
+    line-height: 22px;
+    font-size: 22px;
+  }
+}
