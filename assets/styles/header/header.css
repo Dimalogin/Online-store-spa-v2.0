@@ -235,6 +235,7 @@
   font-size: 13px;
   line-height: 13px;
   letter-spacing: 0.1px;
+  color: #000;
 }
 .header-side-navigation__link:hover {
   text-decoration: underline;
