@@ -1,0 +1,54 @@
+.main__about-story {
+  padding: 100px 0px 0px 0px;
+}
+
+.about-story__body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.about-story__icon {
+  flex: 0 1 auto;
+
+  display: flex;
+}
+
+.about-story__icon img {
+  width: 100%;
+}
+
+.about-story__icon--one {
+  align-self: flex-start;
+}
+
+.about-story__content {
+  flex: 0 1 50%;
+  padding: 0px 0px 80px 0px;
+}
+
+.about-story__title {
+  text-transform: uppercase;
+  line-height: 38px;
+  font-size: 36px;
+  letter-spacing: 1.2px;
+  margin: 0px 0px 30px 0px;
+}
+
+.about-story__text {
+  line-height: 25px;
+  font-size: 20px;
+  letter-spacing: 0.8px;
+}
+
+.about-story__text--paragraph {
+  display: block;
+}
+
+.about-story__text--paragraph:not(:last-child) {
+  margin: 0px 0px 20px 0px;
+}
+
+.about-story__icon--two {
+  align-self: flex-end;
+}
