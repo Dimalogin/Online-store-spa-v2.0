@@ -35,3 +35,5 @@ export default class HeaderSideDropdownMenu {
     }
   }
 }
+
+const headerSideDropdownMenu = new HeaderSideDropdownMenu();

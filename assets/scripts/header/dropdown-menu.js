@@ -60,3 +60,5 @@ export default class HeaderDropdown {
     this.#headerDropdown.style.display = "none";
   }
 }
+
+const headerDropdown = new HeaderDropdown();

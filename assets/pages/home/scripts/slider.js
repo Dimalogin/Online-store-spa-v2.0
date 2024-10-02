@@ -29,6 +29,7 @@ export default class MainSliderWrapper {
 
   #showSlides() {
     const slideWidth = this.#slidesWrapperSlide.clientWidth;
+
     this.#slidesWrapperList.scrollLeft += slideWidth;
 
     this.slideIndex++;
@@ -53,3 +54,5 @@ export default class MainSliderWrapper {
     this.#slidesWrapperList.scrollLeft -= slideWidth;
   }
 }
+
+const mainSliderWrapper = new MainSliderWrapper();
