@@ -47,3 +47,5 @@ export default class HeaderSideNavigation {
     this.#headerSideNavigation.style.display = "none";
   }
 }
+
+const headerSideNavigation = new HeaderSideNavigation();
