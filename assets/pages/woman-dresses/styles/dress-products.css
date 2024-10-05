@@ -1,0 +1,195 @@
+.main__woman-dresses-products {
+  padding: 30px 0px 0px 0px;
+  border: 1px solid black;
+}
+
+.woman-dresses-products__top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.woman-dresses-products-top__result {
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  line-height: 13px;
+}
+
+.woman-dresses-products-top__dropdown {
+  cursor: pointer;
+  position: relative;
+}
+
+.woman-dresses-products-top-dropdown__title {
+  display: flex;
+  flex-direction: row;
+  min-height: 25px;
+  align-items: center;
+}
+
+.woman-dresses-products-top-dropdown__title--sort {
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  line-height: 14px;
+}
+
+.woman-dresses-products-top-dropdown__title--option {
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  line-height: 16px;
+  font-family: "montserrat_alternatesbold";
+  margin: 0px 5px 0px 5px;
+}
+
+.woman-dresses-products-top-dropdown__title--icon {
+  width: 20px;
+  height: 20px;
+}
+
+.woman-dresses-products-top-dropdown__content {
+  display: none;
+  position: absolute;
+  top: 23px;
+  right: 0px;
+  min-width: 180px;
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #e2e2e2;
+  border-radius: 3px;
+}
+
+.woman-dresses-products-top-dropdown__item {
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.woman-dresses-products-top-dropdown__item:hover {
+  opacity: 0.8;
+  transition: opacity 0.5s;
+}
+
+.woman-dresses-products-top__dropdown:hover
+  .woman-dresses-products-top-dropdown__content {
+  display: block;
+  transition: display 0.3s;
+}
+
+/*Products List */
+
+.woman-dresses-products__list {
+  display: flex;
+  margin: 20px -15px -30px -15px;
+  flex-wrap: wrap;
+}
+
+.woman-dresses-products__column {
+  padding: 0px 15px;
+  flex: 0 1 25%;
+  margin: 0px 0px 30px 0px;
+}
+
+.woman-dresses-products__item {
+  padding: 0px 0px 10px 0px;
+  position: relative;
+  cursor: pointer;
+  border-radius: 3px;
+  overflow: hidden;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 5px -2px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0px 0px 5px -2px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 0px 5px -2px rgba(34, 60, 80, 0.2);
+}
+
+.woman-dresses-products__icon {
+  margin: 0px 0px 15px 0px;
+}
+
+.woman-dresses-products__icon img {
+  width: 100%;
+}
+
+.woman-dresses-products__title {
+  margin: 0px 0px 10px 0px;
+  font-size: 14px;
+}
+
+.woman-dresses-products__price {
+  display: flex;
+  flex-direction: row;
+  font-family: "montserrat_alternatesbold";
+  font-size: 14px;
+}
+
+.woman-dresses-products-price__new-price {
+  margin: 0px 10px 0px 0px;
+}
+
+.woman-dresses-products-price__old-price {
+  text-decoration: line-through;
+  color: #b5b6b5;
+}
+
+.woman-dresses-products__heart {
+  display: none;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 25px;
+  height: 25px;
+}
+
+.woman-dresses-products__heart img {
+  width: 100%;
+}
+
+.woman-dresses-products__sale {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  padding: 5px 8px;
+  background: black;
+  border-radius: 3px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  line-height: 13px;
+}
+
+.woman-dresses-products__select-option {
+  display: none;
+  position: absolute;
+  bottom: 63px;
+  left: 0px;
+  background: #fff;
+  min-height: 40px;
+  width: 100%;
+  padding: 10px;
+}
+
+.woman-dresses-products-select-option__btn {
+  min-height: 40px;
+  width: 100%;
+  background: transparent;
+  color: #000;
+  border: 1px solid #000;
+  text-transform: uppercase;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.woman-dresses-products-select-option__btn:hover {
+  background: #000;
+  color: #fff;
+  transition: background 0.5s;
+}
+
+.woman-dresses-products__item:hover .woman-dresses-products__heart,
+.woman-dresses-products__item:hover .woman-dresses-products__select-option {
+  display: block;
+  transition: 0.5s ease;
+}
