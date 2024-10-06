@@ -6,6 +6,7 @@
 .woman-dresses-products__top {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -85,7 +86,7 @@
 
 .woman-dresses-products__list {
   display: flex;
-  margin: 20px -15px -30px -15px;
+  margin: 30px -15px -30px -15px;
   flex-wrap: wrap;
 }
 
