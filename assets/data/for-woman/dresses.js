@@ -331,3 +331,5 @@ const womanDresseProducts = [
     ],
   },
 ];
+
+export default womanDresseProducts;
