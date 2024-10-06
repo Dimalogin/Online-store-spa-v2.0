@@ -93,6 +93,7 @@
   text-transform: uppercase;
   font-size: 13px;
   cursor: pointer;
+  color: #000;
 }
 
 .dropdown-header-content__link:hover {
@@ -308,6 +309,7 @@
   font-size: 12px;
   line-height: 12px;
   letter-spacing: 0.1px;
+  color: #000;
 }
 
 .side-navigation-panel__link:hover {
