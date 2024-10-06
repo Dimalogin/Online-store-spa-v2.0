@@ -3,10 +3,12 @@ export function openDb(dbName, dbMigrations) {
     const request = indexedDB.open(dbName, dbMigrations.length);
 
     request.addEventListener("error", function () {
+      console.log("error");
       reject(request.error);
     });
 
     request.addEventListener("success", function () {
+      console.log("success");
       resolve(request.result);
     });
 
