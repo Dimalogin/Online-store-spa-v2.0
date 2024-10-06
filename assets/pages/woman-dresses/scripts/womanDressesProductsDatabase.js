@@ -1,4 +1,4 @@
-import DatabaseProducts from "../../../database/databaseProductsModel.js";
+import DatabaseProducts from "../../../database/databaseModel.js";
 
 export default class WomanDressesProductsDatabase {
   #storageName = "womanDressesProducts";
