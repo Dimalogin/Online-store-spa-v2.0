@@ -8,7 +8,6 @@ export function openDb(dbName, dbMigrations) {
     });
 
     request.addEventListener("success", function () {
-      console.log("success");
       resolve(request.result);
     });
 

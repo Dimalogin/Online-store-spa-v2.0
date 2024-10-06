@@ -1,5 +1,5 @@
 import { openDb, addProductsIntoDB } from "./initIndexedDB.js";
-import womanDresseProducts from "../data/for-woman/dresses.js";
+import womanDressesProducts from "../data/for-woman/dresses.js";
 
 const wdp = {
   id: 1,
@@ -33,11 +33,13 @@ const wdp = {
 };
 
 class DatabaseProducts {
-  #dbName = "ProductsStorage";
-  #storageName = "womanDressesProducts";
-  #dbPromise = null;
+  #dbBasketName = "BasketStorage";
+  #dbProductsName = "ProductsStorage";
 
-  #migrations = [
+  #dbProductsPromise = null;
+  #dbBasketPromise = null;
+
+  #productsMigrations = [
     [
       (db) => {
         db.createObjectStore("womanDressesProducts", {
@@ -78,12 +80,31 @@ class DatabaseProducts {
     ],
   ];
 
+  #basketMigrations = [
+    [
+      (db) => {
+        db.createObjectStore("productsBasket", {
+          keyPath: "id",
+          autoIncrement: true,
+        });
+      },
+    ],
+  ];
+
   constructor() {
-    this.startIndexedDb();
+    this.initProductsIndexedDb();
+    this.initBasketIndexedDb();
   }
 
-  startIndexedDb() {
-    this.#dbPromise = openDb(this.#dbName, this.#migrations);
+  initProductsIndexedDb() {
+    this.#dbProductsPromise = openDb(
+      this.#dbProductsName,
+      this.#productsMigrations
+    );
+  }
+
+  initBasketIndexedDb() {
+    this.#dbBasketPromise = openDb(this.#dbBasketName, this.#basketMigrations);
   }
 
   addWomanDressesProducts() {
@@ -99,7 +120,7 @@ class DatabaseProducts {
     });
 */
 
-    this.#dbPromise.then((db) =>
+    this.#dbProductsPromise.then((db) =>
       addProductsIntoDB(db, "womanDressesProducts", wdp)
     );
   }
