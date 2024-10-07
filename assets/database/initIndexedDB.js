@@ -3,7 +3,6 @@ export function openDb(dbName, dbMigrations) {
     const request = indexedDB.open(dbName, dbMigrations.length);
 
     request.addEventListener("error", function () {
-      console.log("error");
       reject(request.error);
     });
 
@@ -12,7 +11,6 @@ export function openDb(dbName, dbMigrations) {
     });
 
     request.addEventListener("upgradeneeded", function (event) {
-      console.log("upgrade");
       const db = request.result;
       const { oldVersion } = event;
 
@@ -38,6 +36,23 @@ export function addProductsIntoDB(db, storeName, data) {
       console.log("succses");
 
       resolve(addRequest.result);
+    });
+  });
+}
+
+export function readProductFromDB(db, storeName, key) {
+  return new Promise((resolve, reject) => {
+    const transaction = db.transaction(storeName, "readonly");
+    const objectStore = transaction.objectStore(storeName);
+
+    const request = objectStore.get(key);
+
+    request.addEventListener("error", function () {
+      reject(request.error);
+    });
+
+    request.addEventListener("success", function () {
+      resolve(request.result);
     });
   });
 }

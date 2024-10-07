@@ -1,36 +1,18 @@
-import { openDb, addProductsIntoDB } from "./initIndexedDB.js";
+import {
+  openDb,
+  addProductsIntoDB,
+  readProductFromDB,
+} from "./initIndexedDB.js";
 import womanDressesProducts from "../data/for-woman/dresses.js";
 
-const wdp = {
-  id: 1,
-  image: "Double Breasted Tailored Dress In Black",
-  title: "",
-  price: "$260",
-  discount: null,
-  sale: false,
-  description: [
-    "Reimagined in a soft shade of cream, this lambswool Polo Neck has subtle design details such as a contrasting ribbed neck. A saddle shoulder design adds further interest. Wear the neck folded over or upright. Buy this product on victoriabeckham.com",
-  ],
-  productDetails: [
-    "Soft Lambswool Fabrication",
-    "Saddle shoulder design",
-    "High neckline complete with ribbed hemline",
-    "Contrasting VB monogram embroidery",
-    " Fits true to size, take your regular size",
-    "The model’s height is 180cm and is wearing a size XS",
-    " Front Length (Side Neck Point To Hem): 55.5cm",
-    "Sleeve Length (From Shoulder): 70.8cm",
-    "Main: 100% Lambswool",
-    "Specialized Dry Clean Only",
-    "Made in Turkey],",
-  ],
-
-  deliveryAndReturns: [
-    "We offer complimentary express shipping.",
-    "Free returns are available worldwide. If your item is eligible for return, you have 30 days from the date you receive your order to follow this procedure.",
-    "See delivery and returns for more information.",
-  ],
-};
+const storages = [
+  { nameStorage: "womanDressesProducts", products: womanDressesProducts },
+  {nameStorage:"womanBagsProducts", products:},
+  "womanShoesProducts",
+  "manCoatProducts",
+  "manShoesProducts",
+  "manTrousersProducts",
+];
 
 class DatabaseProducts {
   #dbBasketName = "BasketStorage";
@@ -38,6 +20,8 @@ class DatabaseProducts {
 
   #dbProductsPromise = null;
   #dbBasketPromise = null;
+
+  #emptyStorages = [];
 
   #productsMigrations = [
     [
@@ -94,6 +78,8 @@ class DatabaseProducts {
   constructor() {
     this.initProductsIndexedDb();
     this.initBasketIndexedDb();
+
+    this.checkingStorageEmptiness();
   }
 
   initProductsIndexedDb() {
@@ -107,22 +93,42 @@ class DatabaseProducts {
     this.#dbBasketPromise = openDb(this.#dbBasketName, this.#basketMigrations);
   }
 
-  addWomanDressesProducts() {
-    /*
-    womanDresseProducts.forEach((product) => {
-
-
-      this.#dbPromise.then((db) =>
-        addProductsIntoDB(db, "womanDressesProducts", product)
-      );
-
-
+  checkingStorageEmptiness() {
+    const storagePromise = new Promise((resolve, reject) => {
+      storages.forEach((storage) => {
+        this.#dbProductsPromise.then((db) => {
+          readProductFromDB(db, storage, 1)
+            .then((result) => {
+              this.#emptyStorages.push({
+                storageName: storage,
+                storageData: result,
+              });
+              if (this.#emptyStorages.length === 6) {
+                resolve();
+              }
+            })
+            .catch((err) => {
+              reject(err);
+            });
+        });
+      });
     });
-*/
 
-    this.#dbProductsPromise.then((db) =>
-      addProductsIntoDB(db, "womanDressesProducts", wdp)
-    );
+    storagePromise
+      .then(() => {
+        this.loadingProductIntoDB();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  loadingProductIntoDB() {
+    this.#emptyStorages.forEach((storage) => {
+      if (!storage.storageData) {
+        addProductsIntoDB(db, storeName, data);
+      }
+    });
   }
 }
 
