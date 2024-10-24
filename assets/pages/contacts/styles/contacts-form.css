@@ -122,6 +122,7 @@
   min-height: 120px;
   max-height: 120px;
   border-radius: 3px;
+  padding: 10px;
 }
 
 .form-contacts__textarea textarea:hover,

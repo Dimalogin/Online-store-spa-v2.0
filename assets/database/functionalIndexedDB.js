@@ -14,7 +14,7 @@ export function openDb(dbName, dbMigrations) {
       const db = request.result;
       const { oldVersion } = event;
 
-      for (const migration of dbMigrations[oldVersion]) {
+      for (const migration of dbMigrations.slice(oldVersion)) {
         migration(db);
       }
     });
@@ -33,8 +33,6 @@ export function addProductsIntoDB(db, storeName, data) {
     });
 
     addRequest.addEventListener("success", function () {
-      console.log("succses");
-
       resolve(addRequest.result);
     });
   });
@@ -53,6 +51,23 @@ export function readProductFromDB(db, storeName, key) {
 
     request.addEventListener("success", function () {
       resolve(request.result);
+    });
+  });
+}
+
+export function getAllProductsFromDB(db, storeName) {
+  return new Promise((resolve, reject) => {
+    const transaction = db.transaction(storeName, "readonly");
+    const objectStore = transaction.objectStore(storeName);
+
+    const all = objectStore.getAll();
+
+    all.addEventListener("error", function () {
+      reject(all.error);
+    });
+
+    all.addEventListener("success", function () {
+      resolve(all.result);
     });
   });
 }

@@ -5,21 +5,21 @@ womanDressesProductsTemplate.innerHTML = `
                   <div class="woman-dresses-products__item">
                     <div class="woman-dresses-products__icon">
                       <img
-                        src="../../assets/images/products/for-woman/dresses/woman-dress-1.png"
-                        alt=""
+                        src=""
+                        alt="dress"
                       />
                     </div>
                     <div class="woman-dresses-products__title">
-                      Lorem ipsum dolor sit amet
+                      
                     </div>
                     <div
                       class="woman-dresses-products__price woman-dresses-products-price"
                     >
-                      <div class="woman-dresses-products-price__new-price">
-                        $450
-                      </div>
                       <div class="woman-dresses-products-price__old-price">
-                        $555
+                    
+                      </div>
+                      <div class="woman-dresses-products-price__new-price">
+                   
                       </div>
                     </div>
 
@@ -29,12 +29,12 @@ womanDressesProductsTemplate.innerHTML = `
                         alt="heart"
                       />
                     </div>
-                    <div class="woman-dresses-products__sale">Sale!</div>
+                    <div class="woman-dresses-products__sale ">Sale!</div>
                     <div
                       class="woman-dresses-products__select-option woman-dresses-products-select-option"
                     >
                       <button class="woman-dresses-products-select-option__btn">
-                        Select options
+                        Select Option
                       </button>
                     </div>
                   </div>
