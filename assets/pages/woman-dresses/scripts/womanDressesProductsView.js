@@ -35,13 +35,12 @@ class WomanDressesProductsView {
       if (event.currentTarget === this.#womanDressesProductsList) {
         const target = event.target;
 
-        const taskId = Number(target.closest(".task-item").dataset.taskId);
+        const productId = Number(
+          target.closest(".woman-dresses-products__column").dataset.productId
+        );
 
-        if (target.matches(".task-item__toggle")) {
-          //this.#onToggleTask(taskId);
-        }
-        if (target.matches(".task-item__delete")) {
-          //this.#onDeleteTask(taskId);
+        if (target.matches(".woman-dresses-products-select-option__btn")) {
+          console.log(productId);
         }
       }
     },
@@ -109,7 +108,12 @@ class WomanDressesProductsView {
       const { id, images, title, price, discount, sale } = product;
 
       const element = womanDressesProductsTemplate.content.cloneNode(true);
-      const elementLi = element.querySelector(".woman-dresses-products__item");
+      const elementLi = element.querySelector(
+        ".woman-dresses-products__column"
+      );
+      const elementItem = element.querySelector(
+        ".woman-dresses-products__item"
+      );
       const elementLiIcon = element.querySelector(
         ".woman-dresses-products__icon img"
       );
