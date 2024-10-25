@@ -15,10 +15,10 @@ womanDressesProductsTemplate.innerHTML = `
                     <div
                       class="woman-dresses-products__price woman-dresses-products-price"
                     >
-                      <div class="woman-dresses-products-price__old-price">
+                      <div class="woman-dresses-products-price__new-price">
                     
                       </div>
-                      <div class="woman-dresses-products-price__new-price">
+                      <div class="woman-dresses-products-price__old-price">
                    
                       </div>
                     </div>

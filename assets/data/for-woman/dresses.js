@@ -31,6 +31,9 @@ const womanDressesProducts = [
       "Free returns are available worldwide. If your item is eligible for return, you have 30 days from the date you receive your order to follow this procedure.",
       "See delivery and returns for more information.",
     ],
+
+    color: ["black"],
+    size: ["XS", "S", "M", "L", "XL"],
   },
   {
     id: 2,
@@ -64,6 +67,8 @@ const womanDressesProducts = [
       "Free returns are available worldwide. If your item is eligible for return, you have 30 days from the date you receive your order to follow this procedure.",
       "See delivery and returns for more information.",
     ],
+    color: ["white"],
+    size: ["XS", "S", "M", "L", "XL"],
   },
   {
     id: 3,
@@ -97,6 +102,8 @@ const womanDressesProducts = [
       "Free returns are available worldwide. If your item is eligible for return, you have 30 days from the date you receive your order to follow this procedure.",
       "See delivery and returns for more information.",
     ],
+    color: ["brown", "navy", "sand"],
+    size: ["XS", "S", "M", "L", "XL"],
   },
   {
     id: 4,
@@ -130,6 +137,8 @@ const womanDressesProducts = [
       "Free returns are available worldwide. If your item is eligible for return, you have 30 days from the date you receive your order to follow this procedure.",
       "See delivery and returns for more information.",
     ],
+    color: ["brown", "navy", "sand"],
+    size: ["XS", "S", "M", "L", "XL"],
   },
   {
     id: 5,
@@ -163,6 +172,8 @@ const womanDressesProducts = [
       "Free returns are available worldwide. If your item is eligible for return, you have 30 days from the date you receive your order to follow this procedure.",
       "See delivery and returns for more information.",
     ],
+    color: ["brown", "navy", "sand"],
+    size: ["XS", "S", "M", "L", "XL"],
   },
   {
     id: 6,
@@ -196,6 +207,8 @@ const womanDressesProducts = [
       "Free returns are available worldwide. If your item is eligible for return, you have 30 days from the date you receive your order to follow this procedure.",
       "See delivery and returns for more information.",
     ],
+    color: ["brown", "navy", "sand"],
+    size: ["XS", "S", "M", "L", "XL"],
   },
   {
     id: 7,
@@ -262,6 +275,8 @@ const womanDressesProducts = [
       "Free returns are available worldwide. If your item is eligible for return, you have 30 days from the date you receive your order to follow this procedure.",
       "See delivery and returns for more information.",
     ],
+    color: ["brown", "navy", "sand"],
+    size: ["XS", "S", "M", "L", "XL"],
   },
   {
     id: 9,
@@ -295,6 +310,8 @@ const womanDressesProducts = [
       "Free returns are available worldwide. If your item is eligible for return, you have 30 days from the date you receive your order to follow this procedure.",
       "See delivery and returns for more information.",
     ],
+    color: ["brown", "navy", "sand"],
+    size: ["XS", "S", "M", "L", "XL"],
   },
   {
     id: 10,
@@ -328,6 +345,8 @@ const womanDressesProducts = [
       "Free returns are available worldwide. If your item is eligible for return, you have 30 days from the date you receive your order to follow this procedure.",
       "See delivery and returns for more information.",
     ],
+    color: ["brown", "navy", "sand"],
+    size: ["XS", "S", "M", "L", "XL"],
   },
 ];
 

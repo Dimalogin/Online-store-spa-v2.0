@@ -128,11 +128,11 @@
   font-size: 14px;
 }
 
-.woman-dresses-products-price__old-price {
+.woman-dresses-products-price__new-price {
   margin: 0px 10px 0px 0px;
 }
 
-.woman-dresses-products-price__new-price {
+.woman-dresses-products-price__old-price {
   text-decoration: line-through;
   color: #b5b6b5;
 }
@@ -205,4 +205,10 @@
 .woman-dresses-products__item:hover .woman-dresses-products__select-option {
   display: block;
   transition: 0.5s ease;
+}
+
+/*Modal Window*/
+
+.woman-dresses-products__modal-window {
+  
 }
