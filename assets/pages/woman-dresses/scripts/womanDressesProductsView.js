@@ -40,7 +40,7 @@ class WomanDressesProductsView {
         );
 
         if (target.matches(".woman-dresses-products-select-option__btn")) {
-          console.log(productId);
+          this.#onGetProduct(productId);
         }
       }
     },
@@ -97,7 +97,8 @@ class WomanDressesProductsView {
 
   #onGetAllProducts() {
     this.#DBProductsModel.getAllTasks().then((products) => {
-      this.#onTriggerList(products);
+      this.#dressesProducts = products;
+      this.#onTriggerList(this.#dressesProducts);
     });
   }
 
@@ -133,11 +134,10 @@ class WomanDressesProductsView {
       elementLi.dataset.productId = id.toString();
       elementLiIcon.src = images.catalogImage;
       elementLiTitle.textContent = title;
+      elementLiNewPrice.textContent = price;
       discount
-        ? (elementLiNewPrice.textContent = discount)
-        : (elementLiNewPrice.textContent = "");
-
-      elementLiOldPrice.textContent = price;
+        ? (elementLiOldPrice.textContent = discount)
+        : (elementLiOldPrice.textContent = "");
 
       sale
         ? elementLiSale.classList.add("woman-dresses-products__sale--completed")
@@ -149,6 +149,18 @@ class WomanDressesProductsView {
     this.#womanDressesProductsList.innerHTML = "";
     this.#womanDressesProductsList.appendChild(fragment);
   }
+
+  #onGetProduct(productId) {
+    this.#DBProductsModel.getAllTasks().then((products) => {
+      const product = products.find((product) => {
+        return product.id === productId;
+      });
+
+      this.#openProductModal(product);
+    });
+  }
+
+  #openProductModal(product) {}
 }
 
 const womanDressesProductsView = new WomanDressesProductsView();
