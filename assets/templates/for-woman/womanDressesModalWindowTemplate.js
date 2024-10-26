@@ -12,7 +12,7 @@ womanDressesModalWindowTemplate.innerHTML = `
                   </button>
 
                   <div class="woman-dresses-products-modal-window__icon">
-                    <img src="" alt="" />
+                    <img src="" alt="dress" />
                   </div>
                   <div class="woman-dresses-products-modal-window__content">
                     <div
@@ -33,7 +33,7 @@ womanDressesModalWindowTemplate.innerHTML = `
                     >
                       <div
                         class="woman-dresses-products-modal-window-price-color__title"
-                      ></div>
+                      >Color</div>
                       <select
                         class="woman-dresses-products-modal-window-price-color__select"
                       ></select>
@@ -44,7 +44,7 @@ womanDressesModalWindowTemplate.innerHTML = `
                     >
                       <div
                         class="woman-dresses-products-modal-window-price-size__title"
-                      ></div>
+                      >Size</div>
                       <select
                         class="woman-dresses-products-modal-window-price-size__select"
                       ></select>
@@ -61,25 +61,29 @@ womanDressesModalWindowTemplate.innerHTML = `
                       />
                       <button
                         class="woman-dresses-products-modal-window-add-to-cart__add"
-                      ></button>
+                      >Add to cart</button>
                     </div>
 
                     <div class="woman-dresses-products-modal-window__wishlist">
                       <img
                         class="woman-dresses-products-modal-window-wishlist__icon"
+                        src = ''
+                        alt = ''
                       />
                       <div
                         class="woman-dresses-products-modal-window-wishlist__title"
-                      ></div>
+                      >Add to wishlist</div>
                     </div>
 
                     <div class="woman-dresses-products-modal-window__fit-guide">
                       <img
                         class="woman-dresses-products-modal-window-fit-guide__icon"
+                        src=''
+                        alt=''
                       />
                       <div
                         class="woman-dresses-products-modal-window-fit-guide__title"
-                      ></div>
+                      >Size & fit guide</div>
                     </div>
 
                     <div
@@ -87,21 +91,21 @@ womanDressesModalWindowTemplate.innerHTML = `
                     >
                       <button
                         class="woman-dresses-products-modal-window-drop-down-menu__open-btn"
-                      ></button>
+                      >Description</button>
                       <div
                         class="woman-dresses-products-modal-window-drop-down-menu__panel"
                       ></div>
 
                       <button
                         class="woman-dresses-products-modal-window-drop-down-menu__open-btn"
-                      ></button>
+                      >Product details</button>
                       <div
                         class="woman-dresses-products-modal-window-drop-down-menu__panel"
                       ></div>
 
                       <button
                         class="woman-dresses-products-modal-window-drop-down-menu__open-btn"
-                      ></button>
+                      >Delivery and Returns</button>
                       <div
                         class="woman-dresses-products-modal-window-drop-down-menu__panel"
                       ></div>

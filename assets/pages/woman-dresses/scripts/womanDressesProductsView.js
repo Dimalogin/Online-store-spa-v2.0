@@ -4,11 +4,15 @@ import DatabaseProductsModel from "../../../database/databaseProductsModel.js";
 // Templates
 
 import womanDressesProductsTemplate from "../../../templates/for-woman/womanDressesProductsTemplate.js";
+import womanDressesModalWindowTemplate from "../../../templates/for-woman/womanDressesModalWindowTemplate.js";
 
 class WomanDressesProductsView {
   #DBBasketModel = null;
   #DBProductsModel = null;
+
   #womanDressesProductsList = null;
+  #womanDressesProductsModalWindow = null;
+
   #dressesProducts = [];
 
   constructor() {
@@ -43,6 +47,11 @@ class WomanDressesProductsView {
           this.#onGetProduct(productId);
         }
       }
+
+      if (event.currentTarget === this.#womanDressesProductsModalWindow) {
+        const target = event.target;
+        console.log(target);
+      }
     },
   };
 
@@ -64,10 +73,18 @@ class WomanDressesProductsView {
     this.#womanDressesProductsList = document.querySelector(
       ".woman-dresses-products__list"
     );
+
+    this.#womanDressesProductsModalWindow = document.querySelector(
+      ".woman-dresses-products__modal-window"
+    );
   }
 
   #bindListener() {
     this.#womanDressesProductsList.addEventListener(
+      "click",
+      this.#eventListeners
+    );
+    this.#womanDressesProductsModalWindow.addEventListener(
       "click",
       this.#eventListeners
     );
@@ -156,11 +173,55 @@ class WomanDressesProductsView {
         return product.id === productId;
       });
 
-      this.#openProductModal(product);
+      this.#openProductModalWindow(product);
     });
   }
 
-  #openProductModal(product) {}
+  #openProductModalWindow(product) {
+    const fragment = document.createDocumentFragment();
+
+    const {
+      id,
+      images,
+      title,
+      price,
+      discount,
+      description,
+      productDetails,
+      deliveryAndReturns,
+      color,
+      size,
+    } = product;
+
+    const fullView = womanDressesModalWindowTemplate.content.cloneNode(true);
+    const modalWindow = fullView.querySelector(
+      ".woman-dresses-products-modal-window__body"
+    );
+    const modalWindowIcon = fullView.querySelector(
+      ".woman-dresses-products-modal-window__icon img"
+    );
+    const modalWindowTitle = fullView.querySelector(
+      ".woman-dresses-products-modal-window__title"
+    );
+    const modalWindowNewPrice = fullView.querySelector(
+      ".woman-dresses-products-modal-window-price__new-price"
+    );
+    const modalWindowOldPrice = fullView.querySelector(
+      ".woman-dresses-products-modal-window-price__old-price"
+    );
+    const modalWindowColorSelect = fullView.querySelector(
+      ".woman-dresses-products-modal-window-price-color__select"
+    );
+    const modalWindowSizeSelect = fullView.querySelector(
+      ".woman-dresses-products-modal-window-price-size__select"
+    );
+    const modalWindowDropDownBtns = fullView.querySelectorAll(
+      ".woman-dresses-products-modal-window-drop-down-menu__open-btn"
+    );
+
+
+    
+  }
 }
 
 const womanDressesProductsView = new WomanDressesProductsView();
