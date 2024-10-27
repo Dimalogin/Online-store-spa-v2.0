@@ -207,9 +207,10 @@
   transition: 0.5s ease;
 }
 
-/*Modal Window*/
+/*Modal Window Product*/
 
 .woman-dresses-products__modal-window {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -246,6 +247,7 @@
 .woman-dresses-products-modal-window-close-btn__icon {
   width: 100%;
   height: 100%;
+  pointer-events: none;
 }
 
 .woman-dresses-products-modal-window__icon {
@@ -289,6 +291,7 @@
 .woman-dresses-products-modal-window-add-to-cart-quantity__minus img {
   width: 100%;
   height: 100%;
+  pointer-events: none;
 }
 
 .woman-dresses-products-modal-window-add-to-cart-quantity__value {
@@ -304,6 +307,7 @@
 .woman-dresses-products-modal-window-add-to-cart-quantity__plus img {
   width: 100%;
   height: 100%;
+  pointer-events: none;
 }
 
 .woman-dresses-products-modal-window-add-to-cart__add {
@@ -315,10 +319,72 @@
 }
 
 .woman-dresses-products-modal-window-wishlist__icon {
-  display: block;
-  width: 15px;
-  height: 15px;
+  width: 17px;
+  height: 17px;
 }
 
 .woman-dresses-products-modal-window-wishlist__title {
+}
+
+.woman-dresses-products-modal-window__fit-guide {
+  border: 1px solid black;
+  display: flex;
+}
+
+.woman-dresses-products-modal-window-fit-guide__icon {
+  display: block;
+  width: 17px;
+  height: 17px;
+}
+
+.woman-dresses-products-modal-window__drop-down-menu {
+}
+
+.woman-dresses-products-modal-window-drop-down-menu__open-btn {
+  min-width: 200px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0px 0px 0px 10px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  position: relative;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.woman-dresses-products-modal-window-drop-down-menu__open-btn:not(
+    :first-child
+  ) {
+  margin: -1px 0px 0px 0px;
+}
+
+.woman-dresses-products-modal-window-drop-down-menu__open-btn::after {
+  content: url("../../../images/products/for-woman/dresses/dresses-plus-product-drop-down.svg");
+  -webkit-transition: max-height 500ms ease-in-out;
+  -o-transition: max-height 500ms ease-in-out;
+  transition: max-height 500ms ease-in-out;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: calc(50% - 10px);
+  right: 10px;
+}
+
+.woman-dresses-products-modal-window-drop-down-menu__open-btn--active::after {
+  content: url("../../../images/products/for-woman/dresses/dresses-minus-product-drop-down.svg");
+  -webkit-transition: max-height 500ms ease-in-out;
+  -o-transition: max-height 500ms ease-in-out;
+  transition: max-height 500ms ease-in-out;
+}
+
+.woman-dresses-products-modal-window-drop-down-menu__panel {
+  max-width: 200px;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: 0.2s ease-out;
+  -o-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
 }
