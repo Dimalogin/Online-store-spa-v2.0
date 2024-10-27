@@ -5,6 +5,7 @@ import DatabaseProductsModel from "../../../database/databaseProductsModel.js";
 
 import womanDressesProductsTemplate from "../../../templates/for-woman/womanDressesProductsTemplate.js";
 import womanDressesModalWindowTemplate from "../../../templates/for-woman/womanDressesModalWindowTemplate.js";
+import womanDressesModalWindowDropDownMenuTemplate from "../../../templates/for-woman/womanDressesModalWindowDropDownMenuTemplate.js";
 
 class WomanDressesProductsView {
   #DBBasketModel = null;
@@ -50,7 +51,40 @@ class WomanDressesProductsView {
 
       if (event.currentTarget === this.#womanDressesProductsModalWindow) {
         const target = event.target;
-        console.log(target);
+
+        if (target.matches(".woman-dresses-products-modal-window__close-btn")) {
+          this.#closeProductModalWindow();
+        }
+
+        if (
+          target.matches(
+            ".woman-dresses-products-modal-window-add-to-cart-quantity__minus"
+          )
+        ) {
+          this.#productModalWindowQuantityMinus(target);
+        } else if (
+          target.matches(
+            ".woman-dresses-products-modal-window-add-to-cart-quantity__plus"
+          )
+        ) {
+          this.#productModalWindowQuantityPlus(target);
+        }
+
+        if (
+          target.matches(
+            ".woman-dresses-products-modal-window-add-to-cart__add"
+          )
+        ) {
+          console.log("add");
+        }
+
+        if (
+          target.matches(
+            ".woman-dresses-products-modal-window-drop-down-menu__open-btn"
+          )
+        ) {
+          this.#openDropDownMenu(target);
+        }
       }
     },
   };
@@ -178,20 +212,8 @@ class WomanDressesProductsView {
   }
 
   #openProductModalWindow(product) {
-    const fragment = document.createDocumentFragment();
-
-    const {
-      id,
-      images,
-      title,
-      price,
-      discount,
-      description,
-      productDetails,
-      deliveryAndReturns,
-      color,
-      size,
-    } = product;
+    const { id, images, title, price, discount, colors, sizes, dropDownMenu } =
+      product;
 
     const fullView = womanDressesModalWindowTemplate.content.cloneNode(true);
     const modalWindow = fullView.querySelector(
@@ -215,12 +237,117 @@ class WomanDressesProductsView {
     const modalWindowSizeSelect = fullView.querySelector(
       ".woman-dresses-products-modal-window-price-size__select"
     );
-    const modalWindowDropDownBtns = fullView.querySelectorAll(
-      ".woman-dresses-products-modal-window-drop-down-menu__open-btn"
+    const modalWindowDropDownMenu = fullView.querySelector(
+      ".woman-dresses-products-modal-window__drop-down-menu"
     );
 
+    modalWindow.dataset.productId = id;
+    modalWindowIcon.src = images.catalogImage;
+    modalWindowTitle.textContent = title;
+    discount ? (modalWindowNewPrice.textContent = discount) : null;
+    modalWindowOldPrice.textContent = price;
+    modalWindowColorSelect.appendChild(
+      this.#createProductModalWindowColorsSelect(colors)
+    );
+    modalWindowSizeSelect.appendChild(
+      this.#createProductModalWindowSizesSelect(sizes)
+    );
 
-    
+    modalWindowDropDownMenu.appendChild(
+      this.#createProductModalWindowDropDownMenu(dropDownMenu)
+    );
+
+    this.#womanDressesProductsModalWindow.style.display = "block";
+    this.#womanDressesProductsModalWindow.innerHTML = "";
+    this.#womanDressesProductsModalWindow.appendChild(fullView);
+  }
+
+  #closeProductModalWindow() {
+    this.#womanDressesProductsModalWindow.style.display = "none";
+    this.#womanDressesProductsModalWindow.innerHTML = "";
+  }
+
+  #openDropDownMenu(element) {
+    element.classList.toggle(
+      "woman-dresses-products-modal-window-drop-down-menu__open-btn--active"
+    );
+
+    const panel = element.nextElementSibling;
+
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  }
+
+  #productModalWindowQuantityMinus(element) {
+    const quantityElement = element.nextElementSibling;
+    let quantityValue = Number(quantityElement.textContent);
+    quantityValue > 1 ? (quantityElement.textContent = --quantityValue) : null;
+  }
+
+  #productModalWindowQuantityPlus(element) {
+    const quantityElement = element.previousElementSibling;
+    let quantityValue = Number(quantityElement.textContent);
+    quantityValue < 10 ? (quantityElement.textContent = ++quantityValue) : null;
+  }
+
+  #createProductModalWindowColorsSelect(colors) {
+    return colors.reduce((fragment, color) => {
+      const option = new Option(color);
+      option.value = color;
+      fragment.appendChild(option);
+
+      return fragment;
+    }, document.createDocumentFragment());
+  }
+
+  #createProductModalWindowSizesSelect(sizes) {
+    return sizes.reduce((fragment, size) => {
+      const option = new Option(size);
+      option.value = size;
+      fragment.appendChild(option);
+
+      return fragment;
+    }, document.createDocumentFragment());
+  }
+
+  #createProductModalWindowDropDownMenu(dropDownMenu) {
+    const fragment = document.createDocumentFragment();
+
+    for (const element of dropDownMenu) {
+      const fullView =
+        womanDressesModalWindowDropDownMenuTemplate.content.cloneNode(true);
+      const dropDownMenuBtn = fullView.querySelector(
+        ".woman-dresses-products-modal-window-drop-down-menu__open-btn"
+      );
+      const dropDownMenuPanel = fullView.querySelector(
+        ".woman-dresses-products-modal-window-drop-down-menu__panel"
+      );
+
+      dropDownMenuBtn.textContent = element.title;
+
+      Array.isArray(element.text)
+        ? dropDownMenuPanel.appendChild(
+            element.text.reduce((fragment, item) => {
+              const li = document.createElement("li");
+              li.classList.add(
+                "woman-dresses-products-modal-window-drop-down-menu-panel__item"
+              );
+              li.textContent = item;
+
+              fragment.appendChild(li);
+
+              return fragment;
+            }, document.createDocumentFragment())
+          )
+        : (dropDownMenuPanel.textContent = element.text);
+
+      fragment.appendChild(fullView);
+    }
+
+    return fragment;
   }
 }
 
