@@ -244,8 +244,11 @@ class WomanDressesProductsView {
     modalWindow.dataset.productId = id;
     modalWindowIcon.src = images.catalogImage;
     modalWindowTitle.textContent = title;
-    discount ? (modalWindowNewPrice.textContent = discount) : null;
-    modalWindowOldPrice.textContent = price;
+    discount
+      ? (modalWindowOldPrice.textContent = discount)
+      : (modalWindowOldPrice.textContent = "");
+
+    modalWindowNewPrice.textContent = price;
     modalWindowColorSelect.appendChild(
       this.#createProductModalWindowColorsSelect(colors)
     );

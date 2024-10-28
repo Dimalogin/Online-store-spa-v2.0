@@ -42,8 +42,8 @@ const womanDressesProducts = [
       },
     ],
 
-    colors: ["choose an option", "black"],
-    sizes: ["choose an option", "XS", "S", "M", "L", "XL"],
+    colors: ["Choose an option", "Black"],
+    sizes: ["Choose an option", "XS", "S", "M", "L", "XL"],
   },
   {
     id: 2,
@@ -88,8 +88,8 @@ const womanDressesProducts = [
       },
     ],
 
-    colors: ["choose an option", "black"],
-    sizes: ["choose an option", "XS", "S", "M", "L", "XL"],
+    colors: ["Choose an option", "Brown", "Navy", "Sand"],
+    sizes: ["Choose an option", "XS", "S", "M", "L", "XL"],
   },
   {
     id: 3,
@@ -134,8 +134,8 @@ const womanDressesProducts = [
       },
     ],
 
-    colors: ["choose an option", "black"],
-    sizes: ["choose an option", "XS", "S", "M", "L", "XL"],
+    colors: ["Choose an option", "Brown", "Navy", "Sand"],
+    sizes: ["Choose an option", "XS", "S", "M", "L", "XL"],
   },
   {
     id: 4,
@@ -180,8 +180,8 @@ const womanDressesProducts = [
       },
     ],
 
-    colors: ["choose an option", "black"],
-    sizes: ["choose an option", "XS", "S", "M", "L", "XL"],
+    colors: ["Choose an option", "Brown", "Navy", "Sand"],
+    sizes: ["Choose an option", "XS", "S", "M", "L", "XL"],
   },
   {
     id: 5,
@@ -226,8 +226,8 @@ const womanDressesProducts = [
       },
     ],
 
-    colors: ["choose an option", "black"],
-    sizes: ["choose an option", "XS", "S", "M", "L", "XL"],
+    colors: ["Choose an option", "Brown", "Navy", "Sand"],
+    sizes: ["Choose an option", "XS", "S", "M", "L", "XL"],
   },
   {
     id: 6,
@@ -272,8 +272,8 @@ const womanDressesProducts = [
       },
     ],
 
-    colors: ["choose an option", "black"],
-    sizes: ["choose an option", "XS", "S", "M", "L", "XL"],
+    colors: ["Choose an option", "Brown", "Navy", "Sand"],
+    sizes: ["Choose an option", "XS", "S", "M", "L", "XL"],
   },
   {
     id: 7,
@@ -318,8 +318,8 @@ const womanDressesProducts = [
       },
     ],
 
-    colors: ["choose an option", "black"],
-    sizes: ["choose an option", "XS", "S", "M", "L", "XL"],
+    colors: ["Choose an option", "Brown", "Navy", "Sand"],
+    sizes: ["Choose an option", "XS", "S", "M", "L", "XL"],
   },
   {
     id: 8,
@@ -364,8 +364,8 @@ const womanDressesProducts = [
       },
     ],
 
-    colors: ["choose an option", "black"],
-    sizes: ["choose an option", "XS", "S", "M", "L", "XL"],
+    colors: ["Choose an option", "Brown", "Navy", "Sand"],
+    sizes: ["Choose an option", "XS", "S", "M", "L", "XL"],
   },
   {
     id: 9,
@@ -410,8 +410,8 @@ const womanDressesProducts = [
       },
     ],
 
-    colors: ["choose an option", "black"],
-    sizes: ["choose an option", "XS", "S", "M", "L", "XL"],
+    colors: ["Choose an option", "Brown", "Navy", "Sand"],
+    sizes: ["Choose an option", "XS", "S", "M", "L", "XL"],
   },
   {
     id: 10,
@@ -456,8 +456,8 @@ const womanDressesProducts = [
       },
     ],
 
-    colors: ["choose an option", "black"],
-    sizes: ["choose an option", "XS", "S", "M", "L", "XL"],
+    colors: ["Choose an option", "Brown", "Navy", "Sand"],
+    sizes: ["Choose an option", "XS", "S", "M", "L", "XL"],
   },
 ];
 
