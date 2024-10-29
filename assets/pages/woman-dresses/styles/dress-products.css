@@ -121,7 +121,7 @@
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 470px) {
   .woman-dresses-products__column {
     flex: 0 1 100%;
   }
