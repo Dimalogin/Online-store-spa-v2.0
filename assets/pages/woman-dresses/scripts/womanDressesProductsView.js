@@ -202,8 +202,6 @@ class WomanDressesProductsView {
     }
   }
 
-  #onLoadProductsByBtn() {}
-
   #getCurrentNumberOfProducts() {
     const number = this.#womanDressesProductsList.children.length;
     return number;
