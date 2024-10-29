@@ -9,3 +9,9 @@
   line-height: 34px;
   letter-spacing: 0.6px;
 }
+
+@media (max-width: 770px) {
+  .woman-dresses-description__title {
+    font-size: 22px;
+  }
+}
