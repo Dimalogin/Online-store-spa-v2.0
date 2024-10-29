@@ -15,11 +15,21 @@
 .woman-dresses-products-modal-window__body {
   background-color: #fefefe;
   margin: 50px auto 0px auto;
-  padding: 20px;
+  padding: 20px 20px 20px 20px;
   max-width: 1200px;
   position: relative;
   border-radius: 5px;
   display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 770px) {
+  .woman-dresses-products-modal-window__body {
+    max-width: 570px;
+    flex-direction: column;
+    margin: 30px auto 0px auto;
+    padding: 40px 20px 20px 20px;
+  }
 }
 
 .woman-dresses-products-modal-window__close-btn {

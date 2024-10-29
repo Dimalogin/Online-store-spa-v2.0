@@ -181,25 +181,30 @@ class WomanDressesProductsView {
   }
 
   #onTriggerList() {
-    const numberOfProducts = this.#getCurrentNumberOfProducts();
+    this.#offWomanDressesProductsLoadMoreBtn();
+    this.#onWomanDressesProductsLoadMoreLoader();
+    
+    setTimeout(() => {
+      const numberOfProducts = this.#getCurrentNumberOfProducts();
 
-    if (numberOfProducts < this.#dressesProducts.length) {
-      const currentProducts = this.#dressesProducts.slice(
-        0,
-        numberOfProducts + this.#draw
-      );
+      if (numberOfProducts < this.#dressesProducts.length) {
+        const currentProducts = this.#dressesProducts.slice(
+          0,
+          numberOfProducts + this.#draw
+        );
 
-      this.#offWomanDressesProductsLoadMoreLoader();
-      this.#onWomanDressesProductsLoadMoreBtn();
-      this.#showAllProductsResults(currentProducts);
-      this.#onRenderList(currentProducts);
-    }
+        this.#offWomanDressesProductsLoadMoreLoader();
+        this.#onWomanDressesProductsLoadMoreBtn();
+        this.#showAllProductsResults(currentProducts);
+        this.#onRenderList(currentProducts);
+      }
 
-    const afterNumberOfProduct = this.#getCurrentNumberOfProducts();
+      const afterNumberOfProduct = this.#getCurrentNumberOfProducts();
 
-    if (afterNumberOfProduct >= this.#dressesProducts.length) {
-      this.#offWomanDressesProductsLoadMoreBtn();
-    }
+      if (afterNumberOfProduct >= this.#dressesProducts.length) {
+        this.#offWomanDressesProductsLoadMoreBtn();
+      }
+    }, 1000);
   }
 
   #getCurrentNumberOfProducts() {
