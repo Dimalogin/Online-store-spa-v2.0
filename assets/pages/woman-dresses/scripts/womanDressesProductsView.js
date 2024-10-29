@@ -12,9 +12,15 @@ class WomanDressesProductsView {
   #DBProductsModel = null;
 
   #womanDressesProductsList = null;
+  #womanDressesProductsResultCount = null;
+
+  #womanDressesProductsLoadMoreBtn = null;
+  #womanDressesProductsLoadMoreLoader = null;
   #womanDressesProductsModalWindow = null;
 
   #dressesProducts = [];
+
+  #draw = 12;
 
   constructor() {
     this.#initDBBasketModel();
@@ -47,6 +53,10 @@ class WomanDressesProductsView {
         if (target.matches(".woman-dresses-products-select-option__btn")) {
           this.#onGetProduct(productId);
         }
+      }
+
+      if (event.currentTarget === this.#womanDressesProductsLoadMoreBtn) {
+        this.#onTriggerList();
       }
 
       if (event.currentTarget === this.#womanDressesProductsModalWindow) {
@@ -104,8 +114,20 @@ class WomanDressesProductsView {
   }
 
   #initTemplate() {
+    this.#womanDressesProductsResultCount = document.querySelector(
+      ".woman-dresses-products-top-result__count"
+    );
+
     this.#womanDressesProductsList = document.querySelector(
       ".woman-dresses-products__list"
+    );
+
+    this.#womanDressesProductsLoadMoreBtn = document.querySelector(
+      ".woman-dresses-products-load-more__btn"
+    );
+
+    this.#womanDressesProductsLoadMoreLoader = document.querySelector(
+      ".woman-dresses-products-load-more__loader"
     );
 
     this.#womanDressesProductsModalWindow = document.querySelector(
@@ -122,9 +144,14 @@ class WomanDressesProductsView {
       "click",
       this.#eventListeners
     );
+    this.#womanDressesProductsLoadMoreBtn.addEventListener(
+      "click",
+      this.#eventListeners
+    );
   }
 
   #onCheckDataInStorage() {
+    this.#onWomanDressesProductsLoadMoreLoader();
     this.#DBProductsModel
       .checkDataInStorage()
       .then((state) => {
@@ -149,11 +176,40 @@ class WomanDressesProductsView {
   #onGetAllProducts() {
     this.#DBProductsModel.getAllTasks().then((products) => {
       this.#dressesProducts = products;
-      this.#onTriggerList(this.#dressesProducts);
+      this.#onTriggerList();
     });
   }
 
-  #onTriggerList(products) {
+  #onTriggerList() {
+    const numberOfProducts = this.#getCurrentNumberOfProducts();
+
+    if (numberOfProducts < this.#dressesProducts.length) {
+      const currentProducts = this.#dressesProducts.slice(
+        0,
+        numberOfProducts + this.#draw
+      );
+
+      this.#offWomanDressesProductsLoadMoreLoader();
+      this.#onWomanDressesProductsLoadMoreBtn();
+      this.#showAllProductsResults(currentProducts);
+      this.#onRenderList(currentProducts);
+    }
+
+    const afterNumberOfProduct = this.#getCurrentNumberOfProducts();
+
+    if (afterNumberOfProduct >= this.#dressesProducts.length) {
+      this.#offWomanDressesProductsLoadMoreBtn();
+    }
+  }
+
+  #onLoadProductsByBtn() {}
+
+  #getCurrentNumberOfProducts() {
+    const number = this.#womanDressesProductsList.children.length;
+    return number;
+  }
+
+  #onRenderList(products) {
     const fragment = document.createDocumentFragment();
 
     for (const product of products) {
@@ -199,6 +255,11 @@ class WomanDressesProductsView {
 
     this.#womanDressesProductsList.innerHTML = "";
     this.#womanDressesProductsList.appendChild(fragment);
+  }
+
+  #showAllProductsResults(products) {
+    const count = products.length;
+    this.#womanDressesProductsResultCount.textContent = count;
   }
 
   #onGetProduct(productId) {
@@ -351,6 +412,22 @@ class WomanDressesProductsView {
     }
 
     return fragment;
+  }
+
+  #onWomanDressesProductsLoadMoreBtn() {
+    this.#womanDressesProductsLoadMoreBtn.style.display = "block";
+  }
+
+  #offWomanDressesProductsLoadMoreBtn() {
+    this.#womanDressesProductsLoadMoreBtn.style.display = "none";
+  }
+
+  #onWomanDressesProductsLoadMoreLoader() {
+    this.#womanDressesProductsLoadMoreLoader.style.display = "block";
+  }
+
+  #offWomanDressesProductsLoadMoreLoader() {
+    this.#womanDressesProductsLoadMoreLoader.style.display = "none";
   }
 }
 

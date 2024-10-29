@@ -459,6 +459,466 @@ const womanDressesProducts = [
     colors: ["Choose an option", "Brown", "Navy", "Sand"],
     sizes: ["Choose an option", "XS", "S", "M", "L", "XL"],
   },
+  {
+    id: 11,
+    images: {
+      catalogImage:
+        "../../assets/images/products/for-woman/dresses/woman-dress-11.png",
+    },
+    title: "Dazzle Bustier",
+    price: "$455",
+    discount: null,
+    sale: false,
+
+    dropDownMenu: [
+      {
+        title: "description",
+        text: "Reimagined in a soft shade of cream, this lambswool Polo Neck has subtle design details such as a contrasting ribbed neck. A saddle shoulder design adds further interest. Wear the neck folded over or upright. Buy this product on victoriabeckham.com",
+      },
+
+      {
+        title: "product details",
+        text: [
+          "Soft Lambswool Fabrication",
+          "Saddle shoulder design",
+          "High neckline complete with ribbed hemline",
+          "Contrasting VB monogram embroidery",
+          " Fits true to size, take your regular size",
+          "The model’s height is 180cm and is wearing a size XS",
+          " Front Length (Side Neck Point To Hem): 55.5cm",
+          "Sleeve Length (From Shoulder): 70.8cm",
+          "Main: 100% Lambswool",
+          "Specialized Dry Clean Only",
+          "Made in Turkey],",
+        ],
+      },
+      {
+        title: "delivery and returns",
+        text: [
+          "We offer complimentary express shipping.",
+          "Free returns are available worldwide. If your item is eligible for return, you have 30 days from the date you receive your order to follow this procedure.",
+          "See delivery and returns for more information.",
+        ],
+      },
+    ],
+
+    colors: ["Choose an option", "Brown", "Navy", "Sand"],
+    sizes: ["Choose an option", "XS", "S", "M", "L", "XL"],
+  },
+  {
+    id: 12,
+    images: {
+      catalogImage:
+        "../../assets/images/products/for-woman/dresses/woman-dress-12.png",
+    },
+    title: "Graceful Arrival Black Floral Burnout Backless Maxi Dress",
+    price: "$73",
+    discount: "$98",
+    sale: false,
+
+    dropDownMenu: [
+      {
+        title: "description",
+        text: "Reimagined in a soft shade of cream, this lambswool Polo Neck has subtle design details such as a contrasting ribbed neck. A saddle shoulder design adds further interest. Wear the neck folded over or upright. Buy this product on victoriabeckham.com",
+      },
+
+      {
+        title: "product details",
+        text: [
+          "Soft Lambswool Fabrication",
+          "Saddle shoulder design",
+          "High neckline complete with ribbed hemline",
+          "Contrasting VB monogram embroidery",
+          " Fits true to size, take your regular size",
+          "The model’s height is 180cm and is wearing a size XS",
+          " Front Length (Side Neck Point To Hem): 55.5cm",
+          "Sleeve Length (From Shoulder): 70.8cm",
+          "Main: 100% Lambswool",
+          "Specialized Dry Clean Only",
+          "Made in Turkey],",
+        ],
+      },
+      {
+        title: "delivery and returns",
+        text: [
+          "We offer complimentary express shipping.",
+          "Free returns are available worldwide. If your item is eligible for return, you have 30 days from the date you receive your order to follow this procedure.",
+          "See delivery and returns for more information.",
+        ],
+      },
+    ],
+
+    colors: ["Choose an option", "Black"],
+    sizes: ["Choose an option", "XS", "S", "M", "L", "XL"],
+  },
+  {
+    id: 13,
+    images: {
+      catalogImage:
+        "../../assets/images/products/for-woman/dresses/woman-dress-13.png",
+    },
+    title: "Love In Your Eyes Black Knotted Mermaid Maxi Dress",
+    price: "$66",
+    discount: "$88",
+    sale: false,
+
+    dropDownMenu: [
+      {
+        title: "description",
+        text: "Reimagined in a soft shade of cream, this lambswool Polo Neck has subtle design details such as a contrasting ribbed neck. A saddle shoulder design adds further interest. Wear the neck folded over or upright. Buy this product on victoriabeckham.com",
+      },
+
+      {
+        title: "product details",
+        text: [
+          "Soft Lambswool Fabrication",
+          "Saddle shoulder design",
+          "High neckline complete with ribbed hemline",
+          "Contrasting VB monogram embroidery",
+          " Fits true to size, take your regular size",
+          "The model’s height is 180cm and is wearing a size XS",
+          " Front Length (Side Neck Point To Hem): 55.5cm",
+          "Sleeve Length (From Shoulder): 70.8cm",
+          "Main: 100% Lambswool",
+          "Specialized Dry Clean Only",
+          "Made in Turkey],",
+        ],
+      },
+      {
+        title: "delivery and returns",
+        text: [
+          "We offer complimentary express shipping.",
+          "Free returns are available worldwide. If your item is eligible for return, you have 30 days from the date you receive your order to follow this procedure.",
+          "See delivery and returns for more information.",
+        ],
+      },
+    ],
+
+    colors: ["Choose an option", "Black"],
+    sizes: ["Choose an option", "XS", "S", "M", "L", "XL"],
+  },
+  {
+    id: 14,
+    images: {
+      catalogImage:
+        "../../assets/images/products/for-woman/dresses/woman-dress-14.png",
+    },
+    title: "How Much I Care Emerald Green Velvet Off-the-Shoulder Midi Dress",
+    price: "$44.25",
+    discount: "$59",
+    sale: true,
+
+    dropDownMenu: [
+      {
+        title: "description",
+        text: "Reimagined in a soft shade of cream, this lambswool Polo Neck has subtle design details such as a contrasting ribbed neck. A saddle shoulder design adds further interest. Wear the neck folded over or upright. Buy this product on victoriabeckham.com",
+      },
+
+      {
+        title: "product details",
+        text: [
+          "Soft Lambswool Fabrication",
+          "Saddle shoulder design",
+          "High neckline complete with ribbed hemline",
+          "Contrasting VB monogram embroidery",
+          " Fits true to size, take your regular size",
+          "The model’s height is 180cm and is wearing a size XS",
+          " Front Length (Side Neck Point To Hem): 55.5cm",
+          "Sleeve Length (From Shoulder): 70.8cm",
+          "Main: 100% Lambswool",
+          "Specialized Dry Clean Only",
+          "Made in Turkey],",
+        ],
+      },
+      {
+        title: "delivery and returns",
+        text: [
+          "We offer complimentary express shipping.",
+          "Free returns are available worldwide. If your item is eligible for return, you have 30 days from the date you receive your order to follow this procedure.",
+          "See delivery and returns for more information.",
+        ],
+      },
+    ],
+
+    colors: ["Choose an option", "Green", "Black", "White", "Red"],
+    sizes: ["Choose an option", "XS", "S", "M", "L", "XL"],
+  },
+  {
+    id: 15,
+    images: {
+      catalogImage:
+        "../../assets/images/products/for-woman/dresses/woman-dress-15.png",
+    },
+    title: "Fit and Fair Mauve Purple Ribbed Knit Long Sleeve Skater Dress",
+    price: "$11.25",
+    discount: "$39",
+    sale: false,
+
+    dropDownMenu: [
+      {
+        title: "description",
+        text: "Reimagined in a soft shade of cream, this lambswool Polo Neck has subtle design details such as a contrasting ribbed neck. A saddle shoulder design adds further interest. Wear the neck folded over or upright. Buy this product on victoriabeckham.com",
+      },
+
+      {
+        title: "product details",
+        text: [
+          "Soft Lambswool Fabrication",
+          "Saddle shoulder design",
+          "High neckline complete with ribbed hemline",
+          "Contrasting VB monogram embroidery",
+          " Fits true to size, take your regular size",
+          "The model’s height is 180cm and is wearing a size XS",
+          " Front Length (Side Neck Point To Hem): 55.5cm",
+          "Sleeve Length (From Shoulder): 70.8cm",
+          "Main: 100% Lambswool",
+          "Specialized Dry Clean Only",
+          "Made in Turkey],",
+        ],
+      },
+      {
+        title: "delivery and returns",
+        text: [
+          "We offer complimentary express shipping.",
+          "Free returns are available worldwide. If your item is eligible for return, you have 30 days from the date you receive your order to follow this procedure.",
+          "See delivery and returns for more information.",
+        ],
+      },
+    ],
+
+    colors: ["Choose an option", "Green", "Purple"],
+    sizes: ["Choose an option", "XS", "S", "M", "L", "XL"],
+  },
+  {
+    id: 16,
+    images: {
+      catalogImage:
+        "../../assets/images/products/for-woman/dresses/woman-dress-16.png",
+    },
+    title: "Loving You Fondly Olive Green Ribbed Knit Sweater Dress",
+    price: "$59.25",
+    discount: "$79",
+    sale: false,
+
+    dropDownMenu: [
+      {
+        title: "description",
+        text: "Reimagined in a soft shade of cream, this lambswool Polo Neck has subtle design details such as a contrasting ribbed neck. A saddle shoulder design adds further interest. Wear the neck folded over or upright. Buy this product on victoriabeckham.com",
+      },
+
+      {
+        title: "product details",
+        text: [
+          "Soft Lambswool Fabrication",
+          "Saddle shoulder design",
+          "High neckline complete with ribbed hemline",
+          "Contrasting VB monogram embroidery",
+          " Fits true to size, take your regular size",
+          "The model’s height is 180cm and is wearing a size XS",
+          " Front Length (Side Neck Point To Hem): 55.5cm",
+          "Sleeve Length (From Shoulder): 70.8cm",
+          "Main: 100% Lambswool",
+          "Specialized Dry Clean Only",
+          "Made in Turkey],",
+        ],
+      },
+      {
+        title: "delivery and returns",
+        text: [
+          "We offer complimentary express shipping.",
+          "Free returns are available worldwide. If your item is eligible for return, you have 30 days from the date you receive your order to follow this procedure.",
+          "See delivery and returns for more information.",
+        ],
+      },
+    ],
+
+    colors: ["Choose an option", "Green", "Purple"],
+    sizes: ["Choose an option", "XS", "S", "M", "L", "XL"],
+  },
+  {
+    id: 17,
+    images: {
+      catalogImage:
+        "../../assets/images/products/for-woman/dresses/woman-dress-17.png",
+    },
+    title: "Splendidly Yours Black Floral Organza Mesh Strapless Midi Dress",
+    price: "$66",
+    discount: "$88",
+    sale: false,
+
+    dropDownMenu: [
+      {
+        title: "description",
+        text: "Reimagined in a soft shade of cream, this lambswool Polo Neck has subtle design details such as a contrasting ribbed neck. A saddle shoulder design adds further interest. Wear the neck folded over or upright. Buy this product on victoriabeckham.com",
+      },
+
+      {
+        title: "product details",
+        text: [
+          "Soft Lambswool Fabrication",
+          "Saddle shoulder design",
+          "High neckline complete with ribbed hemline",
+          "Contrasting VB monogram embroidery",
+          " Fits true to size, take your regular size",
+          "The model’s height is 180cm and is wearing a size XS",
+          " Front Length (Side Neck Point To Hem): 55.5cm",
+          "Sleeve Length (From Shoulder): 70.8cm",
+          "Main: 100% Lambswool",
+          "Specialized Dry Clean Only",
+          "Made in Turkey],",
+        ],
+      },
+      {
+        title: "delivery and returns",
+        text: [
+          "We offer complimentary express shipping.",
+          "Free returns are available worldwide. If your item is eligible for return, you have 30 days from the date you receive your order to follow this procedure.",
+          "See delivery and returns for more information.",
+        ],
+      },
+    ],
+
+    colors: ["Choose an option", "Black Flolar"],
+    sizes: ["Choose an option", "XS", "S", "M", "L", "XL"],
+  },
+  {
+    id: 18,
+    images: {
+      catalogImage:
+        "../../assets/images/products/for-woman/dresses/woman-dress-18.png",
+    },
+    title: "Candlelit Date Forest Green Velvet One-Shoulder Bodycon Dress",
+    price: "$18.75",
+    discount: "$59",
+    sale: false,
+
+    dropDownMenu: [
+      {
+        title: "description",
+        text: "Reimagined in a soft shade of cream, this lambswool Polo Neck has subtle design details such as a contrasting ribbed neck. A saddle shoulder design adds further interest. Wear the neck folded over or upright. Buy this product on victoriabeckham.com",
+      },
+
+      {
+        title: "product details",
+        text: [
+          "Soft Lambswool Fabrication",
+          "Saddle shoulder design",
+          "High neckline complete with ribbed hemline",
+          "Contrasting VB monogram embroidery",
+          " Fits true to size, take your regular size",
+          "The model’s height is 180cm and is wearing a size XS",
+          " Front Length (Side Neck Point To Hem): 55.5cm",
+          "Sleeve Length (From Shoulder): 70.8cm",
+          "Main: 100% Lambswool",
+          "Specialized Dry Clean Only",
+          "Made in Turkey],",
+        ],
+      },
+      {
+        title: "delivery and returns",
+        text: [
+          "We offer complimentary express shipping.",
+          "Free returns are available worldwide. If your item is eligible for return, you have 30 days from the date you receive your order to follow this procedure.",
+          "See delivery and returns for more information.",
+        ],
+      },
+    ],
+
+    colors: ["Choose an option", "Black"],
+    sizes: ["Choose an option", "XS", "S", "M", "L", "XL"],
+  },
+  {
+    id: 19,
+    images: {
+      catalogImage:
+        "../../assets/images/products/for-woman/dresses/woman-dress-19.png",
+    },
+    title: "Approachably Adorable Black Ribbed Bubble Hem Mini Dress",
+    price: "$36.75",
+    discount: "$49",
+    sale: false,
+
+    dropDownMenu: [
+      {
+        title: "description",
+        text: "Reimagined in a soft shade of cream, this lambswool Polo Neck has subtle design details such as a contrasting ribbed neck. A saddle shoulder design adds further interest. Wear the neck folded over or upright. Buy this product on victoriabeckham.com",
+      },
+
+      {
+        title: "product details",
+        text: [
+          "Soft Lambswool Fabrication",
+          "Saddle shoulder design",
+          "High neckline complete with ribbed hemline",
+          "Contrasting VB monogram embroidery",
+          " Fits true to size, take your regular size",
+          "The model’s height is 180cm and is wearing a size XS",
+          " Front Length (Side Neck Point To Hem): 55.5cm",
+          "Sleeve Length (From Shoulder): 70.8cm",
+          "Main: 100% Lambswool",
+          "Specialized Dry Clean Only",
+          "Made in Turkey],",
+        ],
+      },
+      {
+        title: "delivery and returns",
+        text: [
+          "We offer complimentary express shipping.",
+          "Free returns are available worldwide. If your item is eligible for return, you have 30 days from the date you receive your order to follow this procedure.",
+          "See delivery and returns for more information.",
+        ],
+      },
+    ],
+
+    colors: ["Choose an option", "Gray", "Black", "Red"],
+    sizes: ["Choose an option", "XS", "S", "M", "L", "XL"],
+  },
+  {
+    id: 20,
+    images: {
+      catalogImage:
+        "../../assets/images/products/for-woman/dresses/woman-dress-20.png",
+    },
+    title: "Promise of Forever Navy Blue Velvet Column Maxi Dress",
+    price: "$66",
+    discount: "$88",
+    sale: false,
+
+    dropDownMenu: [
+      {
+        title: "description",
+        text: "Reimagined in a soft shade of cream, this lambswool Polo Neck has subtle design details such as a contrasting ribbed neck. A saddle shoulder design adds further interest. Wear the neck folded over or upright. Buy this product on victoriabeckham.com",
+      },
+
+      {
+        title: "product details",
+        text: [
+          "Soft Lambswool Fabrication",
+          "Saddle shoulder design",
+          "High neckline complete with ribbed hemline",
+          "Contrasting VB monogram embroidery",
+          " Fits true to size, take your regular size",
+          "The model’s height is 180cm and is wearing a size XS",
+          " Front Length (Side Neck Point To Hem): 55.5cm",
+          "Sleeve Length (From Shoulder): 70.8cm",
+          "Main: 100% Lambswool",
+          "Specialized Dry Clean Only",
+          "Made in Turkey],",
+        ],
+      },
+      {
+        title: "delivery and returns",
+        text: [
+          "We offer complimentary express shipping.",
+          "Free returns are available worldwide. If your item is eligible for return, you have 30 days from the date you receive your order to follow this procedure.",
+          "See delivery and returns for more information.",
+        ],
+      },
+    ],
+
+    colors: ["Choose an option", "Blue"],
+    sizes: ["Choose an option", "XS", "S", "M", "L", "XL"],
+  },
 ];
 
 export default womanDressesProducts;

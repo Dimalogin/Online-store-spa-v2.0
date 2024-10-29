@@ -20,6 +20,7 @@
   cursor: pointer;
   position: relative;
   transition: 0.5s ease-in-out;
+  z-index: 2;
 }
 
 .woman-dresses-products-top-dropdown__title {
@@ -205,4 +206,49 @@
 .woman-dresses-products__item:hover .woman-dresses-products__select-option {
   display: block;
   transition: 0.5s ease;
+}
+
+/*Load More Btn*/
+
+.woman-dresses-products-load-more__btn {
+  display: none;
+  margin: 50px auto 0px auto;
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-family: "montserrat_alternatesbold";
+  background: transparent;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+/*Loader*/
+
+.woman-dresses-products-load-more__loader {
+  display: none;
+  margin: 0px auto;
+  border: 3px solid #dddddd;
+  border-radius: 50%;
+  border-top: 3px solid #000000;
+  width: 18px;
+  height: 18px;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
