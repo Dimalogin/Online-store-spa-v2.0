@@ -39,6 +39,7 @@
 }
 
 .slides-wrapper__list {
+  pointer-events: none;
   height: calc(100vh - 121px);
   width: 100%;
   display: flex;
