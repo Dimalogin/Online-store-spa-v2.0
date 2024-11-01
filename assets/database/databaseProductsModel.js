@@ -3,6 +3,7 @@ import {
   addProductsIntoDB,
   readProductFromDB,
   getAllProductsFromDB,
+  updateProductIntoDB,
 } from "./functionalIndexedDB.js";
 
 import womanDressesProducts from "../data/for-woman/dresses.js";
@@ -14,21 +15,21 @@ import manTrousersProducts from "../data/for-man/trousers.js";
 
 export default class DatabaseProductsModel {
   #dbProductsName = "ProductsStorage";
-  #storageName = "womanDressesProducts";
+  #storageDressesProductsName = "womanDressesProducts";
   #dbProductsPromise = null;
 
   #emptyStorages = [];
 
   #productsMigrations = [
     (db) => {
-      db.createObjectStore(this.#storageName, {
+      db.createObjectStore(this.#storageDressesProductsName, {
         keyPath: "id",
         autoIncrement: true,
       });
     },
   ];
 
-  openIndexedDb() {
+  openProductsIndexedDb() {
     this.#dbProductsPromise = openDb(
       this.#dbProductsName,
       this.#productsMigrations
@@ -38,7 +39,7 @@ export default class DatabaseProductsModel {
   checkDataInStorage() {
     return new Promise((resolve, reject) => {
       this.#dbProductsPromise.then((db) => {
-        readProductFromDB(db, this.#storageName, 1)
+        readProductFromDB(db, this.#storageDressesProductsName, 1)
           .then((products) => {
             products ? resolve(true) : resolve(false);
           })
@@ -51,7 +52,7 @@ export default class DatabaseProductsModel {
 
   getAllTasks() {
     return this.#dbProductsPromise.then((db) => {
-      return getAllProductsFromDB(db, this.#storageName);
+      return getAllProductsFromDB(db, this.#storageDressesProductsName);
     });
   }
 
@@ -62,7 +63,7 @@ export default class DatabaseProductsModel {
           const l = womanDressesProducts.length - 1;
 
           this.#dbProductsPromise.then((db) => {
-            addProductsIntoDB(db, this.#storageName, product);
+            addProductsIntoDB(db, this.#storageDressesProductsName, product);
           });
 
           if (l === index) {
@@ -72,6 +73,12 @@ export default class DatabaseProductsModel {
         .catch((error) => {
           reject(error);
         });
+    });
+  }
+
+  updateProductIntoStorage(object) {
+    return this.#dbProductsPromise.then((db) => {
+      return updateProductIntoDB(db, this.#storageDressesProductsName, object);
     });
   }
 }

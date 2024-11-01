@@ -1,6 +1,7 @@
 const womanDressesProducts = [
   {
     id: 1,
+    inBasket: false,
     images: {
       catalogImage:
         "../../assets/images/products/for-woman/dresses/woman-dress-1.png",
@@ -47,6 +48,7 @@ const womanDressesProducts = [
   },
   {
     id: 2,
+    inBasket: false,
     images: {
       catalogImage:
         "../../assets/images/products/for-woman/dresses/woman-dress-2.png",
@@ -93,6 +95,7 @@ const womanDressesProducts = [
   },
   {
     id: 3,
+    inBasket: false,
     images: {
       catalogImage:
         "../../assets/images/products/for-woman/dresses/woman-dress-3.png",
@@ -139,6 +142,7 @@ const womanDressesProducts = [
   },
   {
     id: 4,
+    inBasket: false,
     images: {
       catalogImage:
         "../../assets/images/products/for-woman/dresses/woman-dress-4.png",
@@ -185,6 +189,7 @@ const womanDressesProducts = [
   },
   {
     id: 5,
+    inBasket: false,
     images: {
       catalogImage:
         "../../assets/images/products/for-woman/dresses/woman-dress-5.png",
@@ -231,6 +236,7 @@ const womanDressesProducts = [
   },
   {
     id: 6,
+    inBasket: false,
     images: {
       catalogImage:
         "../../assets/images/products/for-woman/dresses/woman-dress-6.png",
@@ -277,6 +283,7 @@ const womanDressesProducts = [
   },
   {
     id: 7,
+    inBasket: false,
     images: {
       catalogImage:
         "../../assets/images/products/for-woman/dresses/woman-dress-7.png",
@@ -323,6 +330,7 @@ const womanDressesProducts = [
   },
   {
     id: 8,
+    inBasket: false,
     images: {
       catalogImage:
         "../../assets/images/products/for-woman/dresses/woman-dress-8.png",
@@ -369,6 +377,7 @@ const womanDressesProducts = [
   },
   {
     id: 9,
+    inBasket: false,
     images: {
       catalogImage:
         "../../assets/images/products/for-woman/dresses/woman-dress-9.png",
@@ -415,6 +424,7 @@ const womanDressesProducts = [
   },
   {
     id: 10,
+    inBasket: false,
     images: {
       catalogImage:
         "../../assets/images/products/for-woman/dresses/woman-dress-10.png",
@@ -461,6 +471,7 @@ const womanDressesProducts = [
   },
   {
     id: 11,
+    inBasket: false,
     images: {
       catalogImage:
         "../../assets/images/products/for-woman/dresses/woman-dress-11.png",
@@ -507,6 +518,7 @@ const womanDressesProducts = [
   },
   {
     id: 12,
+    inBasket: false,
     images: {
       catalogImage:
         "../../assets/images/products/for-woman/dresses/woman-dress-12.png",
@@ -553,6 +565,7 @@ const womanDressesProducts = [
   },
   {
     id: 13,
+    inBasket: false,
     images: {
       catalogImage:
         "../../assets/images/products/for-woman/dresses/woman-dress-13.png",
@@ -599,6 +612,7 @@ const womanDressesProducts = [
   },
   {
     id: 14,
+    inBasket: false,
     images: {
       catalogImage:
         "../../assets/images/products/for-woman/dresses/woman-dress-14.png",
@@ -645,6 +659,7 @@ const womanDressesProducts = [
   },
   {
     id: 15,
+    inBasket: false,
     images: {
       catalogImage:
         "../../assets/images/products/for-woman/dresses/woman-dress-15.png",
@@ -691,6 +706,7 @@ const womanDressesProducts = [
   },
   {
     id: 16,
+    inBasket: false,
     images: {
       catalogImage:
         "../../assets/images/products/for-woman/dresses/woman-dress-16.png",
@@ -737,6 +753,7 @@ const womanDressesProducts = [
   },
   {
     id: 17,
+    inBasket: false,
     images: {
       catalogImage:
         "../../assets/images/products/for-woman/dresses/woman-dress-17.png",
@@ -783,6 +800,7 @@ const womanDressesProducts = [
   },
   {
     id: 18,
+    inBasket: false,
     images: {
       catalogImage:
         "../../assets/images/products/for-woman/dresses/woman-dress-18.png",
@@ -829,6 +847,7 @@ const womanDressesProducts = [
   },
   {
     id: 19,
+    inBasket: false,
     images: {
       catalogImage:
         "../../assets/images/products/for-woman/dresses/woman-dress-19.png",
@@ -875,6 +894,7 @@ const womanDressesProducts = [
   },
   {
     id: 20,
+    inBasket: false,
     images: {
       catalogImage:
         "../../assets/images/products/for-woman/dresses/woman-dress-20.png",

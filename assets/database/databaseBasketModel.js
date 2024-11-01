@@ -7,20 +7,25 @@ import {
 
 export default class DatabaseBasketModel {
   #dbBasketName = "BasketStorage";
+  #storageBasketName = "productsBasket";
   #dbBasketPromise = null;
 
   #basketMigrations = [
-    [
-      (db) => {
-        db.createObjectStore("productsBasket", {
-          keyPath: "id",
-          autoIncrement: true,
-        });
-      },
-    ],
+    (db) => {
+      db.createObjectStore(this.#storageBasketName, {
+        keyPath: "id",
+        autoIncrement: true,
+      });
+    },
   ];
 
-  initBasketIndexedDb() {
+  openBasketIndexedDb() {
     this.#dbBasketPromise = openDb(this.#dbBasketName, this.#basketMigrations);
+  }
+
+  addProductToBasket(product) {
+    return this.#dbBasketPromise.then((db) => {
+      return addProductsIntoDB(db, this.#storageBasketName, product);
+    });
   }
 }

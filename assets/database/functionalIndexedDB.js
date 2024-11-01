@@ -22,6 +22,7 @@ export function openDb(dbName, dbMigrations) {
 }
 
 export function addProductsIntoDB(db, storeName, data) {
+  console.log(storeName);
   return new Promise((resolve, reject) => {
     const transaction = db.transaction(storeName, "readwrite");
     const objectStore = transaction.objectStore(storeName);
@@ -68,6 +69,24 @@ export function getAllProductsFromDB(db, storeName) {
 
     all.addEventListener("success", function () {
       resolve(all.result);
+    });
+  });
+}
+
+export function updateProductIntoDB(db, storeName, data, key) {
+  return new Promise((resolve, reject) => {
+    const transaction = db.transaction(storeName, "readwrite");
+    const objectStore = transaction.objectStore(storeName);
+
+    const updateRequest =
+      key === undefined ? objectStore.put(data) : objectStore.put(data, key);
+
+    updateRequest.addEventListener("error", function () {
+      reject(updateRequest.error);
+    });
+
+    updateRequest.addEventListener("success", function () {
+      resolve(true);
     });
   });
 }
