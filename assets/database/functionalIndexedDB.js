@@ -22,7 +22,7 @@ export function openDb(dbName, dbMigrations) {
 }
 
 export function addProductsIntoDB(db, storeName, data) {
-  console.log(storeName);
+
   return new Promise((resolve, reject) => {
     const transaction = db.transaction(storeName, "readwrite");
     const objectStore = transaction.objectStore(storeName);
