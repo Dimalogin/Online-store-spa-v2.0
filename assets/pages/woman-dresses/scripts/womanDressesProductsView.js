@@ -13,13 +13,14 @@ class WomanDressesProductsView {
 
   #womanDressesProductsList = null;
   #womanDressesProductsResultCount = null;
-
   #womanDressesProductsLoadMoreBtn = null;
   #womanDressesProductsLoadMoreLoader = null;
+
   #womanDressesProductsModalWindow = null;
+  #womanDressesProductsModalWindowAddToCartBtn = null;
+  #womanDressesProductsModalWindowAddToCartLoader = null;
 
   #dressesProducts = [];
-
   #draw = 12;
 
   constructor() {
@@ -82,10 +83,14 @@ class WomanDressesProductsView {
 
         if (
           target.matches(
-            ".woman-dresses-products-modal-window-add-to-cart__add"
+            ".woman-dresses-products-modal-window-add-to-cart-add__btn"
           )
         ) {
-          console.log("add");
+          const element = target.closest(
+            ".woman-dresses-products-modal-window__body"
+          );
+
+          this.#getProductData(element);
         }
 
         if (
@@ -107,10 +112,12 @@ class WomanDressesProductsView {
     this.#DBProductsModel = new DatabaseProductsModel();
   }
 
-  #openDBBasket() {}
+  #openDBBasket() {
+    this.#DBBasketModel.openBasketIndexedDb();
+  }
 
   #openDBProducts() {
-    this.#DBProductsModel.openIndexedDb();
+    this.#DBProductsModel.openProductsIndexedDb();
   }
 
   #initTemplate() {
@@ -183,7 +190,7 @@ class WomanDressesProductsView {
   #onTriggerList() {
     this.#offWomanDressesProductsLoadMoreBtn();
     this.#onWomanDressesProductsLoadMoreLoader();
-    
+
     setTimeout(() => {
       const numberOfProducts = this.#getCurrentNumberOfProducts();
 
@@ -208,8 +215,7 @@ class WomanDressesProductsView {
   }
 
   #getCurrentNumberOfProducts() {
-    const number = this.#womanDressesProductsList.children.length;
-    return number;
+    return this.#womanDressesProductsList.children.length;
   }
 
   #onRenderList(products) {
@@ -276,8 +282,17 @@ class WomanDressesProductsView {
   }
 
   #openProductModalWindow(product) {
-    const { id, images, title, price, discount, colors, sizes, dropDownMenu } =
-      product;
+    const {
+      id,
+      inBasket,
+      images,
+      title,
+      price,
+      discount,
+      colors,
+      sizes,
+      dropDownMenu,
+    } = product;
 
     const fullView = womanDressesModalWindowTemplate.content.cloneNode(true);
     const modalWindow = fullView.querySelector(
@@ -301,6 +316,9 @@ class WomanDressesProductsView {
     const modalWindowSizeSelect = fullView.querySelector(
       ".woman-dresses-products-modal-window-price-size__select"
     );
+    const modalWindowAddToCartBtn = fullView.querySelector(
+      ".woman-dresses-products-modal-window-add-to-cart-add__btn"
+    );
     const modalWindowDropDownMenu = fullView.querySelector(
       ".woman-dresses-products-modal-window__drop-down-menu"
     );
@@ -319,7 +337,11 @@ class WomanDressesProductsView {
     modalWindowSizeSelect.appendChild(
       this.#createProductModalWindowSizesSelect(sizes)
     );
-
+    modalWindowAddToCartBtn.classList.toggle(
+      "woman-dresses-products-modal-window-add-to-cart-add__btn--disable",
+      inBasket
+    );
+    modalWindowAddToCartBtn.disabled = inBasket;
     modalWindowDropDownMenu.appendChild(
       this.#createProductModalWindowDropDownMenu(dropDownMenu)
     );
@@ -431,6 +453,105 @@ class WomanDressesProductsView {
 
   #offWomanDressesProductsLoadMoreLoader() {
     this.#womanDressesProductsLoadMoreLoader.style.display = "none";
+  }
+
+  /*Basket*/
+
+  #getProductData(element) {
+    this.#womanDressesProductsModalWindowAddToCartBtn = null;
+    this.#womanDressesProductsModalWindowAddToCartLoader = null;
+
+    this.#womanDressesProductsModalWindowAddToCartBtn = element.querySelector(
+      ".woman-dresses-products-modal-window-add-to-cart-add__btn"
+    );
+    this.#womanDressesProductsModalWindowAddToCartLoader =
+      element.querySelector(
+        ".woman-dresses-products-modal-window-add-to-cart-add__loader"
+      );
+
+    const id = Number(element.dataset.productId);
+    const quantity = Number(
+      element.querySelector(
+        ".woman-dresses-products-modal-window-add-to-cart-quantity__value"
+      ).textContent
+    );
+
+    const color = element.querySelector(
+      ".woman-dresses-products-modal-window-price-color__select"
+    ).value;
+
+    const size = element.querySelector(
+      ".woman-dresses-products-modal-window-price-size__select"
+    ).value;
+
+    const productData = this.#dressesProducts.find((product) => {
+      return product.id === id;
+    });
+
+    const dataObject = {
+      id: productData.id,
+      images: productData.images.catalogImage,
+      title: productData.title,
+      price: productData.price,
+      discount: productData.discount,
+      quantityProducts: quantity,
+      color: color,
+      size: size,
+    };
+
+    this.#hideAddToCartBtn();
+    this.#onAddToCartLoader();
+
+    setTimeout(() => {
+      this.#onUpdateProductIntoDB(productData);
+      this.#onAddProductToBasket(dataObject);
+    }, 1000);
+  }
+
+  #onAddProductToBasket(data) {
+    this.#DBBasketModel
+      .addProductToBasket(data)
+      .then((result) => {
+        this.#showAddToCartBtn();
+        this.#offAddToCartLoader();
+        this.#disableAddToCartBtn();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  #onUpdateProductIntoDB(object) {
+    const uptadeObject = { ...object, inBasket: !object.inBasket };
+    this.#DBProductsModel
+      .updateProductIntoStorage(uptadeObject)
+      .then((result) => {})
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  #disableAddToCartBtn() {
+    this.#womanDressesProductsModalWindowAddToCartBtn.classList.add(
+      "woman-dresses-products-modal-window-add-to-cart-add__btn--disable"
+    );
+    this.#womanDressesProductsModalWindowAddToCartBtn.disabled = true;
+  }
+
+  #showAddToCartBtn() {
+    this.#womanDressesProductsModalWindowAddToCartBtn.style.display = "flex";
+  }
+  #hideAddToCartBtn() {
+    this.#womanDressesProductsModalWindowAddToCartBtn.style.display = "none";
+  }
+
+  #onAddToCartLoader() {
+    this.#womanDressesProductsModalWindowAddToCartLoader.style.display =
+      "block";
+  }
+
+  #offAddToCartLoader() {
+    this.#womanDressesProductsModalWindowAddToCartLoader.style.display = "none";
   }
 }
 

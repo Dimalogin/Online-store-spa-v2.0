@@ -86,11 +86,14 @@ womanDressesModalWindowTemplate.innerHTML = `
                         </button>
                       </div>
 
-                      <button
-                        class="woman-dresses-products-modal-window-add-to-cart__add"
-                      >
-                        Add to cart
-                      </button>
+                      <div class='woman-dresses-products-modal-window-add-to-cart__add'>
+                        <button
+                          class="woman-dresses-products-modal-window-add-to-cart-add__btn"
+                        >
+                          Add to cart
+                        </button>
+                        <div class = 'woman-dresses-products-modal-window-add-to-cart-add__loader'></div>
+                      </div>
                     </div>
 
                     <div class="woman-dresses-products-modal-window__wishlist">
