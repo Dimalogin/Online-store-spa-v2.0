@@ -19,6 +19,8 @@ class ShoppingCartProductsView {
 
     this.#initTemplate();
     this.#bindListener();
+
+    this.#onCheckDataInStorage();
   }
 
   #initDBBasketModel() {
@@ -40,7 +42,27 @@ class ShoppingCartProductsView {
   #initTemplate() {}
   #bindListener() {}
 
-  
+  #onCheckDataInStorage() {
+    this.#DBProductsModel
+      .checkDataInStorage()
+      .then((state) => {
+        this.#onAddProductsToStorage();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  #onAddProductsToStorage() {
+    this.#DBProductsModel
+      .addProductsToStorage()
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 }
 
 const shoppingCartProductsView = new ShoppingCartProductsView();
