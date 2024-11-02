@@ -68,7 +68,6 @@
 .shopping-cart-products__shopping-list {
   flex: 0 1 100%;
   margin: 0px 100px 0px 0px;
-
   align-self: flex-start;
 }
 
@@ -76,7 +75,7 @@
   position: relative;
   border: 1px solid #e5e5e5;
   min-height: 120px;
-  padding: 0px 40px;
+  padding: 0px 60px 0px 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -99,40 +98,71 @@
 /*Product Info*/
 
 .shopping-cart-products__info {
-  border: 1px solid black;
 }
 
 .shopping-cart-products-info__title {
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  margin: 0px 0px 5px 0px;
 }
 
 .shopping-cart-products-info__color {
 }
 
 .shopping-cart-products-info-color__text {
+  color: #575757;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.5px;
 }
 
 .shopping-cart-products-info-color__value {
+  color: #000000;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 .shopping-cart-products-info__size {
 }
 
 .shopping-cart-products-info-size__text {
+  color: #575757;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.5px;
+}
+
+.shopping-cart-products-info-size__value {
+  color: #000000;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.shopping-cart-products__price {
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.8px;
 }
 
 .shopping-cart-products__bottom {
+  min-width: 35%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid black;
-  min-width: 30%;
 }
 
 /* Quantity */
 
 .shopping-cart-products__quantity {
   border: 1px solid rgb(173, 173, 173);
+  min-width: 100px;
   min-height: 45px;
   margin: 0px 10px 0px 0px;
   display: flex;
