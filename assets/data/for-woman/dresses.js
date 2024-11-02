@@ -1,6 +1,7 @@
 const womanDressesProducts = [
   {
     id: 1,
+    articleNumber: "dress-product-icon-1",
     inBasket: false,
     images: {
       catalogImage:
@@ -48,6 +49,7 @@ const womanDressesProducts = [
   },
   {
     id: 2,
+    articleNumber: "dress-product-icon-2",
     inBasket: false,
     images: {
       catalogImage:
@@ -95,6 +97,7 @@ const womanDressesProducts = [
   },
   {
     id: 3,
+    articleNumber: "dress-product-icon-3",
     inBasket: false,
     images: {
       catalogImage:
@@ -142,6 +145,7 @@ const womanDressesProducts = [
   },
   {
     id: 4,
+    articleNumber: "dress-product-icon-4",
     inBasket: false,
     images: {
       catalogImage:
@@ -189,6 +193,7 @@ const womanDressesProducts = [
   },
   {
     id: 5,
+    articleNumber: "dress-product-icon-5",
     inBasket: false,
     images: {
       catalogImage:
@@ -236,6 +241,7 @@ const womanDressesProducts = [
   },
   {
     id: 6,
+    articleNumber: "dress-product-icon-6",
     inBasket: false,
     images: {
       catalogImage:
@@ -283,6 +289,7 @@ const womanDressesProducts = [
   },
   {
     id: 7,
+    articleNumber: "dress-product-icon-7",
     inBasket: false,
     images: {
       catalogImage:
@@ -330,6 +337,7 @@ const womanDressesProducts = [
   },
   {
     id: 8,
+    articleNumber: "dress-product-icon-8",
     inBasket: false,
     images: {
       catalogImage:
@@ -377,6 +385,7 @@ const womanDressesProducts = [
   },
   {
     id: 9,
+    articleNumber: "dress-product-icon-9",
     inBasket: false,
     images: {
       catalogImage:
@@ -424,6 +433,7 @@ const womanDressesProducts = [
   },
   {
     id: 10,
+    articleNumber: "dress-product-icon-10",
     inBasket: false,
     images: {
       catalogImage:
@@ -471,6 +481,7 @@ const womanDressesProducts = [
   },
   {
     id: 11,
+    articleNumber: "dress-product-icon-11",
     inBasket: false,
     images: {
       catalogImage:
@@ -518,6 +529,7 @@ const womanDressesProducts = [
   },
   {
     id: 12,
+    articleNumber: "dress-product-icon-12",
     inBasket: false,
     images: {
       catalogImage:
@@ -565,6 +577,7 @@ const womanDressesProducts = [
   },
   {
     id: 13,
+    articleNumber: "dress-product-icon-13",
     inBasket: false,
     images: {
       catalogImage:
@@ -612,6 +625,7 @@ const womanDressesProducts = [
   },
   {
     id: 14,
+    articleNumber: "dress-product-icon-14",
     inBasket: false,
     images: {
       catalogImage:
@@ -659,6 +673,7 @@ const womanDressesProducts = [
   },
   {
     id: 15,
+    articleNumber: "dress-product-icon-15",
     inBasket: false,
     images: {
       catalogImage:
@@ -706,6 +721,7 @@ const womanDressesProducts = [
   },
   {
     id: 16,
+    articleNumber: "dress-product-icon-16",
     inBasket: false,
     images: {
       catalogImage:
@@ -753,6 +769,7 @@ const womanDressesProducts = [
   },
   {
     id: 17,
+    articleNumber: "dress-product-icon-17",
     inBasket: false,
     images: {
       catalogImage:
@@ -800,6 +817,7 @@ const womanDressesProducts = [
   },
   {
     id: 18,
+    articleNumber: "dress-product-icon-18",
     inBasket: false,
     images: {
       catalogImage:
@@ -847,6 +865,7 @@ const womanDressesProducts = [
   },
   {
     id: 19,
+    articleNumber: "dress-product-icon-19",
     inBasket: false,
     images: {
       catalogImage:
@@ -894,6 +913,7 @@ const womanDressesProducts = [
   },
   {
     id: 20,
+    articleNumber: "dress-product-icon-20",
     inBasket: false,
     images: {
       catalogImage:

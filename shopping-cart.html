@@ -11,6 +11,20 @@
     <!--Header styles-->
     <link rel="stylesheet" href="./assets/styles/header/header.css" />
 
+    <!-- Shopping Cart Description -->
+
+    <link
+      rel="stylesheet"
+      href="./assets/pages/shopping-cart/styles/shopping-cart-description.css"
+    />
+
+    <!-- Shopping Cart Products -->
+
+    <link
+      rel="stylesheet"
+      href="./assets/pages/shopping-cart/styles/shopping-cart-products.css"
+    />
+
     <!--Our brands-->
 
     <link rel="stylesheet" href="./assets/pages/home/styles/our-brands.css" />
@@ -180,7 +194,126 @@
         </ul>
       </div>
 
-      <main class="main"></main>
+      <main class="main">
+        <!--Contacts Description-->
+
+        <section
+          class="main__shopping-cart-description shopping-cart-description"
+        >
+          <div class="shopping-cart-description__container container">
+            <div class="shopping-cart-description__body">
+              <h3 class="shopping-cart-description__title">Shopping Cart</h3>
+              <a
+                class="shopping-cart-description__continue"
+                href="https://dimalogin.github.io/online-store/home.html"
+                >Continue Shopping</a
+              >
+            </div>
+          </div>
+        </section>
+
+        <!-- Shopping cart products-->
+
+        <section class="main__shopping-cart-products shopping-cart-products">
+          <div class="shopping-cart-products__container container">
+            <div class="shopping-cart-products__body">
+              <div class="shopping-cart-products__content">
+                <div class="shopping-cart-products__shopping-list">
+                  <ul class="shopping-cart-products__list">
+                    <li class="shopping-cart-products__item">
+                      <div class="shopping-cart-products__top">
+                        <img
+                          class="shopping-cart-products__icon"
+                          src="./assets/images/products/for-woman/dresses/woman-dress-1.png"
+                          alt="icon"
+                        />
+                        <div class="shopping-cart-products__info">
+                          <div class="shopping-cart-products-info__title">
+                            Lorem ipsum, dolor sit amet consectetur
+                          </div>
+                          <div class="shopping-cart-products-info__color">
+                            <span
+                              class="shopping-cart-products-info-color__text"
+                              >Color:</span
+                            >
+                            <span
+                              class="shopping-cart-products-info-color__value"
+                              >black</span
+                            >
+                          </div>
+                          <div class="shopping-cart-products-info__size">
+                            <span class="shopping-cart-products-info-size__text"
+                              >Size:</span
+                            >
+                            <span
+                              class="shopping-cart-products-info-size__value"
+                              >L</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="shopping-cart-products__bottom">
+                        <div class="shopping-cart-products__quantity">
+                          <button
+                            class="shopping-cart-products-quantity__minus"
+                          >
+                            <img
+                              src="../../assets/images/products/for-woman/dresses/dresses-minus-product.svg"
+                              alt="minus"
+                            />
+                          </button>
+                          <span class="shopping-cart-products-quantity__value"
+                            >1</span
+                          >
+                          <button class="shopping-cart-products-quantity__plus">
+                            <img
+                              src="../../assets/images/products/for-woman/dresses/dresses-plus-product.svg"
+                              alt=""
+                            />
+                          </button>
+                        </div>
+                        <div class="shopping-cart-products__price">$455</div>
+                      </div>
+                      <button class="shopping-cart-products__delete-btn">
+                        <img
+                          src="./assets/images/shopping-cart/shopping-cart-delete.svg"
+                          alt=""
+                        />
+                      </button>
+                    </li>
+                  </ul>
+                  <div
+                    class="shopping-cart-products-shopping-list__loader"
+                  ></div>
+                </div>
+                <div class="shopping-cart-products__total">
+                  <div class="shopping-cart-products-total__subtotal">
+                    <div class="shopping-cart-products-total-subtotal__text">
+                      Total
+                    </div>
+                    <div class="shopping-cart-products-total-subtotal__price">
+                      $0
+                    </div>
+                  </div>
+                  <div class="shopping-cart-products-total__vat">
+                    <div class="shopping-cart-products-total-vat__text">
+                      Vat
+                    </div>
+                    <div class="shopping-cart-products-total-vat__price">
+                      $0
+                    </div>
+                  </div>
+                  <button
+                    class="shopping-cart-products-total__proceed-to-checkout"
+                  >
+                    Proceed to Checkout
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
 
       <!--Our brands-->
 
@@ -208,6 +341,7 @@
           </div>
         </div>
       </section>
+
       <!--Footer-->
 
       <footer class="footer">
