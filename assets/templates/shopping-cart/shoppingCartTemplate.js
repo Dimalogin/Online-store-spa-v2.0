@@ -1,6 +1,6 @@
-const shoppingCartListTemplate = document.createElement("template");
+const shoppingCartTemplate = document.createElement("template");
 
-shoppingCartListTemplate.innerHTML = `
+shoppingCartTemplate.innerHTML = `
 <div class="shopping-cart-products__content">
                 <div class="shopping-cart-products__shopping-list">
                   <ul class="shopping-cart-products__list"></ul>
@@ -34,4 +34,4 @@ shoppingCartListTemplate.innerHTML = `
               </div>
 `;
 
-export default shoppingCartListTemplate;
+export default shoppingCartTemplate;

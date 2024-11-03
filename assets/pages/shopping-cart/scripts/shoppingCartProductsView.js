@@ -3,7 +3,7 @@ import DatabaseProductsModel from "../../../database/databaseProductsModel.js";
 
 // Templates
 
-import shoppingCartListTemplate from "../../../templates/shopping-cart/shoppingCartListTemplate.js";
+import shoppingCartListTemplate from "../../../templates/shopping-cart/shoppingCartTemplate.js";
 import shoppingCartEmptyListTemplate from "../../../templates/shopping-cart/shoppingCartEmptyListTemplate.js";
 import shoppingCartProductTemplate from "../../../templates/shopping-cart/shoppingCartProductTemplate.js";
 
@@ -12,6 +12,7 @@ class ShoppingCartProductsView {
   #DBProductsModel = null;
 
   #shoppingCartProductsBody = null;
+  #shoppingCartProductsLoader = null;
 
   #productsShoppingCartStorage = [];
 
@@ -55,7 +56,10 @@ class ShoppingCartProductsView {
     this.#shoppingCartProductsBody = document.querySelector(
       ".shopping-cart-products__body"
     );
-    console.log(this.#shoppingCartProductsBody);
+
+    this.#shoppingCartProductsLoader = document.querySelector(
+      ".shopping-cart-products__loader"
+    );
   }
 
   #bindListener() {
@@ -88,6 +92,8 @@ class ShoppingCartProductsView {
   }
 
   #onCheckProductsInShoppingCartStorage() {
+    this.#onShoppingCartProductLoader();
+
     this.#DBBasketModel
       .getAllProductsFromBasketStorage()
       .then((products) => {
@@ -99,9 +105,21 @@ class ShoppingCartProductsView {
   }
 
   #onTriggerList(products) {
-    this.#productsShoppingCartStorage = products;
-    const numberOfProducts = products.length;
-    numberOfProducts === 0 ? this.#onRenderEmptyList() : this.#onRenderList();
+    setTimeout(() => {
+      this.#productsShoppingCartStorage = products;
+      this.#offShoppingCartProductLoader();
+
+      const numberOfProducts = products.length;
+      numberOfProducts === 0
+        ? this.#onRenderEmptyList()
+        : this.#onRenderShoppingCartTemplate();
+    }, 1000);
+  }
+
+  #onRenderShoppingCartTemplate() {
+    const fullView = shoppingCartEmptyListTemplate.content.cloneNode(true);
+    this.#shoppingCartProductsBody.innerHTML = "";
+    this.#shoppingCartProductsBody.appendChild(fullView);
   }
 
   #onRenderList() {
@@ -113,6 +131,14 @@ class ShoppingCartProductsView {
 
     this.#shoppingCartProductsBody.innerHTML = "";
     this.#shoppingCartProductsBody.appendChild(fullView);
+  }
+
+  #onShoppingCartProductLoader() {
+    this.#shoppingCartProductsLoader.style.display = "block";
+  }
+
+  #offShoppingCartProductLoader() {
+    this.#shoppingCartProductsLoader.style.display = "none";
   }
 }
 
