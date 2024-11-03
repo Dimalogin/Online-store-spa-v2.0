@@ -6,7 +6,7 @@ shoppingCartProductTemplate.innerHTML = `
 <div class="shopping-cart-products__top">
   <img
     class="shopping-cart-products__icon"
-    src="./assets/images/products/for-woman/dresses/woman-dress-1.png"
+    src=""
     alt="icon"
   />
   <div class="shopping-cart-products__info">
