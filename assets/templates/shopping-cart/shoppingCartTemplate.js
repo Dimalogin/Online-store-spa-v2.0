@@ -3,10 +3,10 @@ const shoppingCartTemplate = document.createElement("template");
 shoppingCartTemplate.innerHTML = `
 <div class="shopping-cart-products__content">
                 <div class="shopping-cart-products__shopping-list">
-                  <ul class="shopping-cart-products__list"></ul>
-                  <div
-                    class="shopping-cart-products-shopping-list__loader"
-                  ></div>
+                  <ul class="shopping-cart-products__list">
+                   <img src = '../../assets/images/products/for-woman/dresses/woman-dress-9.png'>
+                  </ul>
+                  <div class = 'shopping-cart-products-list__loader'></div>
                 </div>
                 <div class="shopping-cart-products__total">
                   <div class="shopping-cart-products-total__subtotal">
