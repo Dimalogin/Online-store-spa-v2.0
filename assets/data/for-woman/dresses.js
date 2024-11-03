@@ -7,7 +7,7 @@ const womanDressesProducts = [
       catalogImage:
         "../../assets/images/products/for-woman/dresses/woman-dress-1.png",
       shoppingCartImage:
-        "../../assets/images/products/for-woman/dresses/woman-dress-1.png",
+        "./assets/images/products/for-woman/dresses/woman-dress-1.png",
     },
     title: "Double Breasted Tailored Dress In Black",
     price: "$260",
@@ -57,7 +57,7 @@ const womanDressesProducts = [
       catalogImage:
         "../../assets/images/products/for-woman/dresses/woman-dress-2.png",
       shoppingCartImage:
-        "../../assets/images/products/for-woman/dresses/woman-dress-2.png",
+        "./assets/images/products/for-woman/dresses/woman-dress-2.png",
     },
     title: "Drape Sleeve Midi Dress In White Digital Feather Print",
     price: "$450",
@@ -107,7 +107,7 @@ const womanDressesProducts = [
       catalogImage:
         "../../assets/images/products/for-woman/dresses/woman-dress-3.png",
       shoppingCartImage:
-        "../../assets/images/products/for-woman/dresses/woman-dress-3.png",
+        "./assets/images/products/for-woman/dresses/woman-dress-3.png",
     },
     title: "Flared Midi Skirt In Black",
     price: "$455",
@@ -157,7 +157,7 @@ const womanDressesProducts = [
       catalogImage:
         "../../assets/images/products/for-woman/dresses/woman-dress-4.png",
       shoppingCartImage:
-        "../../assets/images/products/for-woman/dresses/woman-dress-4.png",
+        "./assets/images/products/for-woman/dresses/woman-dress-4.png",
     },
     title: "Floor-Length Dress in Ginger",
     price: "$315",
@@ -207,7 +207,7 @@ const womanDressesProducts = [
       catalogImage:
         "../../assets/images/products/for-woman/dresses/woman-dress-5.png",
       shoppingCartImage:
-        "../../assets/images/products/for-woman/dresses/woman-dress-5.png",
+        "./assets/images/products/for-woman/dresses/woman-dress-5.png",
     },
     title: "Low Back Cami Floor-Length Dress In Poppy Red",
     price: "$350",
@@ -257,7 +257,7 @@ const womanDressesProducts = [
       catalogImage:
         "../../assets/images/products/for-woman/dresses/woman-dress-6.png",
       shoppingCartImage:
-        "../../assets/images/products/for-woman/dresses/woman-dress-6.png",
+        "./assets/images/products/for-woman/dresses/woman-dress-6.png",
     },
     title: "Futurist Dress",
     price: "$250",
@@ -307,7 +307,7 @@ const womanDressesProducts = [
       catalogImage:
         "../../assets/images/products/for-woman/dresses/woman-dress-7.png",
       shoppingCartImage:
-        "../../assets/images/products/for-woman/dresses/woman-dress-7.png",
+        "./assets/images/products/for-woman/dresses/woman-dress-7.png",
     },
     title: "Dazzle Bustier",
     price: "$155",
@@ -357,7 +357,7 @@ const womanDressesProducts = [
       catalogImage:
         "../../assets/images/products/for-woman/dresses/woman-dress-8.png",
       shoppingCartImage:
-        "../../assets/images/products/for-woman/dresses/woman-dress-8.png",
+        "./assets/images/products/for-woman/dresses/woman-dress-8.png",
     },
     title: "Floor-Length Knitted Skirt",
     price: "$455",
@@ -407,7 +407,7 @@ const womanDressesProducts = [
       catalogImage:
         "../../assets/images/products/for-woman/dresses/woman-dress-9.png",
       shoppingCartImage:
-        "../../assets/images/products/for-woman/dresses/woman-dress-9.png",
+        "./assets/images/products/for-woman/dresses/woman-dress-9.png",
     },
     title: "Strap Detail Knitted Gown In Black",
     price: "$455",
@@ -455,9 +455,9 @@ const womanDressesProducts = [
     inBasket: false,
     images: {
       catalogImage:
-        "../../assets/images/products/for-woman/dresses/woman-dress-1.png",
+        "../../assets/images/products/for-woman/dresses/woman-dress-10.png",
       shoppingCartImage:
-        "../../assets/images/products/for-woman/dresses/woman-dress-1.png",
+        "./assets/images/products/for-woman/dresses/woman-dress-10.png",
     },
     title: "Polo Neck Knitted Top In White",
     price: "$455",
@@ -505,9 +505,9 @@ const womanDressesProducts = [
     inBasket: false,
     images: {
       catalogImage:
-        "../../assets/images/products/for-woman/dresses/woman-dress-1.png",
+        "../../assets/images/products/for-woman/dresses/woman-dress-11.png",
       shoppingCartImage:
-        "../../assets/images/products/for-woman/dresses/woman-dress-1.png",
+        "./assets/images/products/for-woman/dresses/woman-dress-11.png",
     },
     title: "Dazzle Bustier",
     price: "$455",
@@ -555,9 +555,9 @@ const womanDressesProducts = [
     inBasket: false,
     images: {
       catalogImage:
-        "../../assets/images/products/for-woman/dresses/woman-dress-1.png",
+        "../../assets/images/products/for-woman/dresses/woman-dress-12.png",
       shoppingCartImage:
-        "../../assets/images/products/for-woman/dresses/woman-dress-1.png",
+        "./assets/images/products/for-woman/dresses/woman-dress-12.png",
     },
     title: "Graceful Arrival Black Floral Burnout Backless Maxi Dress",
     price: "$73",
@@ -605,9 +605,9 @@ const womanDressesProducts = [
     inBasket: false,
     images: {
       catalogImage:
-        "../../assets/images/products/for-woman/dresses/woman-dress-1.png",
+        "../../assets/images/products/for-woman/dresses/woman-dress-13.png",
       shoppingCartImage:
-        "../../assets/images/products/for-woman/dresses/woman-dress-1.png",
+        "./assets/images/products/for-woman/dresses/woman-dress-13.png",
     },
     title: "Love In Your Eyes Black Knotted Mermaid Maxi Dress",
     price: "$66",
@@ -655,9 +655,9 @@ const womanDressesProducts = [
     inBasket: false,
     images: {
       catalogImage:
-        "../../assets/images/products/for-woman/dresses/woman-dress-1.png",
+        "../../assets/images/products/for-woman/dresses/woman-dress-14.png",
       shoppingCartImage:
-        "../../assets/images/products/for-woman/dresses/woman-dress-1.png",
+        "./assets/images/products/for-woman/dresses/woman-dress-14.png",
     },
     title: "How Much I Care Emerald Green Velvet Off-the-Shoulder Midi Dress",
     price: "$44.25",
@@ -705,9 +705,9 @@ const womanDressesProducts = [
     inBasket: false,
     images: {
       catalogImage:
-        "../../assets/images/products/for-woman/dresses/woman-dress-1.png",
+        "../../assets/images/products/for-woman/dresses/woman-dress-15.png",
       shoppingCartImage:
-        "../../assets/images/products/for-woman/dresses/woman-dress-1.png",
+        "./assets/images/products/for-woman/dresses/woman-dress-15.png",
     },
     title: "Fit and Fair Mauve Purple Ribbed Knit Long Sleeve Skater Dress",
     price: "$11.25",
@@ -755,9 +755,9 @@ const womanDressesProducts = [
     inBasket: false,
     images: {
       catalogImage:
-        "../../assets/images/products/for-woman/dresses/woman-dress-1.png",
+        "../../assets/images/products/for-woman/dresses/woman-dress-16.png",
       shoppingCartImage:
-        "../../assets/images/products/for-woman/dresses/woman-dress-1.png",
+        "./assets/images/products/for-woman/dresses/woman-dress-16.png",
     },
     title: "Loving You Fondly Olive Green Ribbed Knit Sweater Dress",
     price: "$59.25",
@@ -805,9 +805,9 @@ const womanDressesProducts = [
     inBasket: false,
     images: {
       catalogImage:
-        "../../assets/images/products/for-woman/dresses/woman-dress-1.png",
+        "../../assets/images/products/for-woman/dresses/woman-dress-17.png",
       shoppingCartImage:
-        "../../assets/images/products/for-woman/dresses/woman-dress-1.png",
+        "./assets/images/products/for-woman/dresses/woman-dress-17.png",
     },
     title: "Splendidly Yours Black Floral Organza Mesh Strapless Midi Dress",
     price: "$66",
@@ -855,9 +855,9 @@ const womanDressesProducts = [
     inBasket: false,
     images: {
       catalogImage:
-        "../../assets/images/products/for-woman/dresses/woman-dress-1.png",
+        "../../assets/images/products/for-woman/dresses/woman-dress-18.png",
       shoppingCartImage:
-        "../../assets/images/products/for-woman/dresses/woman-dress-1.png",
+        "./assets/images/products/for-woman/dresses/woman-dress-18.png",
     },
     title: "Candlelit Date Forest Green Velvet One-Shoulder Bodycon Dress",
     price: "$18.75",
@@ -905,9 +905,9 @@ const womanDressesProducts = [
     inBasket: false,
     images: {
       catalogImage:
-        "../../assets/images/products/for-woman/dresses/woman-dress-1.png",
+        "../../assets/images/products/for-woman/dresses/woman-dress-19.png",
       shoppingCartImage:
-        "../../assets/images/products/for-woman/dresses/woman-dress-1.png",
+        "./assets/images/products/for-woman/dresses/woman-dress-19.png",
     },
     title: "Approachably Adorable Black Ribbed Bubble Hem Mini Dress",
     price: "$36.75",
@@ -955,9 +955,9 @@ const womanDressesProducts = [
     inBasket: false,
     images: {
       catalogImage:
-        "../../assets/images/products/for-woman/dresses/woman-dress-1.png",
+        "../../assets/images/products/for-woman/dresses/woman-dress-20.png",
       shoppingCartImage:
-        "../../assets/images/products/for-woman/dresses/woman-dress-1.png",
+        "./assets/images/products/for-woman/dresses/woman-dress-20.png",
     },
     title: "Promise of Forever Navy Blue Velvet Column Maxi Dress",
     price: "$66",

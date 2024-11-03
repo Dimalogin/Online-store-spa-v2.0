@@ -4,7 +4,7 @@ shoppingCartTemplate.innerHTML = `
 <div class="shopping-cart-products__content">
                 <div class="shopping-cart-products__shopping-list">
                   <ul class="shopping-cart-products__list">
-                   <img src = '../../assets/images/products/for-woman/dresses/woman-dress-9.png'>
+                  
                   </ul>
                   <div class = 'shopping-cart-products-list__loader'></div>
                 </div>
