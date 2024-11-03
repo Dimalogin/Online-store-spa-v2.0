@@ -110,6 +110,9 @@ class ShoppingCartProductsView {
       this.#offShoppingCartProductLoader();
 
       const numberOfProducts = products.length;
+
+      console.log(numberOfProducts);
+
       numberOfProducts === 0
         ? this.#onRenderEmptyList()
         : this.#onRenderShoppingCartTemplate();
@@ -117,7 +120,8 @@ class ShoppingCartProductsView {
   }
 
   #onRenderShoppingCartTemplate() {
-    const fullView = shoppingCartEmptyListTemplate.content.cloneNode(true);
+    const fullView = shoppingCartListTemplate.content.cloneNode(true);
+    
     this.#shoppingCartProductsBody.innerHTML = "";
     this.#shoppingCartProductsBody.appendChild(fullView);
   }
