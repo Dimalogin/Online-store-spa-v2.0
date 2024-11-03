@@ -28,4 +28,10 @@ export default class DatabaseBasketModel {
       return addProductsIntoDB(db, this.#storageBasketName, product);
     });
   }
+
+  getAllProductsFromBasketStorage() {
+    return this.#dbBasketPromise.then((db) => {
+      return getAllProductsFromDB(db, this.#storageBasketName);
+    });
+  }
 }
