@@ -143,21 +143,45 @@ class ShoppingCartProductsView {
     const fragment = document.createDocumentFragment();
 
     for (const product of this.#productsShoppingCartStorage) {
-      console.log(product);
-
       const { id, images, title, price, quantityProducts, color, size } =
         product;
 
-      console.log(id);
-      console.log(images);
-      console.log(title);
-      console.log(price);
-      console.log(quantityProducts);
-      console.log(color);
-      console.log(size);
+      const fullView = shoppingCartProductTemplate.content.cloneNode(true);
+      const productView = fullView.querySelector(
+        ".shopping-cart-products__item"
+      );
+      const productImage = fullView.querySelector(
+        ".shopping-cart-products__icon"
+      );
+      const productTitle = fullView.querySelector(
+        ".shopping-cart-products-info__title"
+      );
+      const productPrice = fullView.querySelector(
+        ".shopping-cart-products__price"
+      );
+      const productQuantityValue = fullView.querySelector(
+        ".shopping-cart-products-quantity__value"
+      );
+      const productColor = fullView.querySelector(
+        ".shopping-cart-products-info-color__value"
+      );
+      const productSize = fullView.querySelector(
+        ".shopping-cart-products-info-size__value"
+      );
+
+      productView.dataset.productId = id;
+      productImage.src = images.shoppingCartImage;
+      productTitle.textContent = title;
+      productPrice.textContent = price;
+      productQuantityValue.textContent = quantityProducts;
+      productColor.textContent = color;
+      productSize.textContent = size;
+
+      fragment.appendChild(fullView);
     }
 
-    this.#shoppingCartProductsList;
+    this.#shoppingCartProductsList.innerHTML = "";
+    this.#shoppingCartProductsList.appendChild(fragment);
   }
 
   #getTotalPriceAllProducts() {
