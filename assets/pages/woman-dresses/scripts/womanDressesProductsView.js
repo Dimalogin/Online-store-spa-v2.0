@@ -490,7 +490,7 @@ class WomanDressesProductsView {
 
     const dataObject = {
       id: productData.id,
-      images: productData.images.catalogImage,
+      images: productData.images.shoppingCartImage,
       title: productData.title,
       price: productData.price,
       discount: productData.discount,

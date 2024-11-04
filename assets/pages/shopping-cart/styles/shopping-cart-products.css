@@ -116,6 +116,10 @@
   background-color: #fff;
 }
 
+.shopping-cart-products__item:not(:last-child) {
+  margin: 0px 0px 20px 0px;
+}
+
 .shopping-cart-products__top {
   display: flex;
   flex-direction: row;

@@ -168,9 +168,9 @@ class ShoppingCartProductsView {
       const productSize = fullView.querySelector(
         ".shopping-cart-products-info-size__value"
       );
-
+      console.log(images);
       productView.dataset.productId = id;
-      productImage.src = images.shoppingCartImage;
+      productImage.src = images;
       productTitle.textContent = title;
       productPrice.textContent = price;
       productQuantityValue.textContent = quantityProducts;
