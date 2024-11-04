@@ -7,11 +7,11 @@ shoppingCartProductTemplate.innerHTML = `
   <img
     class="shopping-cart-products__icon"
     src=""
-    alt="icon"
+    alt=""
   />
   <div class="shopping-cart-products__info">
     <div class="shopping-cart-products-info__title">
-      Lorem ipsum, dolor sit amet consectetur
+     
     </div>
     <div class="shopping-cart-products-info__color">
       <span
@@ -20,7 +20,7 @@ shoppingCartProductTemplate.innerHTML = `
       >
       <span
         class="shopping-cart-products-info-color__value"
-        >black</span
+        ></span
       >
     </div>
     <div class="shopping-cart-products-info__size">
@@ -29,7 +29,7 @@ shoppingCartProductTemplate.innerHTML = `
       >
       <span
         class="shopping-cart-products-info-size__value"
-        >L</span
+        ></span
       >
     </div>
   </div>
@@ -45,7 +45,7 @@ shoppingCartProductTemplate.innerHTML = `
       />
     </button>
     <span class="shopping-cart-products-quantity__value"
-      >1</span
+      ></span
     >
     <button class="shopping-cart-products-quantity__plus">
       <img
@@ -54,7 +54,7 @@ shoppingCartProductTemplate.innerHTML = `
       />
     </button>
   </div>
-  <div class="shopping-cart-products__price">$455</div>
+  <div class="shopping-cart-products__price"></div>
 </div>
 <button class="shopping-cart-products__delete-btn">
   <img
