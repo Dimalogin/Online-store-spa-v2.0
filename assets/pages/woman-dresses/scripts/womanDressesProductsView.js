@@ -181,7 +181,7 @@ class WomanDressesProductsView {
   }
 
   #onGetAllProducts() {
-    this.#DBProductsModel.getAllTasks().then((products) => {
+    this.#DBProductsModel.getAllProducts().then((products) => {
       this.#dressesProducts = products;
       this.#onTriggerList();
     });
@@ -272,7 +272,7 @@ class WomanDressesProductsView {
   }
 
   #onGetProduct(productId) {
-    this.#DBProductsModel.getAllTasks().then((products) => {
+    this.#DBProductsModel.getAllProducts().then((products) => {
       const product = products.find((product) => {
         return product.id === productId;
       });

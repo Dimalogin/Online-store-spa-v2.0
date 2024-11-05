@@ -50,7 +50,7 @@ export default class DatabaseProductsModel {
     });
   }
 
-  getAllTasks() {
+  getAllProducts() {
     return this.#dbProductsPromise.then((db) => {
       return getAllProductsFromDB(db, this.#storageDressesProductsName);
     });

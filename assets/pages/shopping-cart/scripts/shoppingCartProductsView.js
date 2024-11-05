@@ -35,7 +35,13 @@ class ShoppingCartProductsView {
     handleEvent: (event) => {
       if (event.currentTarget === this.#shoppingCartProductsBody) {
         const target = event.target;
-        console.log(target);
+
+        if (target.matches(".shopping-cart-products__delete-btn")) {
+          const productId = Number(
+            target.closest(".shopping-cart-products__item").dataset.productId
+          );
+          this.#onRemoveProductFromShoppingCart(productId);
+        }
       }
     },
   };
@@ -96,8 +102,6 @@ class ShoppingCartProductsView {
   }
 
   #onCheckProductsInShoppingCartStorage() {
-    this.#onShoppingCartProductLoader();
-
     this.#DBBasketModel
       .getAllProductsFromBasketStorage()
       .then((products) => {
@@ -109,6 +113,7 @@ class ShoppingCartProductsView {
   }
 
   #onTriggerList(products) {
+    this.#onShoppingCartProductLoader();
     setTimeout(() => {
       this.#productsShoppingCartStorage = products;
 
@@ -168,7 +173,7 @@ class ShoppingCartProductsView {
       const productSize = fullView.querySelector(
         ".shopping-cart-products-info-size__value"
       );
-      console.log(images);
+
       productView.dataset.productId = id;
       productImage.src = images;
       productTitle.textContent = title;
@@ -200,6 +205,49 @@ class ShoppingCartProductsView {
   }
 
   #onTriggerTotalPrice() {}
+
+  #onRemoveProductFromShoppingCart(productId) {
+    console.log(this.#productsShoppingCartStorage);
+    this.#DBBasketModel
+      .removeProductFromShoppingCart(productId)
+      .then((result) => {
+        this.#productsShoppingCartStorage =
+          this.#productsShoppingCartStorage.filter((product) => {
+            return product.id !== productId;
+          });
+        this.#onUpdateProductAfterRemoveFromShoppingCart(productId);
+        this.#onRenderList();
+        this.#onTriggerList(this.#productsShoppingCartStorage);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  #onUpdateProductAfterRemoveFromShoppingCart(productId) {
+    this.#DBProductsModel
+      .getAllProducts()
+      .then((products) => {
+        const object = products.find((product) => {
+          return product.id === productId;
+        });
+        const uptadeObject = { ...object, inBasket: !object.inBasket };
+        this.#DBProductsModel
+          .updateProductIntoStorage(uptadeObject)
+          .then((result) => {
+            console.log(result);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    //const uptadeObject = { ...object, inBasket: !object.inBasket };
+    // console.log(uptadeObject);
+  }
 
   #onShoppingCartProductLoader() {
     this.#shoppingCartProductsLoader.style.display = "block";
