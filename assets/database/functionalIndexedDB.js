@@ -89,3 +89,24 @@ export function updateProductIntoDB(db, storeName, data, key) {
     });
   });
 }
+
+export function removeProductFromDB(db, storeName, key) {
+  console.log(db);
+  console.log(storeName);
+  console.log(key);
+
+  return new Promise((resolve, reject) => {
+    const transaction = db.transaction(storeName, "readwrite");
+    const objectStore = transaction.objectStore(storeName);
+
+    const deleteRequest = objectStore.delete(key);
+
+    deleteRequest.addEventListener("error", function () {
+      reject(updateRequest.error);
+    });
+
+    deleteRequest.addEventListener("success", function () {
+      resolve(true);
+    });
+  });
+}

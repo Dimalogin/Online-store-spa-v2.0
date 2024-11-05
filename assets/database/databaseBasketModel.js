@@ -3,6 +3,7 @@ import {
   getAllProductsFromDB,
   addProductsIntoDB,
   readProductFromDB,
+  removeProductFromDB,
 } from "./functionalIndexedDB.js";
 
 export default class DatabaseBasketModel {
@@ -32,6 +33,12 @@ export default class DatabaseBasketModel {
   getAllProductsFromBasketStorage() {
     return this.#dbBasketPromise.then((db) => {
       return getAllProductsFromDB(db, this.#storageBasketName);
+    });
+  }
+
+  removeProductFromShoppingCart(productId) {
+    return this.#dbBasketPromise.then((db) => {
+      return removeProductFromDB(db, this.#storageBasketName, productId);
     });
   }
 }
