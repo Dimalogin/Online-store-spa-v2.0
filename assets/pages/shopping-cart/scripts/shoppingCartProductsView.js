@@ -249,6 +249,9 @@ class ShoppingCartProductsView {
     // console.log(uptadeObject);
   }
 
+  #increaseNumberProducts() {}
+  #decreaseNumberProducts() {}
+
   #onShoppingCartProductLoader() {
     this.#shoppingCartProductsLoader.style.display = "block";
   }
