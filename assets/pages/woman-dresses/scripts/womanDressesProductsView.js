@@ -90,7 +90,7 @@ class WomanDressesProductsView {
             ".woman-dresses-products-modal-window__body"
           );
 
-          this.#getProductData(element);
+          this.#checkProductModalWindowData(element);
         }
 
         if (
@@ -456,6 +456,34 @@ class WomanDressesProductsView {
   }
 
   /*Basket*/
+
+  #checkProductModalWindowData(element) {
+    const colorElement = element.querySelector(
+      ".woman-dresses-products-modal-window-price-color__select"
+    );
+    const colorElementValue = colorElement.value;
+
+    const sizeElement = element.querySelector(
+      ".woman-dresses-products-modal-window-price-size__select"
+    );
+
+    const sizeElementValue = sizeElement.value;
+
+    colorElementValue === "Choose an option"
+      ? (colorElement.style.border = "1px solid red")
+      : (colorElement.style.border = "1px solid #b5b6b5");
+
+    sizeElementValue === "Choose an option"
+      ? (sizeElement.style.border = "1px solid red")
+      : (sizeElement.style.border = "1px solid #b5b6b5");
+
+    if (
+      colorElementValue !== "Choose an option" &&
+      sizeElementValue !== "Choose an option"
+    ) {
+      this.#getProductData(element);
+    }
+  }
 
   #getProductData(element) {
     this.#womanDressesProductsModalWindowAddToCartBtn = null;
