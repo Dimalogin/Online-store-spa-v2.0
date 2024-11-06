@@ -244,10 +244,10 @@ class ShoppingCartProductsView {
       .catch((error) => {
         console.log(error);
       });
-
-    //const uptadeObject = { ...object, inBasket: !object.inBasket };
-    // console.log(uptadeObject);
   }
+
+  #increaseNumberProducts() {}
+  #decreaseNumberProducts() {}
 
   #onShoppingCartProductLoader() {
     this.#shoppingCartProductsLoader.style.display = "block";
