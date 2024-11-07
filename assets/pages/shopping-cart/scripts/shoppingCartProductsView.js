@@ -42,6 +42,20 @@ class ShoppingCartProductsView {
           );
           this.#onRemoveProductFromShoppingCart(productId);
         }
+
+        if (target.matches(".shopping-cart-products-quantity__minus")) {
+          const shoppingCartProductsItem = target.closest(
+            ".shopping-cart-products__item"
+          );
+          this.#decreaseNumberProducts(shoppingCartProductsItem);
+        }
+
+        if (target.matches(".shopping-cart-products-quantity__plus")) {
+          const shoppingCartProductsItem = target.closest(
+            ".shopping-cart-products__item"
+          );
+          this.#increaseNumberProducts(shoppingCartProductsItem);
+        }
       }
     },
   };
@@ -192,7 +206,8 @@ class ShoppingCartProductsView {
   #getTotalPriceAllProducts() {
     return this.#productsShoppingCartStorage.reduce((summa, product) => {
       let price = parseInt(product.price.match(/\d+/));
-      summa += price;
+      const quantity = product.quantityProducts;
+      summa += price * quantity;
       return summa;
     }, 0);
   }
@@ -204,10 +219,7 @@ class ShoppingCartProductsView {
     this.#shoppingCartProductsBody.appendChild(fullView);
   }
 
-  #onTriggerTotalPrice() {}
-
   #onRemoveProductFromShoppingCart(productId) {
-    console.log(this.#productsShoppingCartStorage);
     this.#DBBasketModel
       .removeProductFromShoppingCart(productId)
       .then((result) => {
@@ -234,8 +246,77 @@ class ShoppingCartProductsView {
         const uptadeObject = { ...object, inBasket: !object.inBasket };
         this.#DBProductsModel
           .updateProductIntoStorage(uptadeObject)
+          .then((result) => {})
+          .catch((error) => {
+            console.log(error);
+          });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  #increaseNumberProducts(product) {
+    const productId = Number(product.dataset.productId);
+    const productQuantity = product.querySelector(
+      ".shopping-cart-products__quantity"
+    );
+    const productQuantityPlusBtn = product.querySelector(
+      ".shopping-cart-products-quantity__plus"
+    );
+
+    const productQuantityValue = Number(
+      product.querySelector(".shopping-cart-products-quantity__value")
+        .textContent
+    );
+
+    if (productQuantityValue < 10) {
+      productQuantity.style.opacity = 0.4;
+      productQuantityPlusBtn.disabled = true;
+
+      this.#onUpdateProductAfterIncrease(productId);
+    }
+  }
+
+  #decreaseNumberProducts(product) {
+    const productId = Number(product.dataset.productId);
+    const productQuantity = product.querySelector(
+      ".shopping-cart-products__quantity"
+    );
+    const productQuantityMinusBtn = product.querySelector(
+      ".shopping-cart-products-quantity__minus"
+    );
+    const productQuantityValue = Number(
+      product.querySelector(".shopping-cart-products-quantity__value")
+        .textContent
+    );
+
+    if (productQuantityValue > 1) {
+      productQuantity.style.opacity = 0.4;
+      productQuantityMinusBtn.disabled = true;
+
+      this.#onUpdateProductAfterDecrease(productId);
+    }
+  }
+
+  #onUpdateProductAfterIncrease(productId) {
+    this.#DBBasketModel
+      .getProductFromShoppingCartStorage(productId)
+      .then((product) => {
+        const updateProduct = {
+          ...product,
+          quantityProducts: ++product.quantityProducts,
+        };
+
+        this.#DBBasketModel
+          .updateProductIntoShoppingCartStorage(updateProduct)
           .then((result) => {
-            console.log(result);
+            this.#productsShoppingCartStorage =
+              this.#productsShoppingCartStorage.map((product) => {
+                return product.id === productId ? updateProduct : product;
+              });
+
+            this.#onTriggerList(this.#productsShoppingCartStorage);
           })
           .catch((error) => {
             console.log(error);
@@ -246,8 +327,33 @@ class ShoppingCartProductsView {
       });
   }
 
-  #increaseNumberProducts() {}
-  #decreaseNumberProducts() {}
+  #onUpdateProductAfterDecrease(productId) {
+    this.#DBBasketModel
+      .getProductFromShoppingCartStorage(productId)
+      .then((product) => {
+        const updateProduct = {
+          ...product,
+          quantityProducts: --product.quantityProducts,
+        };
+
+        this.#DBBasketModel
+          .updateProductIntoShoppingCartStorage(updateProduct)
+          .then((result) => {
+            this.#productsShoppingCartStorage =
+              this.#productsShoppingCartStorage.map((product) => {
+                return product.id === productId ? updateProduct : product;
+              });
+
+            this.#onTriggerList(this.#productsShoppingCartStorage);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 
   #onShoppingCartProductLoader() {
     this.#shoppingCartProductsLoader.style.display = "block";

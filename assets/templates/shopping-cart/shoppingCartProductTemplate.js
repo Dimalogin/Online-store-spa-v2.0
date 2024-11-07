@@ -35,6 +35,7 @@ shoppingCartProductTemplate.innerHTML = `
   </div>
 </div>
 <div class="shopping-cart-products__bottom">
+
   <div class="shopping-cart-products__quantity">
     <button
       class="shopping-cart-products-quantity__minus"
@@ -54,6 +55,7 @@ shoppingCartProductTemplate.innerHTML = `
       />
     </button>
   </div>
+  
   <div class="shopping-cart-products__price"></div>
 </div>
 <button class="shopping-cart-products__delete-btn">
