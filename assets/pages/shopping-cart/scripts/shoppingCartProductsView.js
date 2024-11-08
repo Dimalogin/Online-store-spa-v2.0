@@ -11,6 +11,8 @@ class ShoppingCartProductsView {
   #DBBasketModel = null;
   #DBProductsModel = null;
 
+  headerSideLinkCount = null;
+
   #shoppingCartProductsBody = null;
   #shoppingCartProductsLoader = null;
   #shoppingCartProductsList = null;
@@ -29,6 +31,7 @@ class ShoppingCartProductsView {
 
     this.#onCheckDataInStorage();
     this.#onCheckProductsInShoppingCartStorage();
+    this.#getCurrentQuantityProductsFromShoppingCart();
   }
 
   #eventListeners = {
@@ -77,6 +80,10 @@ class ShoppingCartProductsView {
   }
 
   #initTemplate() {
+    this.headerSideLinkCount = document.querySelector(
+      ".header-side-link__count"
+    );
+
     this.#shoppingCartProductsBody = document.querySelector(
       ".shopping-cart-products__body"
     );
@@ -228,6 +235,7 @@ class ShoppingCartProductsView {
             return product.id !== productId;
           });
         this.#onUpdateProductAfterRemoveFromShoppingCart(productId);
+        this.#getCurrentQuantityProductsFromShoppingCart();
         this.#onRenderList();
         this.#onTriggerList(this.#productsShoppingCartStorage);
       })
@@ -353,6 +361,23 @@ class ShoppingCartProductsView {
       .catch((error) => {
         console.log(error);
       });
+  }
+
+  // Header Shopping Cart
+
+  #getCurrentQuantityProductsFromShoppingCart() {
+    this.#DBBasketModel
+      .getAllProductsFromBasketStorage()
+      .then((result) => {
+        this.#renderCurrentNumberProductsCart(result);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  #renderCurrentNumberProductsCart(result) {
+    this.headerSideLinkCount.textContent = result.length;
   }
 
   #onShoppingCartProductLoader() {
