@@ -11,6 +11,8 @@ class WomanDressesProductsView {
   #DBBasketModel = null;
   #DBProductsModel = null;
 
+  headerSideLinkCount = null;
+
   #womanDressesProductsList = null;
   #womanDressesProductsResultCount = null;
   #womanDressesProductsLoadMoreBtn = null;
@@ -35,11 +37,7 @@ class WomanDressesProductsView {
 
     this.#onCheckDataInStorage();
 
-    //this.#onGetAllProducts();
-
-    // this.#checkingStorage();
-
-    //this.#onAddProductsToStorage();
+    this.#getCurrentQuantityProductsFromShoppingCart();
   }
 
   #eventListeners = {
@@ -121,6 +119,10 @@ class WomanDressesProductsView {
   }
 
   #initTemplate() {
+    this.headerSideLinkCount = document.querySelector(
+      ".header-side-link__count"
+    );
+
     this.#womanDressesProductsResultCount = document.querySelector(
       ".woman-dresses-products-top-result__count"
     );
@@ -543,6 +545,7 @@ class WomanDressesProductsView {
         this.#showAddToCartBtn();
         this.#offAddToCartLoader();
         this.#disableAddToCartBtn();
+        this.#getCurrentQuantityProductsFromShoppingCart();
       })
       .catch((error) => {
         console.log(error);
@@ -557,6 +560,23 @@ class WomanDressesProductsView {
       .catch((error) => {
         console.log(error);
       });
+  }
+
+  // Header Shopping Cart
+
+  #getCurrentQuantityProductsFromShoppingCart() {
+    this.#DBBasketModel
+      .getAllProductsFromBasketStorage()
+      .then((result) => {
+        this.#renderCurrentNumberProductsCart(result);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  #renderCurrentNumberProductsCart(result) {
+    this.headerSideLinkCount.textContent = result.length;
   }
 
   #disableAddToCartBtn() {
