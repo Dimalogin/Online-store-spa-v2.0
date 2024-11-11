@@ -30,7 +30,9 @@ shoppingCartTemplate.innerHTML = `
                   >
                     Proceed to Checkout
                   </button>
+                  <div class = 'shopping-cart-products-total-proceed-to-checkout__loader'></div>
                 </div>
+                <div class='shopping-cart-products__proceed-to-checkout-modal-window'></div>
               </div>
 `;
 

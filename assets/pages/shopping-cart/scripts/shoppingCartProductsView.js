@@ -38,6 +38,7 @@ class ShoppingCartProductsView {
     handleEvent: (event) => {
       if (event.currentTarget === this.#shoppingCartProductsBody) {
         const target = event.target;
+        console.log(target);
 
         if (target.matches(".shopping-cart-products__delete-btn")) {
           const productId = Number(
