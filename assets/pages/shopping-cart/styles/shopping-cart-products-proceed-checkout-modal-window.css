@@ -1,5 +1,5 @@
 .shopping-cart-products__proceed-to-checkout-modal-window {
-  display: block;
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
