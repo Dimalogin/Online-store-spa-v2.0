@@ -1,0 +1,494 @@
+.shopping-cart-products__proceed-to-checkout-modal-window {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.shopping-cart-products-proceed-to-checkout-modal-window__body {
+  background-color: #fefefe;
+  margin: 50px auto 0px auto;
+  padding: 30px;
+  max-width: 1400px;
+  position: relative;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.shopping-cart-products-proceed-to-checkout-modal-window__close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  max-width: 25px;
+  min-height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.shopping-cart-products-proceed-to-checkout-modal-window-close-btn__icon {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/*Billing Details*/
+
+.shopping-cart-products-proceed-to-checkout-modal-window__billing-details {
+  border: 1px solid black;
+  flex: 1 1 auto;
+  margin: 0px 20px 0px 0px;
+}
+
+.proceed-to-checkout-modal-window-billing-details__title {
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.6px;
+  margin: 0px 0px 30px 0px;
+}
+
+/*Form*/
+
+.proceed-to-checkout-modal-window-billing-details__form {
+}
+
+/*Contact*/
+
+.proceed-to-checkout-modal-window-billing-details-form__contact {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 0px 20px 0px;
+}
+
+.proceed-to-checkout-modal-window-billing-details-form-contact__label {
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  font-family: "montserrat_alternatesbold";
+  margin: 0px 0px 5px 0px;
+  text-transform: uppercase;
+}
+
+.proceed-to-checkout-modal-window-billing-details-form-contact__input {
+  border: 1px solid #e5e5e5;
+  min-height: 45px;
+  font-size: 14px;
+  padding: 0px 20px;
+  border-radius: 5px;
+  background: transparent;
+}
+
+.proceed-to-checkout-modal-window-billing-details-form-contact__input:hover,
+.proceed-to-checkout-modal-window-billing-details-form-contact__input:focus {
+  border: 1px solid #000;
+  transition: border 0.3s ease-in;
+}
+
+/*User Data*/
+
+.proceed-to-checkout-modal-window-billing-details-form__user-data {
+  display: flex;
+  flex-direction: row;
+  margin: 0px 0px 20px 0px;
+}
+
+.proceed-to-checkout-modal-window-billing-details-form-user-data__name {
+  flex: 0 1 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 0px 20px 0px 0px;
+}
+
+.proceed-to-checkout-modal-window-billing-details-form-user-data-name__label {
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  font-family: "montserrat_alternatesbold";
+  margin: 0px 0px 5px 0px;
+  text-transform: uppercase;
+}
+
+.proceed-to-checkout-modal-window-billing-details-form-user-data-name__input {
+  border: 1px solid #e5e5e5;
+  min-height: 45px;
+  font-size: 14px;
+  padding: 0px 20px;
+  border-radius: 5px;
+  background: transparent;
+}
+
+.proceed-to-checkout-modal-window-billing-details-form-user-data-name__input:focus,
+.proceed-to-checkout-modal-window-billing-details-form-user-data-name__input:hover {
+  border: 1px solid #000;
+  transition: border 0.3s ease-in;
+}
+
+.proceed-to-checkout-modal-window-billing-details-form-user-data__lastname {
+  flex: 0 1 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.proceed-to-checkout-modal-window-billing-details-form-user-data-lastname__label {
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  font-family: "montserrat_alternatesbold";
+  margin: 0px 0px 5px 0px;
+  text-transform: uppercase;
+}
+
+.proceed-to-checkout-modal-window-billing-details-form-user-data-lastname__input {
+  border: 1px solid #e5e5e5;
+  min-height: 45px;
+  font-size: 14px;
+  padding: 0px 20px;
+  border-radius: 5px;
+  background: transparent;
+}
+
+.proceed-to-checkout-modal-window-billing-details-form-user-data-lastname__input:hover,
+.proceed-to-checkout-modal-window-billing-details-form-user-data-lastname__input:focus {
+  border: 1px solid #000;
+  transition: border 0.3s ease-in;
+}
+
+/*Delivery*/
+
+.proceed-to-checkout-modal-window-billing-details-form__delivery {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 0px 20px 0px;
+}
+
+.proceed-to-checkout-modal-window-billing-details-form-delivery__title {
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  font-family: "montserrat_alternatesbold";
+  margin: 0px 0px 5px 0px;
+  text-transform: uppercase;
+}
+
+.proceed-to-checkout-modal-window-billing-details-form-delivery__country {
+  border: 1px solid #e5e5e5;
+  min-height: 45px;
+  margin: 0px 0px 20px 0px;
+  background: transparent;
+  font-size: 14px;
+  padding: 0px 20px;
+  border-radius: 5px;
+  font-family: "montserrat_alternatesregular";
+  cursor: pointer;
+}
+
+.proceed-to-checkout-modal-window-billing-details-form-delivery__country:hover,
+.proceed-to-checkout-modal-window-billing-details-form-delivery__country:focus {
+  border: 1px solid #000;
+  transition: border 0.3s ease-in;
+}
+
+.proceed-to-checkout-modal-window-billing-details-form-delivery__address {
+  border: 1px solid #e5e5e5;
+  min-height: 45px;
+  margin: 0px 0px 20px 0px;
+  background: transparent;
+  font-size: 14px;
+  padding: 0px 20px;
+  border-radius: 5px;
+  font-family: "montserrat_alternatesregular";
+}
+
+.proceed-to-checkout-modal-window-billing-details-form-delivery__address:focus,
+.proceed-to-checkout-modal-window-billing-details-form-delivery__address:hover {
+  border: 1px solid #000;
+  transition: border 0.3s ease-in;
+}
+
+.proceed-to-checkout-modal-window-billing-details-form-delivery__apartment {
+  border: 1px solid #e5e5e5;
+  min-height: 45px;
+  margin: 0px 0px 20px 0px;
+  background: transparent;
+  font-size: 14px;
+  padding: 0px 20px;
+  border-radius: 5px;
+  font-family: "montserrat_alternatesregular";
+}
+
+.proceed-to-checkout-modal-window-billing-details-form-delivery__apartment:hover,
+.proceed-to-checkout-modal-window-billing-details-form-delivery__apartment:focus {
+  border: 1px solid #000;
+  transition: border 0.3s ease-in;
+}
+
+.proceed-to-checkout-modal-window-billing-details-form-delivery__bottom {
+  display: flex;
+  flex-direction: row;
+}
+
+.proceed-to-checkout-modal-window-billing-details-form-delivery__city {
+  flex: 0 1 50%;
+  border: 1px solid #e5e5e5;
+  min-height: 45px;
+  margin: 0px 20px 0px 0px;
+  background: transparent;
+  font-size: 14px;
+  padding: 0px 20px;
+  border-radius: 5px;
+  font-family: "montserrat_alternatesregular";
+}
+
+.proceed-to-checkout-modal-window-billing-details-form-delivery__city:focus,
+.proceed-to-checkout-modal-window-billing-details-form-delivery__city:hover {
+  border: 1px solid #000;
+  transition: border 0.3s ease-in;
+}
+
+.proceed-to-checkout-modal-window-billing-details-form-delivery__zip-code {
+  flex: 0 1 50%;
+  border: 1px solid #e5e5e5;
+  min-height: 45px;
+  margin: 0px 0px 0px 0px;
+  background: transparent;
+  font-size: 14px;
+  padding: 0px 20px;
+  border-radius: 5px;
+  font-family: "montserrat_alternatesregular";
+}
+
+.proceed-to-checkout-modal-window-billing-details-form-delivery__zip-code:hover,
+.proceed-to-checkout-modal-window-billing-details-form-delivery__zip-code:focus {
+  border: 1px solid #000;
+  transition: border 0.3s ease-in;
+}
+
+/*Shipping Method*/
+
+.proceed-to-checkout-modal-window-billing-details-form__shipping-method {
+  margin: 0px 0px 20px 0px;
+}
+
+.proceed-to-checkout-modal-window-billing-details-form-shipping-method__label {
+  display: block;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  font-family: "montserrat_alternatesbold";
+  margin: 0px 0px 5px 0px;
+  text-transform: uppercase;
+}
+
+.proceed-to-checkout-modal-window-billing-details-form-shipping-method__field {
+  min-height: 45px;
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.proceed-to-checkout-modal-window-billing-details-form-shipping-method__field:focus,
+.proceed-to-checkout-modal-window-billing-details-form-shipping-method__field:hover {
+  border: 1px solid #000;
+  transition: border 0.3s ease-in;
+}
+
+.proceed-to-checkout-modal-window-billing-details-form-shipping-method-field__name {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+}
+
+.proceed-to-checkout-modal-window-billing-details-form-shipping-method-field__price {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  font-family: "montserrat_alternatesbold";
+}
+
+/* Payment */
+
+.proceed-to-checkout-modal-window-billing-details-form__payment {
+  display: flex;
+  flex-direction: column;
+}
+
+.proceed-to-checkout-modal-window-billing-details-form-payment__label {
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  font-family: "montserrat_alternatesbold";
+  margin: 0px 0px 5px 0px;
+  text-transform: uppercase;
+}
+
+.proceed-to-checkout-modal-window-billing-details-form-payment__transactions {
+  border: 1px solid #e5e5e5;
+  min-height: 45px;
+  font-family: "montserrat_alternatesregular";
+  background: transparent;
+  font-size: 14px;
+  padding: 0px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.proceed-to-checkout-modal-window-billing-details-form-payment__transactions:focus,
+.proceed-to-checkout-modal-window-billing-details-form-payment__transactions:hover {
+  border: 1px solid #000;
+  transition: border 0.3s ease-in;
+}
+
+/*Order Summury*/
+
+.shopping-cart-products-proceed-to-checkout-modal-window__order-summary {
+  border: 1px solid #e5e5e5;
+  flex: 0 1 500px;
+  padding: 25px;
+}
+
+.shopping-cart-products-proceed-to-checkout-modal-window-order-summary__title {
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.6px;
+  margin: 0px 0px 25px 0px;
+}
+
+.shopping-cart-products-proceed-to-checkout-modal-window-order-summary__product {
+  font-size: 14px;
+  line-height: 20px;
+  font-family: "montserrat_alternatesbold";
+  letter-spacing: 0.6px;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0px 0px 20px 0px;
+  margin: 0px 0px 20px 0px;
+}
+
+.shopping-cart-products-proceed-to-checkout-modal-window-order-summary__list {
+}
+
+.shopping-cart-products-proceed-to-checkout-modal-window-order-summary__subtotal {
+  border-bottom: 1px solid #000;
+  padding: 0px 0px 20px 0px;
+  margin: 0px 0px 20px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shopping-cart-products-proceed-to-checkout-modal-window-order-summary-subtotal__text {
+  font-size: 14px;
+  line-height: 20px;
+  font-family: "montserrat_alternatesbold";
+  letter-spacing: 0.6px;
+}
+
+.shopping-cart-products-proceed-to-checkout-modal-window-order-summary-subtotal__price {
+  font-size: 14px;
+  line-height: 20px;
+  font-family: "montserrat_alternatesbold";
+  letter-spacing: 0.6px;
+}
+
+.shopping-cart-products-proceed-to-checkout-modal-window-order-summary__shipping {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0px 0px 20px 0px;
+  margin: 0px 0px 20px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shopping-cart-products-proceed-to-checkout-modal-window-order-summary-shipping__text {
+  font-size: 14px;
+  line-height: 20px;
+  font-family: "montserrat_alternatesbold";
+  letter-spacing: 0.6px;
+}
+
+.shopping-cart-products-proceed-to-checkout-modal-window-order-summary-shipping__price {
+  font-size: 14px;
+  line-height: 20px;
+  font-family: "montserrat_alternatesbold";
+  letter-spacing: 0.6px;
+}
+
+.shopping-cart-products-proceed-to-checkout-modal-window-order-summary__vat {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0px 0px 20px 0px;
+  margin: 0px 0px 20px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shopping-cart-products-proceed-to-checkout-modal-window-order-summary-vat__text {
+  font-size: 14px;
+  line-height: 20px;
+  font-family: "montserrat_alternatesbold";
+  letter-spacing: 0.6px;
+}
+
+.shopping-cart-products-proceed-to-checkout-modal-window-order-summary-vat__price {
+  font-size: 14px;
+  line-height: 20px;
+  font-family: "montserrat_alternatesbold";
+  letter-spacing: 0.6px;
+}
+
+.shopping-cart-products-proceed-to-checkout-modal-window-order-summary__total {
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 25px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shopping-cart-products-proceed-to-checkout-modal-window-order-summary-total__text {
+  font-size: 14px;
+  line-height: 20px;
+  font-family: "montserrat_alternatesbold";
+  letter-spacing: 0.6px;
+}
+
+.shopping-cart-products-proceed-to-checkout-modal-window-order-summary-total__price {
+  font-size: 14px;
+  line-height: 20px;
+  font-family: "montserrat_alternatesbold";
+  letter-spacing: 0.6px;
+}
+
+.shopping-cart-products-proceed-to-checkout-modal-window-order-summary__place-order-btn {
+  width: 100%;
+  min-height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 22px;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: 1px solid black;
+  color: #000000;
+  background: transparent;
+}
+
+.shopping-cart-products-proceed-to-checkout-modal-window-order-summary__place-order-btn:hover {
+  background: #000000;
+  color: #fff;
+  transition: background 0.5s;
+}
