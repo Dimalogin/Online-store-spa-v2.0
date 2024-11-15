@@ -6,6 +6,8 @@ import DatabaseProductsModel from "../../../database/databaseProductsModel.js";
 import shoppingCartListTemplate from "../../../templates/shopping-cart/shoppingCartTemplate.js";
 import shoppingCartEmptyListTemplate from "../../../templates/shopping-cart/shoppingCartEmptyListTemplate.js";
 import shoppingCartProductTemplate from "../../../templates/shopping-cart/shoppingCartProductTemplate.js";
+import shoppingCartProductProceedCheckoutModalWindowTemplate from "../../../templates/shopping-cart/shoppingCartProductProceedCheckoutModalWindowTemplate.js";
+import shoppingCartProductProceedCheckoutItemTemplate from "../../../templates/shopping-cart/shoppingCartProductProceedCheckoutItemTemplate.js";
 
 class ShoppingCartProductsView {
   #DBBasketModel = null;
@@ -19,9 +21,7 @@ class ShoppingCartProductsView {
 
   #shoppingCartTemplate = null;
   #shoppingCartProductsTotalSubtotalPrice = null;
-
-  #shoppingCartProductsTotalProceedCheckoutBtn = null;
-  #shoppingCartProductsTotalProceedCheckoutLoader = null;
+  #shoppingCartProductsProceedCheckoutModalWindow = null;
 
   #productsShoppingCartStorage = null;
 
@@ -70,7 +70,17 @@ class ShoppingCartProductsView {
         if (
           target.matches(".shopping-cart-products-total__proceed-to-checkout")
         ) {
-          console.log(true);
+          const element = target.closest(".shopping-cart-products__content");
+
+          this.#onGetAllProductsFromBasketStorage(element);
+        }
+
+        if (
+          target.matches(
+            ".shopping-cart-products-proceed-to-checkout-modal-window__close-btn"
+          )
+        ) {
+          this.#closeShoppingCartProductProceedCheckoutModalWindow();
         }
       }
     },
@@ -123,17 +133,6 @@ class ShoppingCartProductsView {
       "click",
       this.#eventListeners
     );
-  }
-
-  #onGetAllProductsFromBasketStorage() {
-    this.#DBBasketModel
-      .getAllProductsFromBasketStorage()
-      .then((products) => {
-        console.log(products);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
   }
 
   #onCheckDataInStorage() {
@@ -192,7 +191,9 @@ class ShoppingCartProductsView {
         ".shopping-cart-products-total-subtotal__price"
       );
 
-    this.#shoppingCartProductsTotalSubtotalPrice.textContent = `$${this.#getTotalPriceAllProducts()}`;
+    this.#shoppingCartProductsTotalSubtotalPrice.textContent = `$${this.#getTotalPriceAllProducts(
+      this.#productsShoppingCartStorage
+    )}`;
 
     this.#shoppingCartProductsList = this.#shoppingCartTemplate.querySelector(
       ".shopping-cart-products__list"
@@ -248,8 +249,8 @@ class ShoppingCartProductsView {
     this.#shoppingCartProductsList.appendChild(fragment);
   }
 
-  #getTotalPriceAllProducts() {
-    return this.#productsShoppingCartStorage.reduce((summa, product) => {
+  #getTotalPriceAllProducts(products) {
+    return products.reduce((summa, product) => {
       let price = parseInt(product.price.match(/\d+/));
       const quantity = product.quantityProducts;
       summa += price * quantity;
@@ -399,6 +400,127 @@ class ShoppingCartProductsView {
       .catch((error) => {
         console.log(error);
       });
+  }
+
+  // Proceed Checkout Modal Window
+
+  #onGetAllProductsFromBasketStorage(element) {
+    this.#offShoppingCartProductsTotalProceedCheckout(element);
+    this.#onShoppingCartProductsTotalProceedCheckoutLoader(element);
+
+    setTimeout(() => {
+      this.#DBBasketModel
+        .getAllProductsFromBasketStorage()
+        .then((products) => {
+          this.#onRenderShoppingCartProductProceedCheckoutModalWindow(
+            element,
+            products
+          );
+          this.#onShoppingCartProductsTotalProceedCheckout(element);
+          this.#offShoppingCartProductsTotalProceedCheckoutLoader(element);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }, 1000);
+  }
+
+  #onRenderShoppingCartProductProceedCheckoutModalWindow(element, products) {
+    this.#shoppingCartProductsProceedCheckoutModalWindow =
+      element.querySelector(
+        ".shopping-cart-products__proceed-to-checkout-modal-window"
+      );
+
+    const fullView =
+      shoppingCartProductProceedCheckoutModalWindowTemplate.content.cloneNode(
+        true
+      );
+
+    const modalWindowList = fullView.querySelector(
+      ".shopping-cart-products-proceed-to-checkout-modal-window-order-summary__list"
+    );
+
+    modalWindowList.appendChild(
+      products.reduce((fragment, product) => {
+        const { id, images, color, price, quantityProducts, size, title } =
+          product;
+
+        console.log(product);
+
+        const fullViewItem =
+          shoppingCartProductProceedCheckoutItemTemplate.content.cloneNode(
+            true
+          );
+
+        const item = fullViewItem.querySelector(
+          ".shopping-cart-products-proceed-to-checkout-modal-window-order-summary__item"
+        );
+        const itemIcon = fullViewItem.querySelector(
+          ".shopping-cart-products-proceed-to-checkout-modal-window-order-summary-item__icon img"
+        );
+        const itemQuantity = fullViewItem.querySelector(
+          ".shopping-cart-products-proceed-to-checkout-modal-window-order-summary-item__quantity"
+        );
+        const itemTitle = fullViewItem.querySelector(
+          ".shopping-cart-products-proceed-to-checkout-modal-window-order-summary-item-content__title"
+        );
+        const itemColorValue = fullViewItem.querySelector(
+          ".shopping-cart-products-proceed-to-checkout-modal-window-order-summary-item-content-color__value"
+        );
+        const itemSizeValue = fullViewItem.querySelector(
+          ".shopping-cart-products-proceed-to-checkout-modal-window-order-summary-item-content-size__value"
+        );
+        const itemPrice = fullViewItem.querySelector(
+          ".shopping-cart-products-proceed-to-checkout-modal-window-order-summary-item__price"
+        );
+
+        item.dataset.productId = id;
+        itemIcon.src = images;
+        itemQuantity.textContent = quantityProducts;
+        itemTitle.textContent = title;
+        itemColorValue.textContent = color;
+        itemSizeValue.textContent = size;
+        itemPrice.textContent = price;
+
+        fragment.appendChild(fullViewItem);
+
+        return fragment;
+      }, document.createDocumentFragment())
+    );
+
+    this.#shoppingCartProductsProceedCheckoutModalWindow.style.display =
+      "block";
+    this.#shoppingCartProductsProceedCheckoutModalWindow.innerHTML = "";
+    this.#shoppingCartProductsProceedCheckoutModalWindow.appendChild(fullView);
+  }
+
+  #closeShoppingCartProductProceedCheckoutModalWindow() {
+    this.#shoppingCartProductsProceedCheckoutModalWindow.style.display = "none";
+    this.#shoppingCartProductsProceedCheckoutModalWindow.innerHTML = "";
+  }
+
+  #onShoppingCartProductsTotalProceedCheckout(element) {
+    element.querySelector(
+      ".shopping-cart-products-total__proceed-to-checkout"
+    ).style.display = "flex";
+  }
+
+  #offShoppingCartProductsTotalProceedCheckout(element) {
+    element.querySelector(
+      ".shopping-cart-products-total__proceed-to-checkout"
+    ).style.display = "none";
+  }
+
+  #onShoppingCartProductsTotalProceedCheckoutLoader(element) {
+    element.querySelector(
+      ".shopping-cart-products-total-proceed-to-checkout__loader"
+    ).style.display = "block";
+  }
+
+  #offShoppingCartProductsTotalProceedCheckoutLoader(element) {
+    element.querySelector(
+      ".shopping-cart-products-total-proceed-to-checkout__loader"
+    ).style.display = "none";
   }
 
   // Header Shopping Cart

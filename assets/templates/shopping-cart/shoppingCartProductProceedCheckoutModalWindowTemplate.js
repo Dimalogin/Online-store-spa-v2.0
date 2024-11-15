@@ -5,7 +5,7 @@ shoppingCartProductProceedCheckoutModalWindowTemplate.innerHTML = `
 <div
               class="shopping-cart-products-proceed-to-checkout-modal-window__body"
             >
-              <div
+              <button
                 class="shopping-cart-products-proceed-to-checkout-modal-window__close-btn"
               >
                 <img
@@ -13,7 +13,7 @@ shoppingCartProductProceedCheckoutModalWindowTemplate.innerHTML = `
                   src="./assets/images/shopping-cart/shopping-cart-products-proceed-checkout-modal-window-cross.svg"
                   alt="close"
                 />
-              </div>
+              </button>
 
               <!--Billing Details-->
 
