@@ -6,7 +6,6 @@ shoppingCartTemplate.innerHTML = `
                   <ul class="shopping-cart-products__list">
                   
                   </ul>
-                  <div class = 'shopping-cart-products-list__loader'></div>
                 </div>
                 <div class="shopping-cart-products__total">
                   <div class="shopping-cart-products-total__subtotal">
@@ -14,7 +13,7 @@ shoppingCartTemplate.innerHTML = `
                       Total
                     </div>
                     <div class="shopping-cart-products-total-subtotal__price">
-                      $0
+                      
                     </div>
                   </div>
                   <div class="shopping-cart-products-total__vat">

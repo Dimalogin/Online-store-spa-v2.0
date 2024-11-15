@@ -17,6 +17,12 @@ class ShoppingCartProductsView {
   #shoppingCartProductsLoader = null;
   #shoppingCartProductsList = null;
 
+  #shoppingCartTemplate = null;
+  #shoppingCartProductsTotalSubtotalPrice = null;
+
+  #shoppingCartProductsTotalProceedCheckoutBtn = null;
+  #shoppingCartProductsTotalProceedCheckoutLoader = null;
+
   #productsShoppingCartStorage = null;
 
   constructor() {
@@ -27,6 +33,7 @@ class ShoppingCartProductsView {
     this.#openDBProducts();
 
     this.#initTemplate();
+
     this.#bindListener();
 
     this.#onCheckDataInStorage();
@@ -38,7 +45,6 @@ class ShoppingCartProductsView {
     handleEvent: (event) => {
       if (event.currentTarget === this.#shoppingCartProductsBody) {
         const target = event.target;
-        console.log(target);
 
         if (target.matches(".shopping-cart-products__delete-btn")) {
           const productId = Number(
@@ -59,6 +65,12 @@ class ShoppingCartProductsView {
             ".shopping-cart-products__item"
           );
           this.#increaseNumberProducts(shoppingCartProductsItem);
+        }
+
+        if (
+          target.matches(".shopping-cart-products-total__proceed-to-checkout")
+        ) {
+          console.log(true);
         }
       }
     },
@@ -92,6 +104,18 @@ class ShoppingCartProductsView {
     this.#shoppingCartProductsLoader = document.querySelector(
       ".shopping-cart-products__loader"
     );
+
+    this.#shoppingCartTemplate =
+      shoppingCartListTemplate.content.cloneNode(true);
+
+    this.#shoppingCartProductsList = this.#shoppingCartTemplate.querySelector(
+      ".shopping-cart-products__list"
+    );
+
+    this.#shoppingCartProductsTotalSubtotalPrice =
+      this.#shoppingCartTemplate.querySelector(
+        ".shopping-cart-products-total-subtotal__price"
+      );
   }
 
   #bindListener() {
@@ -99,6 +123,17 @@ class ShoppingCartProductsView {
       "click",
       this.#eventListeners
     );
+  }
+
+  #onGetAllProductsFromBasketStorage() {
+    this.#DBBasketModel
+      .getAllProductsFromBasketStorage()
+      .then((products) => {
+        console.log(products);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   #onCheckDataInStorage() {
@@ -127,6 +162,7 @@ class ShoppingCartProductsView {
     this.#DBBasketModel
       .getAllProductsFromBasketStorage()
       .then((products) => {
+        this.#productsShoppingCartStorage = products;
         this.#onTriggerList(products);
       })
       .catch((error) => {
@@ -137,8 +173,6 @@ class ShoppingCartProductsView {
   #onTriggerList(products) {
     this.#onShoppingCartProductLoader();
     setTimeout(() => {
-      this.#productsShoppingCartStorage = products;
-
       this.#offShoppingCartProductLoader();
 
       const numberOfProducts = products.length;
@@ -150,20 +184,23 @@ class ShoppingCartProductsView {
   }
 
   #onRenderShoppingCartTemplate() {
-    const fullView = shoppingCartListTemplate.content.cloneNode(true);
+    this.#shoppingCartTemplate =
+      shoppingCartListTemplate.content.cloneNode(true);
 
-    this.#shoppingCartProductsList = null;
-    this.#shoppingCartProductsList = fullView.querySelector(
+    this.#shoppingCartProductsTotalSubtotalPrice =
+      this.#shoppingCartTemplate.querySelector(
+        ".shopping-cart-products-total-subtotal__price"
+      );
+
+    this.#shoppingCartProductsTotalSubtotalPrice.textContent = `$${this.#getTotalPriceAllProducts()}`;
+
+    this.#shoppingCartProductsList = this.#shoppingCartTemplate.querySelector(
       ".shopping-cart-products__list"
     );
-    const shoppingCartProductsTotalSubtotalPrice = fullView.querySelector(
-      ".shopping-cart-products-total-subtotal__price"
-    );
-    shoppingCartProductsTotalSubtotalPrice.textContent = `$${this.#getTotalPriceAllProducts()}`;
 
     this.#onRenderList();
     this.#shoppingCartProductsBody.innerHTML = "";
-    this.#shoppingCartProductsBody.appendChild(fullView);
+    this.#shoppingCartProductsBody.appendChild(this.#shoppingCartTemplate);
   }
 
   #onRenderList() {
@@ -235,9 +272,9 @@ class ShoppingCartProductsView {
           this.#productsShoppingCartStorage.filter((product) => {
             return product.id !== productId;
           });
+
         this.#onUpdateProductAfterRemoveFromShoppingCart(productId);
         this.#getCurrentQuantityProductsFromShoppingCart();
-        this.#onRenderList();
         this.#onTriggerList(this.#productsShoppingCartStorage);
       })
       .catch((error) => {
@@ -380,6 +417,8 @@ class ShoppingCartProductsView {
   #renderCurrentNumberProductsCart(result) {
     this.headerSideLinkCount.textContent = result.length;
   }
+
+  /*Utils*/
 
   #onShoppingCartProductLoader() {
     this.#shoppingCartProductsLoader.style.display = "block";
