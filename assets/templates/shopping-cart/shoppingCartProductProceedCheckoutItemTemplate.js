@@ -12,12 +12,12 @@ shoppingCartProductProceedCheckoutItemTemplate.innerHTML = `
                         class="shopping-cart-products-proceed-to-checkout-modal-window-order-summary-item__icon"
                       >
                         <img
-                          src="./assets/images/products/for-woman/dresses/woman-dress-1.png"
+                          src=""
                           alt="dress"
                         />
                         <span
                           class="shopping-cart-products-proceed-to-checkout-modal-window-order-summary-item__quantity"
-                          >10</span
+                          ></span
                         >
                       </div>
                       <div
@@ -26,7 +26,7 @@ shoppingCartProductProceedCheckoutItemTemplate.innerHTML = `
                         <div
                           class="shopping-cart-products-proceed-to-checkout-modal-window-order-summary-item-content__title"
                         >
-                          Lorem ipsum, dolor sit amet consectetur Lorem
+                          
                         </div>
                         <div
                           class="shopping-cart-products-proceed-to-checkout-modal-window-order-summary-item-content__parameters"
@@ -52,7 +52,7 @@ shoppingCartProductProceedCheckoutItemTemplate.innerHTML = `
                             >
                             <span
                               class="shopping-cart-products-proceed-to-checkout-modal-window-order-summary-item-content-size__value"
-                              >L</span
+                              ></span
                             >
                           </div>
                         </div>
@@ -61,7 +61,7 @@ shoppingCartProductProceedCheckoutItemTemplate.innerHTML = `
                     <div
                       class="shopping-cart-products-proceed-to-checkout-modal-window-order-summary-item__price"
                     >
-                      $100
+                      
                     </div>
                   </li>
 `;
