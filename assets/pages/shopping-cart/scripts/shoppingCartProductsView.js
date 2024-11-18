@@ -23,6 +23,7 @@ class ShoppingCartProductsView {
   #shoppingCartTemplate = null;
   #shoppingCartProductsTotalSubtotalPrice = null;
   #shoppingCartProductsProceedCheckoutModalWindow = null;
+  #shoppingCartProductsProceedCheckoutModalWindowBody = null;
   #shoppingCartProductsProceedCheckoutModalWindowForm = null;
 
   #productsShoppingCartStorage = null;
@@ -539,10 +540,14 @@ class ShoppingCartProductsView {
   }
 
   #onCheckFormDataProceedCheckoutModalWindow(element) {
+    this.#shoppingCartProductsProceedCheckoutModalWindowBody = element;
     this.#shoppingCartProductsProceedCheckoutModalWindowForm =
       element.querySelector(
         ".proceed-to-checkout-modal-window-billing-details__form"
       );
+
+    this.#offShoppingCartProductProceedCheckoutModalWindowBtn();
+    this.#onShoppingCartProductProceedCheckoutModalWindowLoader();
 
     const contact = this.#fieldIsEmpty("contact");
     const userName = this.#fieldIsEmpty("user-data-name");
@@ -698,7 +703,14 @@ class ShoppingCartProductsView {
       total: subtotal + shippingMethod,
     };
 
-    this.#onRenderOrderShoppingCart(orderNumber);
+    setTimeout(() => {
+      this.#onRenderOrderShoppingCart(orderNumber);
+      this.#onRemoveAllProductsFromShoppingCartStorage();
+      this.#getCurrentQuantityProductsFromShoppingCart();
+      this.#onShoppingCartProductProceedCheckoutModalWindowBtn();
+      this.#offShoppingCartProductProceedCheckoutModalWindowLoader();
+      console.log(userOrder);
+    }, 1000);
   }
 
   #onRemoveAllProductsFromShoppingCartStorage() {
@@ -712,6 +724,38 @@ class ShoppingCartProductsView {
 
   #onRenderOrderShoppingCart(order) {
     const fullView = shoppingCartOrderTemplate.content.cloneNode(true);
+    const orderNumber = fullView.querySelector(
+      ".shopping-cart-products-order-page-content__text--order-number"
+    );
+
+    orderNumber.textContent = order;
+
+    this.#shoppingCartProductsBody.innerHTML = "";
+    this.#shoppingCartProductsBody.appendChild(fullView);
+  }
+
+  #onShoppingCartProductProceedCheckoutModalWindowBtn() {
+    this.#shoppingCartProductsProceedCheckoutModalWindowBody.querySelector(
+      ".shopping-cart-products-proceed-to-checkout-modal-window-order-summary__place-order-btn"
+    ).style.display = "flex";
+  }
+
+  #offShoppingCartProductProceedCheckoutModalWindowBtn() {
+    this.#shoppingCartProductsProceedCheckoutModalWindowBody.querySelector(
+      ".shopping-cart-products-proceed-to-checkout-modal-window-order-summary__place-order-btn"
+    ).style.display = "none";
+  }
+
+  #onShoppingCartProductProceedCheckoutModalWindowLoader() {
+    this.#shoppingCartProductsProceedCheckoutModalWindowBody.querySelector(
+      ".shopping-cart-products-proceed-to-checkout-modal-window-order-summary__loader"
+    ).style.display = "block";
+  }
+
+  #offShoppingCartProductProceedCheckoutModalWindowLoader() {
+    this.#shoppingCartProductsProceedCheckoutModalWindowBody.querySelector(
+      ".shopping-cart-products-proceed-to-checkout-modal-window-order-summary__loader"
+    ).style.display = "none";
   }
 
   // Header Shopping Cart

@@ -1,4 +1,4 @@
-const shoppingCartOrderTemplate = document.querySelector("template");
+const shoppingCartOrderTemplate = document.createElement("template");
 shoppingCartOrderTemplate.innerHTML = `
   <div class="shopping-cart-products__order-page">
                 <div class="shopping-cart-products-order-page__content">
