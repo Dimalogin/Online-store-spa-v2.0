@@ -5,6 +5,7 @@ import {
   readProductFromDB,
   removeProductFromDB,
   updateProductIntoDB,
+  removeAllProductsFromDB,
 } from "./functionalIndexedDB.js";
 
 export default class DatabaseBasketModel {
@@ -52,6 +53,12 @@ export default class DatabaseBasketModel {
   getProductFromShoppingCartStorage(productId) {
     return this.#dbBasketPromise.then((db) => {
       return readProductFromDB(db, this.#storageBasketName, productId);
+    });
+  }
+
+  removeAllProductsFromShoppingCart() {
+    return this.#dbBasketPromise.then((db) => {
+      return removeAllProductsFromDB(db, this.#storageBasketName);
     });
   }
 }

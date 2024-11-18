@@ -106,3 +106,21 @@ export function removeProductFromDB(db, storeName, key) {
     });
   });
 }
+
+
+export function removeAllProductsFromDB(db, storeName) {
+  return new Promise((resolve, reject) => {
+    const transaction = db.transaction(storeName, "readwrite");
+    const objectStore = transaction.objectStore(storeName);
+
+    const deleteRequest = objectStore.clear();
+
+    deleteRequest.addEventListener("error", function () {
+      reject(deleteRequest.error);
+    });
+
+    deleteRequest.addEventListener("success", function () {
+      resolve();
+    });
+  });
+}
