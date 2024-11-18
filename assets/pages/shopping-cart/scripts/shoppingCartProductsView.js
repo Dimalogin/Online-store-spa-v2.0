@@ -546,9 +546,6 @@ class ShoppingCartProductsView {
         ".proceed-to-checkout-modal-window-billing-details__form"
       );
 
-    this.#offShoppingCartProductProceedCheckoutModalWindowBtn();
-    this.#onShoppingCartProductProceedCheckoutModalWindowLoader();
-
     const contact = this.#fieldIsEmpty("contact");
     const userName = this.#fieldIsEmpty("user-data-name");
     const userLastname = this.#fieldIsEmpty("user-data-lastname");
@@ -673,6 +670,9 @@ class ShoppingCartProductsView {
   }
 
   #onGetDataFromProceedCheckoutModalWindow() {
+    this.#offShoppingCartProductProceedCheckoutModalWindowBtn();
+    this.#onShoppingCartProductProceedCheckoutModalWindowLoader();
+
     const data = new FormData(
       this.#shoppingCartProductsProceedCheckoutModalWindowForm
     );
