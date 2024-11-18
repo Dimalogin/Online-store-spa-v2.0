@@ -16,6 +16,12 @@
   font-size: 26px;
 }
 
+@media (max-width: 740px) {
+  .shopping-cart-description__title {
+    font-size: 15px;
+  }
+}
+
 .shopping-cart-description__continue {
   letter-spacing: 0.3px;
   line-height: 16px;
@@ -23,4 +29,11 @@
   cursor: pointer;
   text-decoration: underline;
   color: black;
+}
+
+
+@media (max-width: 740px) {
+  .shopping-cart-description__continue {
+    font-size: 11px;
+  }
 }
