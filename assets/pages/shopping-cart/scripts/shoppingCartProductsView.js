@@ -8,6 +8,7 @@ import shoppingCartEmptyListTemplate from "../../../templates/shopping-cart/shop
 import shoppingCartProductTemplate from "../../../templates/shopping-cart/shoppingCartProductTemplate.js";
 import shoppingCartProductProceedCheckoutModalWindowTemplate from "../../../templates/shopping-cart/shoppingCartProductProceedCheckoutModalWindowTemplate.js";
 import shoppingCartProductProceedCheckoutItemTemplate from "../../../templates/shopping-cart/shoppingCartProductProceedCheckoutItemTemplate.js";
+import shoppingCartOrderTemplate from "../../../templates/shopping-cart/shoppingCartOrderTemplate.js";
 
 class ShoppingCartProductsView {
   #DBBasketModel = null;
@@ -22,6 +23,7 @@ class ShoppingCartProductsView {
   #shoppingCartTemplate = null;
   #shoppingCartProductsTotalSubtotalPrice = null;
   #shoppingCartProductsProceedCheckoutModalWindow = null;
+  #shoppingCartProductsProceedCheckoutModalWindowForm = null;
 
   #productsShoppingCartStorage = null;
 
@@ -81,6 +83,17 @@ class ShoppingCartProductsView {
           )
         ) {
           this.#closeShoppingCartProductProceedCheckoutModalWindow();
+        }
+
+        if (
+          target.matches(
+            ".shopping-cart-products-proceed-to-checkout-modal-window-order-summary__place-order-btn"
+          )
+        ) {
+          const element = target.closest(
+            ".shopping-cart-products-proceed-to-checkout-modal-window__body"
+          );
+          this.#onCheckFormDataProceedCheckoutModalWindow(element);
         }
       }
     },
@@ -409,23 +422,13 @@ class ShoppingCartProductsView {
     this.#onShoppingCartProductsTotalProceedCheckoutLoader(element);
 
     setTimeout(() => {
-      this.#DBBasketModel
-        .getAllProductsFromBasketStorage()
-        .then((products) => {
-          this.#onRenderShoppingCartProductProceedCheckoutModalWindow(
-            element,
-            products
-          );
-          this.#onShoppingCartProductsTotalProceedCheckout(element);
-          this.#offShoppingCartProductsTotalProceedCheckoutLoader(element);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+      this.#onShoppingCartProductsTotalProceedCheckout(element);
+      this.#offShoppingCartProductsTotalProceedCheckoutLoader(element);
+      this.#onRenderShoppingCartProductProceedCheckoutModalWindow(element);
     }, 1000);
   }
 
-  #onRenderShoppingCartProductProceedCheckoutModalWindow(element, products) {
+  #onRenderShoppingCartProductProceedCheckoutModalWindow(element) {
     this.#shoppingCartProductsProceedCheckoutModalWindow =
       element.querySelector(
         ".shopping-cart-products__proceed-to-checkout-modal-window"
@@ -441,11 +444,9 @@ class ShoppingCartProductsView {
     );
 
     modalWindowList.appendChild(
-      products.reduce((fragment, product) => {
+      this.#productsShoppingCartStorage.reduce((fragment, product) => {
         const { id, images, color, price, quantityProducts, size, title } =
           product;
-
-        console.log(product);
 
         const fullViewItem =
           shoppingCartProductProceedCheckoutItemTemplate.content.cloneNode(
@@ -488,6 +489,20 @@ class ShoppingCartProductsView {
       }, document.createDocumentFragment())
     );
 
+    const modalWindowSubtotalPrice = fullView.querySelector(
+      ".shopping-cart-products-proceed-to-checkout-modal-window-order-summary-subtotal__price"
+    );
+    const modalWindwoTotalPrice = fullView.querySelector(
+      ".shopping-cart-products-proceed-to-checkout-modal-window-order-summary-total__price"
+    );
+
+    const totalPrice = this.#getTotalPriceAllProducts(
+      this.#productsShoppingCartStorage
+    );
+
+    modalWindowSubtotalPrice.textContent = `$${totalPrice}`;
+    modalWindwoTotalPrice.textContent = `$${totalPrice + 20}`;
+
     this.#shoppingCartProductsProceedCheckoutModalWindow.style.display =
       "block";
     this.#shoppingCartProductsProceedCheckoutModalWindow.innerHTML = "";
@@ -523,6 +538,182 @@ class ShoppingCartProductsView {
     ).style.display = "none";
   }
 
+  #onCheckFormDataProceedCheckoutModalWindow(element) {
+    this.#shoppingCartProductsProceedCheckoutModalWindowForm =
+      element.querySelector(
+        ".proceed-to-checkout-modal-window-billing-details__form"
+      );
+
+    const contact = this.#fieldIsEmpty("contact");
+    const userName = this.#fieldIsEmpty("user-data-name");
+    const userLastname = this.#fieldIsEmpty("user-data-lastname");
+    const deliveryAddress = this.#fieldIsEmpty("delivery-address");
+    const deliveryApartment = this.#fieldIsEmpty("delivery-apartment");
+    const deliveryCity = this.#fieldIsEmpty("delivery-city");
+    const deliveryZipCode = this.#fieldIsEmpty("delivery-zip-code");
+
+    if (
+      contact &&
+      userName &&
+      userLastname &&
+      deliveryAddress &&
+      deliveryApartment &&
+      deliveryCity &&
+      deliveryZipCode
+    ) {
+      this.#onGetDataFromProceedCheckoutModalWindow();
+    }
+  }
+
+  #fieldIsEmpty(field) {
+    switch (field) {
+      case "contact":
+        const contact =
+          this.#shoppingCartProductsProceedCheckoutModalWindowForm.querySelector(
+            ".proceed-to-checkout-modal-window-billing-details-form-contact__input"
+          );
+
+        if (contact.value.length > 0) {
+          contact.style.border = "1px solid #e5e5e5";
+          return true;
+        } else {
+          contact.style.border = "1px solid red";
+          return false;
+        }
+
+      case "user-data-name":
+        const userName =
+          this.#shoppingCartProductsProceedCheckoutModalWindowForm.querySelector(
+            ".proceed-to-checkout-modal-window-billing-details-form-user-data-name__input"
+          );
+
+        if (userName.value.length > 0) {
+          userName.style.border = "1px solid #e5e5e5";
+          return true;
+        } else {
+          userName.style.border = "1px solid red";
+          return false;
+        }
+
+      case "user-data-lastname":
+        const userLastname =
+          this.#shoppingCartProductsProceedCheckoutModalWindowForm.querySelector(
+            ".proceed-to-checkout-modal-window-billing-details-form-user-data-lastname__input"
+          );
+
+        if (userLastname.value.length > 0) {
+          userLastname.style.border = "1px solid #e5e5e5";
+          return true;
+        } else {
+          userLastname.style.border = "1px solid red";
+          return false;
+        }
+
+      case "delivery-address":
+        const deliveryAddress =
+          this.#shoppingCartProductsProceedCheckoutModalWindowForm.querySelector(
+            ".proceed-to-checkout-modal-window-billing-details-form-delivery__address"
+          );
+
+        if (deliveryAddress.value.length > 0) {
+          deliveryAddress.style.border = "1px solid #e5e5e5";
+          return true;
+        } else {
+          deliveryAddress.style.border = "1px solid red";
+          return false;
+        }
+
+      case "delivery-apartment":
+        const deliveryApartment =
+          this.#shoppingCartProductsProceedCheckoutModalWindowForm.querySelector(
+            ".proceed-to-checkout-modal-window-billing-details-form-delivery__apartment"
+          );
+
+        if (deliveryApartment.value.length > 0) {
+          deliveryApartment.style.border = "1px solid #e5e5e5";
+          return true;
+        } else {
+          deliveryApartment.style.border = "1px solid red";
+          return false;
+        }
+
+      case "delivery-city":
+        const deliveryCity =
+          this.#shoppingCartProductsProceedCheckoutModalWindowForm.querySelector(
+            ".proceed-to-checkout-modal-window-billing-details-form-delivery__city"
+          );
+
+        if (deliveryCity.value.length > 0) {
+          deliveryCity.style.border = "1px solid #e5e5e5";
+          return true;
+        } else {
+          deliveryCity.style.border = "1px solid red";
+          return false;
+        }
+
+      case "delivery-zip-code":
+        const deliveryZipCode =
+          this.#shoppingCartProductsProceedCheckoutModalWindowForm.querySelector(
+            ".proceed-to-checkout-modal-window-billing-details-form-delivery__zip-code"
+          );
+
+        if (deliveryZipCode.value.length > 0) {
+          deliveryZipCode.style.border = "1px solid #e5e5e5";
+          return true;
+        } else {
+          deliveryZipCode.style.border = "1px solid red";
+          return false;
+        }
+    }
+  }
+
+  #onGetDataFromProceedCheckoutModalWindow() {
+    const data = new FormData(
+      this.#shoppingCartProductsProceedCheckoutModalWindowForm
+    );
+
+    const orderNumber = this.#getOrderNumber();
+    const products = this.#productsShoppingCartStorage;
+    const subtotal = this.#getTotalPriceAllProducts(
+      this.#productsShoppingCartStorage
+    );
+    const shippingMethod = 20;
+
+    const userOrder = {
+      orderNumber: orderNumber,
+      contact: data.get("contact"),
+      userName: data.get("user-data-name"),
+      lastName: data.get("user-data-lastname"),
+      delivery: {
+        country: data.get("country"),
+        address: data.get("delivery-address"),
+        apartment: data.get("delivery-apartment"),
+        city: data.get("delivery-city"),
+        zipCode: data.get("delivery-zip-code"),
+      },
+      shippingMethod: shippingMethod,
+      payment: data.get("payment"),
+      products: products,
+      subtotal: subtotal,
+      total: subtotal + shippingMethod,
+    };
+
+    this.#onRenderOrderShoppingCart(orderNumber);
+  }
+
+  #onRemoveAllProductsFromShoppingCartStorage() {
+    this.#DBBasketModel
+      .removeAllProductsFromShoppingCart()
+      .then(() => {})
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  #onRenderOrderShoppingCart(order) {
+    const fullView = shoppingCartOrderTemplate.content.cloneNode(true);
+  }
+
   // Header Shopping Cart
 
   #getCurrentQuantityProductsFromShoppingCart() {
@@ -548,6 +739,22 @@ class ShoppingCartProductsView {
 
   #offShoppingCartProductLoader() {
     this.#shoppingCartProductsLoader.style.display = "none";
+  }
+
+  #getOrderNumber() {
+    let range = (start, end) =>
+      [...Array(end - start).keys(), end - start].map((n) => start + n);
+
+    let A = range(65, 90);
+    let a = range(97, 122);
+    let dig = range(48, 57);
+    let all = A.concat(a).concat(dig);
+    let str = "";
+
+    for (let i = 0; i < 10; i++) {
+      str += String.fromCharCode(all[Math.floor(Math.random() * all.length)]);
+    }
+    return str;
   }
 }
 

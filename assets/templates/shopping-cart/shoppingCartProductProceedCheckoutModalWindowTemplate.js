@@ -97,6 +97,7 @@ shoppingCartProductProceedCheckoutModalWindowTemplate.innerHTML = `
 
                     <select
                       class="proceed-to-checkout-modal-window-billing-details-form-delivery__country"
+                      name = 'country'
                     >
                       <option value="Belarus">Belarus</option>
                       <option value="Russia">Russia</option>
@@ -105,14 +106,14 @@ shoppingCartProductProceedCheckoutModalWindowTemplate.innerHTML = `
                     <input
                       class="proceed-to-checkout-modal-window-billing-details-form-delivery__address"
                       type="text"
-                      name="delivery__address"
+                      name="delivery-address"
                       placeholder="Address"
                       required
                     />
                     <input
                       class="proceed-to-checkout-modal-window-billing-details-form-delivery__apartment"
                       type="text"
-                      name="delivery__apartment"
+                      name="delivery-apartment"
                       placeholder="Apartment"
                       required
                     />
@@ -122,7 +123,7 @@ shoppingCartProductProceedCheckoutModalWindowTemplate.innerHTML = `
                       <input
                         class="proceed-to-checkout-modal-window-billing-details-form-delivery__city"
                         type="text"
-                        name="delivery__city"
+                        name="delivery-city"
                         placeholder="City"
                         required
                       />
@@ -130,7 +131,7 @@ shoppingCartProductProceedCheckoutModalWindowTemplate.innerHTML = `
                       <input
                         class="proceed-to-checkout-modal-window-billing-details-form-delivery__zip-code"
                         type="text"
-                        name="delivery__zip-code"
+                        name="delivery-zip-code"
                         placeholder="Zip code"
                         required
                       />
@@ -170,6 +171,7 @@ shoppingCartProductProceedCheckoutModalWindowTemplate.innerHTML = `
                     </label>
                     <select
                       class="proceed-to-checkout-modal-window-billing-details-form-payment__transactions"
+                      name= 'payment'
                     >
                       <option value="cash upon receipt">
                         Cash upon receipt
@@ -214,7 +216,7 @@ shoppingCartProductProceedCheckoutModalWindowTemplate.innerHTML = `
                   <div
                     class="shopping-cart-products-proceed-to-checkout-modal-window-order-summary-subtotal__price"
                   >
-                    $0
+                    
                   </div>
                 </div>
 
@@ -259,7 +261,7 @@ shoppingCartProductProceedCheckoutModalWindowTemplate.innerHTML = `
                   <div
                     class="shopping-cart-products-proceed-to-checkout-modal-window-order-summary-total__price"
                   >
-                    $0
+                    
                   </div>
                 </div>
 
@@ -268,6 +270,9 @@ shoppingCartProductProceedCheckoutModalWindowTemplate.innerHTML = `
                 >
                   Place Order
                 </button>
+
+                <div class = 'shopping-cart-products-proceed-to-checkout-modal-window-order-summary__loader'></div>
+
               </div>
             </div>
 `;
