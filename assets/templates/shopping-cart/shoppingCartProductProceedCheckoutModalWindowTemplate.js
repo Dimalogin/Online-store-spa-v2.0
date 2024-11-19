@@ -46,6 +46,8 @@ shoppingCartProductProceedCheckoutModalWindowTemplate.innerHTML = `
                     />
                   </div>
 
+
+
                   <div
                     class="proceed-to-checkout-modal-window-billing-details-form__user-data"
                   >
@@ -185,6 +187,7 @@ shoppingCartProductProceedCheckoutModalWindowTemplate.innerHTML = `
 
               <!--Order Summary-->
 
+             
               <div
                 class="shopping-cart-products-proceed-to-checkout-modal-window__order-summary"
               >
